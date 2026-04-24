@@ -1,0 +1,614 @@
+================================================================
+  DBMS COURSE -- ADVANCED QUERIES REFERENCE
+  Covers: SQL (MySQL) + MongoDB
+  Source: Course lecture slides
+================================================================
+
+
+================================================================
+  PART 1 -- SQL ADVANCED QUERIES (MySQL)
+================================================================
+
+
+----------------------------------------------------------------
+  1. AGGREGATE FUNCTIONS
+----------------------------------------------------------------
+
+-- COUNT: total number of rows in a table
+SELECT COUNT(*) FROM patient;
+
+-- COUNT: non-null values in a specific column
+SELECT COUNT(phone) FROM patient;
+-- (rows with NULL phone are NOT counted)
+
+-- COUNT with WHERE
+SELECT COUNT(*) FROM patient WHERE last_name = 'Smith';
+
+-- SUM
+SELECT SUM(regular_price) FROM product;
+
+-- SUM with alias (much cleaner output)
+SELECT SUM(regular_price) AS total_price FROM product;
+
+-- AVG
+SELECT AVG(regular_price) AS average_price FROM product;
+
+-- MIN / MAX
+SELECT MIN(regular_price) AS cheapest FROM product;
+SELECT MAX(regular_price) AS most_expensive FROM product;
+
+-- All together
+SELECT COUNT(*), MIN(regular_price), MAX(regular_price), AVG(regular_price)
+FROM product;
+
+
+----------------------------------------------------------------
+  2. DISTINCT
+----------------------------------------------------------------
+
+-- List all unique values in a column (no duplicates)
+SELECT DISTINCT attribute1 FROM product;
+
+-- Count of unique values
+SELECT COUNT(DISTINCT attribute1) FROM product;
+
+
+----------------------------------------------------------------
+  3. GROUP BY
+----------------------------------------------------------------
+
+-- Count rows per group
+SELECT attribute1, COUNT(*) FROM product
+GROUP BY attribute1;
+
+-- Multiple aggregate functions per group
+SELECT attribute1, COUNT(*), AVG(regular_price)
+FROM product
+GROUP BY attribute1;
+
+-- GROUP BY with WHERE (filter BEFORE grouping)
+SELECT attribute1, COUNT(*)
+FROM product
+WHERE name LIKE 'Ajax%' AND attrib1name = 'Size'
+GROUP BY attribute1;
+
+-- Execution order: FROM -> WHERE -> GROUP BY -> HAVING -> SELECT -> ORDER BY
+
+
+----------------------------------------------------------------
+  4. HAVING (filter AFTER grouping)
+----------------------------------------------------------------
+
+-- Show only groups where count > 3
+SELECT attribute1, COUNT(*)
+FROM product
+GROUP BY attribute1
+HAVING COUNT(*) > 3;
+
+-- HAVING with AVG
+SELECT attribute1, AVG(regular_price) AS avg_price
+FROM product
+GROUP BY attribute1
+HAVING AVG(regular_price) > 20;
+
+-- Combining WHERE and HAVING
+SELECT attribute1, COUNT(*)
+FROM product
+WHERE regular_price > 5        -- filters rows before grouping
+GROUP BY attribute1
+HAVING COUNT(*) > 2;           -- filters groups after grouping
+
+-- CRITICAL RULE:
+-- WHERE  --> filters ROWS    (before grouping, no aggregates allowed)
+-- HAVING --> filters GROUPS  (after grouping, aggregates allowed)
+-- Using COUNT(*) in a WHERE clause is INVALID.
+
+
+----------------------------------------------------------------
+  5. SUBQUERIES (nested queries)
+----------------------------------------------------------------
+
+-- Find product(s) with the minimum price
+SELECT * FROM product
+WHERE regular_price = (SELECT MIN(regular_price) FROM product);
+
+-- Find product(s) with the maximum price
+SELECT * FROM product
+WHERE regular_price = (SELECT MAX(regular_price) FROM product);
+
+-- Find product(s) with price above the average
+SELECT * FROM product
+WHERE regular_price > (SELECT AVG(regular_price) FROM product);
+
+-- Inner query executes FIRST, then the outer query uses its result.
+
+
+----------------------------------------------------------------
+  6. JOINS
+----------------------------------------------------------------
+
+-- INNER JOIN (old-style with comma + WHERE)
+SELECT * FROM appointment, patient
+WHERE appointment.pid = patient.pid;
+
+-- INNER JOIN (modern syntax -- preferred)
+SELECT * FROM appointment
+JOIN patient ON appointment.pid = patient.pid;
+
+-- INNER JOIN with projection (choose specific columns)
+SELECT appointment.apid, patient.first_name, appointment.start_time
+FROM appointment
+JOIN patient ON appointment.pid = patient.pid;
+
+-- INNER JOIN with filter
+SELECT * FROM appointment
+JOIN patient ON appointment.pid = patient.pid
+WHERE appointment.duration > 30;
+
+-- JOINING THREE TABLES
+SELECT * FROM appointment
+JOIN patient ON appointment.pid  = patient.pid
+JOIN staff  ON appointment.doctor = staff.st_id;
+
+-- INNER JOIN with aliases (useful when same column name exists in both tables)
+SELECT a.apid, p.first_name AS patient_name, s.first_name AS doctor_name
+FROM appointment a
+JOIN patient p ON a.pid    = p.pid
+JOIN staff   s ON a.doctor = s.st_id;
+
+-- LEFT (OUTER) JOIN -- keeps ALL rows from LEFT table
+-- Patient 400 has no appointments, but still appears (with NULLs on right)
+SELECT * FROM patient
+LEFT JOIN appointment ON patient.pid = appointment.pid;
+
+-- RIGHT (OUTER) JOIN -- keeps ALL rows from RIGHT table
+SELECT * FROM patient
+RIGHT JOIN appointment ON patient.pid = appointment.pid;
+
+-- NATURAL JOIN (auto-matches columns with same name)
+-- Only works when column names match exactly and only with 2 tables in MySQL
+SELECT * FROM appointment NATURAL JOIN patient;
+
+
+----------------------------------------------------------------
+  7. SET OPERATIONS
+----------------------------------------------------------------
+
+-- UNION (all entries from both tables, NO duplicates)
+-- Tables must be union-compatible (same number and types of columns)
+SELECT name FROM patient
+UNION
+SELECT name FROM doctor;
+
+-- INTERSECT (names that appear in BOTH tables)
+-- MySQL does NOT support INTERSECT directly -- use this workaround:
+SELECT name FROM patient
+WHERE name IN (SELECT name FROM doctor);
+
+-- DIFFERENCE (names in doctor but NOT in patient)
+-- MySQL does NOT support EXCEPT/MINUS -- use this workaround:
+SELECT name FROM doctor
+WHERE name NOT IN (SELECT name FROM patient);
+
+-- NOTE: MySQL natively supports UNION only.
+-- INTERSECT and DIFFERENCE must be simulated with subqueries.
+
+
+----------------------------------------------------------------
+  8. VIEWS
+----------------------------------------------------------------
+
+-- Create a simple view
+CREATE VIEW patient_appointments AS
+SELECT p.first_name, p.last_name, a.start_time, a.duration
+FROM patient p
+JOIN appointment a ON p.pid = a.pid;
+
+-- Query a view (exactly like a table)
+SELECT * FROM patient_appointments;
+SELECT * FROM patient_appointments WHERE duration > 30;
+
+-- Complex view: who can enter the clinic today
+CREATE VIEW entry_list AS
+SELECT p.first_name, p.last_name, a.start_time
+FROM patient p
+JOIN appointment a ON p.pid = a.pid
+WHERE DATE(a.start_time) = CURDATE();
+
+-- Use the view
+SELECT * FROM entry_list;
+
+-- Drop a view
+DROP VIEW patient_appointments;
+
+-- UPDATABLE VIEW rules:
+-- A view IS updatable if: one-to-one relationship between view rows and base table rows.
+-- A view is NOT updatable if it contains:
+--   aggregate functions, DISTINCT, GROUP BY, UNION, or nested queries.
+-- A column formed from multiple base columns (like full_name = first + last) is NOT updatable.
+
+
+----------------------------------------------------------------
+  9. INDEXES (MySQL)
+----------------------------------------------------------------
+
+-- Add an index on the phone column
+CREATE INDEX idx_phone ON patient(phone);
+
+-- See if MySQL is using an index (look for type=ALL as a warning)
+EXPLAIN SELECT * FROM patient WHERE phone = '5551-0000';
+EXPLAIN SELECT * FROM patient WHERE pid = 232;
+
+-- EXPLAIN output interpretation:
+--   type: ALL  --> full table scan (BAD -- needs an index)
+--   type: const --> constant-time lookup using PK or unique index (BEST)
+--   key: NULL  --> no index being used
+--   rows: 100  --> had to scan 100 rows to find result
+
+-- Drop an index
+DROP INDEX idx_phone ON patient;
+
+-- When NOT to add an index:
+--   Searching by primary key (already indexed automatically)
+--   Small tables (full scan is fast enough)
+--   Columns rarely used in WHERE clauses
+
+-- Downsides of indexes:
+--   Larger database size
+--   INSERT/UPDATE/DELETE become slower (index must also update)
+
+
+----------------------------------------------------------------
+  10. CASCADE OPERATIONS
+----------------------------------------------------------------
+
+-- ON DELETE CASCADE: child rows auto-deleted when parent is deleted
+CREATE TABLE appointment (
+    apid INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    pid  INT NOT NULL,
+    CONSTRAINT fk_appt_patient FOREIGN KEY (pid)
+        REFERENCES patient(pid)
+        ON DELETE CASCADE
+);
+
+-- ON UPDATE CASCADE: child FKs auto-updated when parent PK changes
+CREATE TABLE appointment (
+    apid INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    pid  INT NOT NULL,
+    CONSTRAINT fk_appt_patient FOREIGN KEY (pid)
+        REFERENCES patient(pid)
+        ON UPDATE CASCADE
+);
+
+-- WARNING: ON DELETE CASCADE is generally NOT recommended.
+-- You usually want to KEEP history, not auto-delete it.
+
+
+----------------------------------------------------------------
+  11. DATE OPERATIONS
+----------------------------------------------------------------
+
+-- Filter by today's date
+SELECT * FROM appointment WHERE DATE(start_time) = CURDATE();
+
+-- Date arithmetic (appointments in the last 7 days)
+SELECT * FROM appointment
+WHERE start_time >= DATE_SUB(CURDATE(), INTERVAL 7 DAY);
+
+
+----------------------------------------------------------------
+  12. JSON DATA TYPE (MySQL)
+----------------------------------------------------------------
+
+-- Create a table with a JSON column
+CREATE TABLE competition (
+    id      INT PRIMARY KEY AUTO_INCREMENT,
+    team    VARCHAR(50),
+    details JSON
+);
+
+-- Extract a value from JSON column using json_extract
+SELECT json_extract(details, '$.score') FROM competition;
+
+-- Search on a JSON attribute
+SELECT * FROM competition
+WHERE json_extract(details, '$.score') > 50;
+
+-- Note: if a document in a cell doesn't contain the attribute,
+-- that row is simply ignored (no error).
+
+
+================================================================
+  PART 2 -- MONGODB ADVANCED QUERIES
+================================================================
+
+
+----------------------------------------------------------------
+  1. QUERYING EMBEDDED OBJECTS (dot notation)
+----------------------------------------------------------------
+
+-- Find patients where last_vitals.height = 175
+db.patients.find({ "last_vitals.height": 175 })
+
+-- Find patients where last_vitals.weight > 80
+db.patients.find({ "last_vitals.weight": { $gt: 80 } })
+
+-- RULE: Use dot notation ("parent.child") and enclose in quotes.
+
+
+----------------------------------------------------------------
+  2. QUERYING SIMPLE ARRAYS
+----------------------------------------------------------------
+
+-- Direct search (finds documents where the array contains this value)
+db.patients.find({ "phone": "134-411-7696" })
+
+-- Search by array position (0 = first element, 1 = second, etc.)
+-- Find patients where the FIRST blood_pressure element > 130
+db.patients.find({ "last_vitals.blood_pressure.0": { $gt: 130 } })
+
+-- Find patients where the SECOND blood_pressure element > 90
+db.patients.find({ "last_vitals.blood_pressure.1": { $gt: 90 } })
+
+-- Match an exact array (value AND order must match)
+db.patients.find({ "last_vitals.blood_pressure": [125, 82] })
+
+
+----------------------------------------------------------------
+  3. QUERYING ARRAYS OF EMBEDDED OBJECTS ($elemMatch)
+----------------------------------------------------------------
+
+-- Find patients who had a visit with doctor "Taylor"
+db.patients.find({
+    "visits": { $elemMatch: { "doctor": "Taylor" } }
+})
+
+-- Find patients who had a visit with Taylor on May 20, 2023
+db.patients.find({
+    "visits": {
+        $elemMatch: {
+            "doctor": "Taylor",
+            "date": {
+                $gte: "2023-05-20T00:00",
+                $lte: "2023-05-20T23:59"
+            }
+        }
+    }
+})
+
+-- RULE: Use $elemMatch when searching arrays of embedded objects.
+-- Regular dot notation alone won't work correctly for this case.
+
+
+----------------------------------------------------------------
+  4. UPDATING EMBEDDED OBJECTS
+----------------------------------------------------------------
+
+-- Update a single field inside an embedded object
+db.patients.updateOne(
+    { first_name: "Sarah" },
+    { $set: { "last_vitals.weight": 75 } }
+)
+
+
+----------------------------------------------------------------
+  5. UPDATING ARRAYS OF EMBEDDED OBJECTS
+----------------------------------------------------------------
+
+-- This FAILS if Sarah has multiple visits (ambiguous which to update)
+db.patients.updateOne(
+    { first_name: "Sarah", "visits.doctor": "Kamal" },
+    { $set: { "visits.$.doctor": "Ali" } }
+)
+
+-- This updates ALL visits for Sarah
+db.patients.updateMany(
+    { first_name: "Sarah" },
+    { $set: { "visits.$[].doctor": "Ali" } }
+)
+
+
+----------------------------------------------------------------
+  6. AGGREGATION PIPELINE
+----------------------------------------------------------------
+
+-- Basic structure
+db.collection.aggregate([
+    { stage1 },
+    { stage2 },
+    { stage3 }
+])
+
+-- Course-focused stages: $match, $project, $group, $count, $sort
+
+-- $match (like WHERE -- filter documents)
+db.cars.aggregate([
+    { $match: { manufacturer: "Volvo" } }
+])
+
+-- $project (like SELECT column list -- choose/reshape fields)
+db.cars.aggregate([
+    { $project: { manufacturer: 1, price: 1, _id: 0 } }
+])
+
+-- $group (like GROUP BY -- group and compute)
+-- _id is the "group by" field. Use null to group everything together.
+db.cars.aggregate([
+    { $group: { _id: "$manufacturer", total: { $sum: "$price" } } }
+])
+
+-- $count (count remaining documents after previous stages)
+db.cars.aggregate([
+    { $match: { manufacturer: "Toyota" } },
+    { $count: "toyota_count" }
+])
+
+-- $sort (like ORDER BY -- 1=asc, -1=desc)
+db.cars.aggregate([
+    { $sort: { price: -1 } }
+])
+
+
+----------------------------------------------------------------
+  7. MULTI-STAGE AGGREGATION PIPELINES
+----------------------------------------------------------------
+
+-- Example 1: Total price of all Volvos
+db.cars.aggregate([
+    { $match: { manufacturer: "Volvo" } },
+    { $group: {
+        _id: "$manufacturer",
+        total_price: { $sum: "$price" }
+    }}
+])
+
+-- Example 2: Manufacturers whose total price is less than 10,000, sorted
+db.cars.aggregate([
+    { $group: {
+        _id: "$manufacturer",
+        total: { $sum: "$price" }
+    }},
+    { $match: { total: { $lt: 10000 } } },
+    { $sort: { total: 1 } }
+])
+-- NOTE: $match AFTER $group works like HAVING in SQL.
+-- $match BEFORE $group works like WHERE in SQL.
+
+-- Example 3: Count documents per manufacturer
+db.cars.aggregate([
+    { $group: {
+        _id: "$manufacturer",
+        count: { $sum: 1 }
+    }},
+    { $sort: { count: -1 } }
+])
+
+-- Example 4: Average price per manufacturer, only show avg > 15000
+db.cars.aggregate([
+    { $group: {
+        _id: "$manufacturer",
+        avg_price: { $avg: "$price" }
+    }},
+    { $match: { avg_price: { $gt: 15000 } } }
+])
+
+
+----------------------------------------------------------------
+  8. $unwind (flatten arrays into separate documents)
+----------------------------------------------------------------
+
+-- Unwind the visits array so each visit becomes a separate document
+db.patients.aggregate([
+    { $unwind: "$visits" }
+])
+
+-- After $unwind, each document represents ONE visit,
+-- making it easier to filter and aggregate on visit-level data.
+
+-- Example: Count visits per doctor across all patients
+db.patients.aggregate([
+    { $unwind: "$visits" },
+    { $group: {
+        _id: "$visits.doctor",
+        visit_count: { $sum: 1 }
+    }},
+    { $sort: { visit_count: -1 } }
+])
+
+
+----------------------------------------------------------------
+  9. INDEXES IN MONGODB
+----------------------------------------------------------------
+
+-- Create single-field index (ascending)
+db.cars.createIndex({ manufacturer: 1 })
+
+-- Create compound index (multiple fields)
+db.patients.createIndex({ last_name: 1, first_name: 1 })
+
+-- Unique index
+db.patients.createIndex({ phone: 1 }, { unique: true })
+
+-- TTL index (documents auto-expire after N seconds)
+db.sessions.createIndex({ createdAt: 1 }, { expireAfterSeconds: 3600 })
+
+-- Named index (easier to manage later)
+db.cars.createIndex(
+    { manufacturer: 1 },
+    { name: "idx_manufacturer" }
+)
+
+-- Check if index is being used (look for IXSCAN vs COLLSCAN)
+db.cars.find({ manufacturer: "Toyota" }).explain("executionStats")
+-- IXSCAN = index scan (fast)  GOOD
+-- COLLSCAN = full collection scan (slow)  BAD
+
+
+================================================================
+  PIPELINE STAGE QUICK REFERENCE
+================================================================
+
+  $match   --> filter documents (like SQL WHERE or HAVING)
+  $project --> choose/rename fields (like SQL SELECT column list)
+  $group   --> group + compute (like SQL GROUP BY + aggregates)
+  $count   --> count documents (produces {fieldName: count})
+  $sort    --> sort results (like SQL ORDER BY)
+  $unwind  --> flatten arrays (no SQL equivalent)
+  $limit   --> limit number of results (like SQL LIMIT)
+  $skip    --> skip N documents (like SQL OFFSET)
+
+  $sum     --> total (use inside $group)
+  $avg     --> average
+  $min     --> minimum
+  $max     --> maximum
+  $count   --> can also be used as accumulator inside $group: {$sum: 1}
+
+
+================================================================
+  SQL vs MONGODB AGGREGATION MAPPING
+================================================================
+
+  SQL                          MongoDB Equivalent
+  -------                      ------------------
+  WHERE (before group)         $match (before $group)
+  GROUP BY column              $group: { _id: "$column" }
+  COUNT(*)                     { $sum: 1 } inside $group
+  SUM(col)                     { $sum: "$col" } inside $group
+  AVG(col)                     { $avg: "$col" } inside $group
+  MIN(col)                     { $min: "$col" } inside $group
+  MAX(col)                     { $max: "$col" } inside $group
+  HAVING (after group)         $match (after $group)
+  ORDER BY col ASC             $sort: { col: 1 }
+  ORDER BY col DESC            $sort: { col: -1 }
+  SELECT col1, col2            $project: { col1: 1, col2: 1 }
+  (no equivalent)              $unwind (flatten arrays)
+
+
+================================================================
+  CRITICAL TRAPS FOR EXAMS
+================================================================
+
+SQL:
+  - WHERE cannot use aggregate functions (COUNT, SUM, etc.)
+    Use HAVING instead.
+  - HAVING filters groups; WHERE filters rows.
+  - UNION requires union-compatible tables (same columns + types).
+  - MySQL natively supports only UNION, not INTERSECT or EXCEPT.
+  - A view with GROUP BY, DISTINCT, UNION, or aggregates
+    is NOT updatable.
+  - LEFT JOIN keeps ALL rows from left table, NULLs for missing right.
+  - NATURAL JOIN only works in MySQL with 2 tables + matching column names.
+  - Subquery (inner query) always executes FIRST.
+
+MONGODB:
+  - $match BEFORE $group = like SQL WHERE (filters rows first).
+  - $match AFTER $group  = like SQL HAVING (filters groups).
+  - Use $elemMatch for searching arrays of embedded objects.
+  - Use dot notation ("parent.child") for embedded object fields.
+  - $unwind flattens one array element per output document.
+  - COLLSCAN in explain output means no index is being used (slow).
+  - Indexes speed up reads but slow down writes (INSERT/UPDATE/DELETE).
+
+================================================================
+  END OF ADVANCED QUERIES
+================================================================

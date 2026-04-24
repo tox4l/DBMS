@@ -1,0 +1,392 @@
+================================================================
+  DBMS COURSE -- BASIC QUERIES REFERENCE
+  Covers: SQL (MySQL) + MongoDB
+  Source: Course lecture slides
+================================================================
+
+
+================================================================
+  PART 1 -- SQL BASIC QUERIES (MySQL)
+================================================================
+
+
+----------------------------------------------------------------
+  1. TABLE CREATION (DDL)
+----------------------------------------------------------------
+
+-- Basic table, no constraints
+CREATE TABLE patient (
+    pid         INT,
+    first_name  VARCHAR(50),
+    last_name   VARCHAR(50),
+    phone       VARCHAR(20)
+);
+
+-- Table with primary key
+CREATE TABLE patient (
+    pid         INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    first_name  VARCHAR(50) NOT NULL,
+    last_name   VARCHAR(50) NOT NULL,
+    phone       VARCHAR(20)
+);
+
+-- Table with foreign key
+CREATE TABLE appointment (
+    apid        INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    pid         INT NOT NULL,
+    doctor      INT NOT NULL,
+    start_time  DATETIME NOT NULL,
+    duration    INT NOT NULL DEFAULT 15,
+    CONSTRAINT fk_appt_patient FOREIGN KEY (pid) REFERENCES patient(pid),
+    CONSTRAINT fk_appt_doctor  FOREIGN KEY (doctor) REFERENCES doctor(id)
+);
+
+-- Table deletion (must delete child tables first)
+DROP TABLE appointment;
+DROP TABLE patient;
+
+
+----------------------------------------------------------------
+  2. INSERT
+----------------------------------------------------------------
+
+-- Single row (all columns in order)
+INSERT INTO patient VALUES (232, 'Mohammed', 'Al Walkra', '4431-1132');
+INSERT INTO patient VALUES (334, 'Fatima', 'Shamal', '5554-1123');
+INSERT INTO patient VALUES (400, 'Test', 'Subject', '5555-1111');
+
+-- Multiple rows in one statement (MySQL only, not Oracle)
+INSERT INTO patient VALUES
+    (401, 'Next',  'Subject', '1234-4321'),
+    (402, 'Final', 'Demo',    '4444-3333');
+
+-- Insert specifying column names (safer, order-independent)
+INSERT INTO patient (first_name, last_name, phone)
+VALUES ('Ali', 'Hassan', '5551-0000');
+
+
+----------------------------------------------------------------
+  3. SELECT -- SELECTION (all rows)
+----------------------------------------------------------------
+
+-- All columns, all rows  [SELECTION = full table]
+SELECT * FROM patient;
+
+-- Specific columns only  [PROJECTION]
+SELECT first_name, last_name FROM patient;
+
+-- Column alias (rename in output)
+SELECT first_name AS name, phone AS contact FROM patient;
+
+
+----------------------------------------------------------------
+  4. SELECT -- WHERE (filtering rows)
+----------------------------------------------------------------
+
+-- Equality
+SELECT * FROM patient WHERE pid = 232;
+
+-- Not equal
+SELECT * FROM patient WHERE pid != 232;
+
+-- Comparison operators
+SELECT * FROM product WHERE regular_price > 10;
+SELECT * FROM product WHERE regular_price >= 10;
+SELECT * FROM product WHERE regular_price < 50;
+SELECT * FROM product WHERE regular_price <= 50;
+
+-- BETWEEN (inclusive on both ends)
+SELECT * FROM product WHERE regular_price BETWEEN 4 AND 10;
+-- equivalent to:
+SELECT * FROM product WHERE regular_price >= 4 AND regular_price <= 10;
+
+-- NULL checks (MUST use IS NULL / IS NOT NULL, never = NULL)
+SELECT * FROM patient WHERE phone IS NULL;
+SELECT * FROM patient WHERE phone IS NOT NULL;
+
+-- IN (match any value in a list)
+SELECT * FROM student WHERE id IN (1234, 1235, 2222);
+
+-- Logical operators: AND, OR, NOT
+SELECT * FROM student WHERE name = 'Test' AND gpa < 3;
+SELECT * FROM student WHERE name = 'Test' OR  gpa < 3;
+SELECT * FROM student WHERE NOT name = 'Test';
+
+
+----------------------------------------------------------------
+  5. SELECT -- LIKE (pattern matching)
+----------------------------------------------------------------
+
+-- Starts with 'm'
+SELECT * FROM student WHERE name LIKE 'm%';
+
+-- Ends with 'm'
+SELECT * FROM student WHERE name LIKE '%m';
+
+-- Contains 'm' anywhere
+SELECT * FROM student WHERE name LIKE '%m%';
+
+-- Names starting with 'Ajax'
+SELECT * FROM product WHERE name LIKE 'Ajax%';
+
+-- Note: % means any character(s). _ means exactly one character.
+
+
+----------------------------------------------------------------
+  6. SELECT -- ORDER BY
+----------------------------------------------------------------
+
+-- Ascending (default)
+SELECT * FROM product ORDER BY regular_price;
+SELECT * FROM product ORDER BY regular_price ASC;
+
+-- Descending
+SELECT * FROM product ORDER BY regular_price DESC;
+
+-- Multiple columns: sort by price asc, then name desc within same price
+SELECT * FROM product
+WHERE attribute1 = 'L'
+ORDER BY regular_price, name DESC;
+
+-- RULE: ORDER BY must come AFTER WHERE clause.
+-- RULE: SELECT has NO guaranteed order without ORDER BY.
+
+
+----------------------------------------------------------------
+  7. UPDATE
+----------------------------------------------------------------
+
+-- Update one column for one row
+UPDATE patient SET phone = '5555-0000' WHERE pid = 232;
+
+-- Update multiple columns
+UPDATE patient SET first_name = 'Ahmed', phone = '5555-1234' WHERE pid = 232;
+
+-- WARNING: Forgetting WHERE updates ALL rows in the table!
+-- UPDATE patient SET phone = '0000-0000';   <-- dangerous!
+
+
+----------------------------------------------------------------
+  8. DELETE
+----------------------------------------------------------------
+
+-- Delete a specific row
+DELETE FROM patient WHERE pid = 400;
+
+-- WARNING: Forgetting WHERE deletes ALL rows in the table!
+-- DELETE FROM patient;   <-- dangerous!
+
+-- Note: Deleting a row referenced by a foreign key will FAIL
+-- unless ON DELETE CASCADE is defined.
+
+
+----------------------------------------------------------------
+  9. TABLE ALTERATION (ALTER TABLE)
+----------------------------------------------------------------
+
+-- Add a column (filled with NULLs)
+ALTER TABLE patient ADD COLUMN date_of_birth DATE;
+
+-- Add a column after a specific column
+ALTER TABLE patient ADD COLUMN dob DATE AFTER last_name;
+
+-- Drop a column (data is permanently lost)
+ALTER TABLE patient DROP COLUMN phone;
+
+-- Rename/change a column type
+ALTER TABLE patient CHANGE phone contact_number VARCHAR(30);
+
+-- Add a primary key constraint
+ALTER TABLE patient ADD CONSTRAINT pk_patient PRIMARY KEY (pid);
+
+-- Add a foreign key constraint
+ALTER TABLE appointment ADD CONSTRAINT fk_appt_doc
+    FOREIGN KEY (doctor) REFERENCES doctor(id);
+
+-- Drop a named constraint
+ALTER TABLE appointment DROP CONSTRAINT fk_appt_doc;
+
+-- Drop the primary key
+ALTER TABLE patient DROP PRIMARY KEY;
+
+-- Change auto_increment starting value
+ALTER TABLE patient AUTO_INCREMENT = 1002;
+
+
+----------------------------------------------------------------
+  10. AUTO_INCREMENT
+----------------------------------------------------------------
+
+-- Define auto_increment primary key
+CREATE TABLE patient (
+    pid        INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50)
+);
+
+-- When inserting, skip the PK column (it auto-fills)
+INSERT INTO patient (first_name) VALUES ('Mohammed');
+INSERT INTO patient (first_name) VALUES ('Fatima');
+-- pids will be 1, 2, 3 ... automatically
+
+-- Rules:
+-- Only ONE auto_increment per table.
+-- Value never goes backwards (rolling back is ignored).
+-- Next value = largest existing value + 1.
+
+
+================================================================
+  PART 2 -- MONGODB BASIC QUERIES
+================================================================
+
+
+----------------------------------------------------------------
+  1. SETUP COMMANDS
+----------------------------------------------------------------
+
+-- Switch to (or create) a database
+use clinic
+
+-- Create a collection
+db.createCollection('patients')
+
+
+----------------------------------------------------------------
+  2. INSERT DOCUMENTS
+----------------------------------------------------------------
+
+-- Insert one document
+db.patients.insertOne({
+    first_name: "Mohammed",
+    last_name:  "Al Walkra",
+    phone:      "4431-1132"
+})
+
+-- Insert many documents
+db.patients.insertMany([
+    { first_name: "Fatima",  last_name: "Jadeeda", phone: "5554-1123" },
+    { first_name: "Test",    last_name: "Subject",  phone: "5555-1111" }
+])
+
+-- Notes:
+-- _id is auto-generated if not provided.
+-- insertOne / insertMany also create the collection if it doesn't exist.
+-- Duplicate _id will cause an error.
+
+
+----------------------------------------------------------------
+  3. FIND (basic queries)
+----------------------------------------------------------------
+
+-- All documents
+db.patients.find()
+
+-- Find with a filter (equality)
+db.patients.find({ first_name: "Mohammed" })
+
+-- Find with a projection (show only first_name and phone; hide _id)
+db.patients.find(
+    { first_name: "Mohammed" },
+    { first_name: 1, phone: 1, _id: 0 }
+)
+-- 1 = include, 0 = exclude. _id is shown by default unless set to 0.
+
+-- Comparison operators
+db.cars.find({ price: { $gt: 10000 } })   -- greater than
+db.cars.find({ price: { $gte: 10000 } })  -- greater than or equal
+db.cars.find({ price: { $lt: 5000 } })    -- less than
+db.cars.find({ price: { $lte: 5000 } })   -- less than or equal
+db.cars.find({ price: { $ne: 10000 } })   -- not equal
+
+-- IN operator
+db.cars.find({ manufacturer: { $in: ["Toyota", "Volvo"] } })
+
+
+----------------------------------------------------------------
+  4. SORTING
+----------------------------------------------------------------
+
+-- Sort ascending (1) by manufacturer
+db.car_sales.find().sort({ manufacturer: 1 })
+
+-- Sort descending (-1) by manufacturer
+db.car_sales.find().sort({ manufacturer: -1 })
+
+
+----------------------------------------------------------------
+  5. UPDATE DOCUMENTS
+----------------------------------------------------------------
+
+-- Update one document (first match only)
+db.patients.updateOne(
+    { first_name: "Mohammed" },
+    { $set: { phone: "9999-0000" } }
+)
+
+-- Update many documents
+db.patients.updateMany(
+    { last_name: "Subject" },
+    { $set: { status: "inactive" } }
+)
+
+-- Common update operators:
+-- $set    --> set a field value
+-- $unset  --> remove a field
+-- $inc    --> increment a numeric field
+
+
+----------------------------------------------------------------
+  6. DELETE DOCUMENTS
+----------------------------------------------------------------
+
+-- Delete one matching document
+db.patients.deleteOne({ first_name: "Test" })
+
+-- Delete all matching documents
+db.patients.deleteMany({ status: "inactive" })
+
+-- Delete ALL documents in collection (empty filter = match all)
+db.patients.deleteMany({})
+
+
+----------------------------------------------------------------
+  7. INDEXES
+----------------------------------------------------------------
+
+-- Create a single-field index (ascending)
+db.cars.createIndex({ manufacturer: 1 })
+
+-- Create a single-field index (descending)
+db.cars.createIndex({ manufacturer: -1 })
+
+-- Index with options
+db.patients.createIndex(
+    { phone: 1 },
+    { unique: true, name: "idx_phone_unique" }
+)
+
+-- Why: Searching on _id is fast. All other fields cause a full
+-- document scan unless you create an index.
+
+
+================================================================
+  QUICK REFERENCE -- KEY RULES
+================================================================
+
+SQL RULES:
+  - SELECT has NO guaranteed order without ORDER BY
+  - ORDER BY must come AFTER WHERE
+  - Always use IS NULL / IS NOT NULL (never = NULL)
+  - INSERT, UPDATE, DELETE are uncommitted until COMMIT
+  - NEVER update or delete without a WHERE unless you mean all rows
+  - DROP TABLE fails if another table has a FK pointing to it
+
+MONGODB RULES:
+  - Only _id is fast to search without an index
+  - Empty filter {} matches ALL documents
+  - insertOne/insertMany create the collection if it doesn't exist
+  - Duplicate _id values cause an error
+  - 1 = include in projection, 0 = exclude
+
+================================================================
+  END OF BASIC QUERIES
+================================================================

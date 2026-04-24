@@ -1,0 +1,22 @@
+{
+  "name": "VelocityDB",
+  "short_name": "VelocityDB",
+  "description": "A cinematic, interactive learning platform to demolish your DBMS final exam.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/globe.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/globe.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}

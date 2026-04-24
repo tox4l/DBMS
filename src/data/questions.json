@@ -1,0 +1,1377 @@
+[
+  {
+    "id": 1,
+    "text": "Which of the following is the MOST accurate definition of a DBMS?",
+    "type": "mcq",
+    "options": [
+      "A) A collection of organized data stored on disk",
+      "B) Software that manages, stores, and retrieves data in a database",
+      "C) A spreadsheet application used for data analysis",
+      "D) A network protocol for sharing files between computers"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 2,
+    "text": "A centralized database stores data in:",
+    "type": "mcq",
+    "options": [
+      "A) Multiple physical locations with replication",
+      "B) One physical location only",
+      "C) Cloud-based distributed nodes",
+      "D) Each end-user's local machine"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 3,
+    "text": "Which of the following is a disadvantage of a centralized database?",
+    "type": "mcq",
+    "options": [
+      "A) Administration is complex",
+      "B) Multiple copies may have inconsistent data",
+      "C) It is a single point of failure",
+      "D) It is difficult to enforce security policies"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 4,
+    "text": "A distributed database is best suited for which scenario?",
+    "type": "mcq",
+    "options": [
+      "A) A small business with one office",
+      "B) A system where all users are in the same building",
+      "C) A global company that needs data close to regional users",
+      "D) A system where administration simplicity is the top priority"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 5,
+    "text": "In the course, the relational database system used is:",
+    "type": "mcq",
+    "options": [
+      "A) Oracle",
+      "B) MongoDB",
+      "C) MySQL",
+      "D) PostgreSQL"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 6,
+    "text": "Which of the following correctly identifies the three building blocks of data modeling?",
+    "type": "mcq",
+    "options": [
+      "A) Tables, rows, columns",
+      "B) Entities, attributes, relationships",
+      "C) Keys, constraints, views",
+      "D) Schemas, instances, records"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 7,
+    "text": "According to business rules translation, a noun in a business description maps to:",
+    "type": "mcq",
+    "options": [
+      "A) A constraint",
+      "B) A relationship",
+      "C) An attribute",
+      "D) An entity"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 8,
+    "text": "Entity names in a data model should always be:",
+    "type": "mcq",
+    "options": [
+      "A) Plural (e.g., students)",
+      "B) Singular (e.g., student)",
+      "C) Uppercase",
+      "D) Prefixed with \"tbl_\""
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 9,
+    "text": "Which data model generation is used in MongoDB?",
+    "type": "mcq",
+    "options": [
+      "A) 1st generation (hierarchical)",
+      "B) 2nd generation (network)",
+      "C) 3rd generation (relational)",
+      "D) Next generation (NoSQL)"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 10,
+    "text": "A constraint in a data model represents:",
+    "type": "mcq",
+    "options": [
+      "A) An association between two entities",
+      "B) A detail or property of an entity",
+      "C) A limit or rule placed on the data",
+      "D) The unique identifier of a record"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 11,
+    "text": "Which of the following is the BEST definition of a primary key?",
+    "type": "mcq",
+    "options": [
+      "A) Any column used for searching",
+      "B) One or more attributes that uniquely identify each row",
+      "C) A column that references another table",
+      "D) An automatically generated integer value"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 12,
+    "text": "The notation \"qid -> name, dob, address\" means:",
+    "type": "mcq",
+    "options": [
+      "A) name, dob, and address determine qid",
+      "B) qid is determined by name, dob, and address together",
+      "C) qid functionally determines name, dob, and address",
+      "D) qid, name, dob, and address form a composite key"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 13,
+    "text": "A composite key is needed when:",
+    "type": "mcq",
+    "options": [
+      "A) No single column can uniquely identify a row",
+      "B) A table has more than 5 columns",
+      "C) Two tables are joined together",
+      "D) A surrogate key is not available"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 14,
+    "text": "Which key type is described as \"used for data retrieval but not necessarily unique\"?",
+    "type": "mcq",
+    "options": [
+      "A) Primary key",
+      "B) Foreign key",
+      "C) Secondary key",
+      "D) Composite key"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 15,
+    "text": "A foreign key in table B references:",
+    "type": "mcq",
+    "options": [
+      "A) The primary key of table B",
+      "B) Any column in table A",
+      "C) The primary key of table A",
+      "D) A secondary key of table A"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 16,
+    "text": "A surrogate key is best described as:",
+    "type": "mcq",
+    "options": [
+      "A) A key made up of multiple columns",
+      "B) A key used only for searching purposes",
+      "C) An artificial, auto-generated key with no business meaning",
+      "D) A key that references another table"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 17,
+    "text": "In the relational schema below, VEND_CODE in the PRODUCT table is a:",
+    "type": "mcq",
+    "options": [
+      "A) Primary key",
+      "B) Secondary key",
+      "C) Composite key",
+      "D) Foreign key"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 18,
+    "text": "Which of the following correctly describes functional dependence?",
+    "type": "mcq",
+    "options": [
+      "A) A determines B if and only if A is a primary key",
+      "B) B is functionally dependent on A if knowing A always tells you B",
+      "C) A and B are functionally dependent if they appear in the same table",
+      "D) A determines B if B cannot be NULL"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 19,
+    "text": "Which cardinality type is the MOST COMMON in relational databases?",
+    "type": "mcq",
+    "options": [
+      "A) 1:1",
+      "B) M:N",
+      "C) 1:M",
+      "D) M:M"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 20,
+    "text": "A many-to-many (M:N) relationship in a relational database MUST be implemented using:",
+    "type": "mcq",
+    "options": [
+      "A) A foreign key in one of the two tables",
+      "B) A bridge (junction) table containing keys from both tables",
+      "C) Merging both tables into one",
+      "D) A composite primary key in one of the tables"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 21,
+    "text": "In a 1:M relationship between Department and Instructor, where should the foreign key go?",
+    "type": "mcq",
+    "options": [
+      "A) In the Department table",
+      "B) In a new bridge table",
+      "C) In the Instructor table",
+      "D) In both tables"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 22,
+    "text": "A 1:1 relationship where one side is optional (Instructor may or may not have an office):",
+    "type": "mcq",
+    "options": [
+      "A) Foreign key goes in the Department table",
+      "B) Foreign key goes in the Instructor table (the optional side)",
+      "C) A bridge table is required",
+      "D) No foreign key is needed; merge the tables"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 23,
+    "text": "In the conceptual model, which of the following is typically EXCLUDED?",
+    "type": "mcq",
+    "options": [
+      "A) Entity names",
+      "B) Entity relationships",
+      "C) Attributes with data types",
+      "D) High-level associations"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 24,
+    "text": "Which feature appears ONLY in the physical model and not the conceptual or logical?",
+    "type": "mcq",
+    "options": [
+      "A) Entity names",
+      "B) Relationships",
+      "C) Primary keys",
+      "D) Column data types"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 25,
+    "text": "MySQL Workbench operates at which modeling level?",
+    "type": "mcq",
+    "options": [
+      "A) Conceptual",
+      "B) Logical",
+      "C) Physical",
+      "D) All three levels equally"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 26,
+    "text": "In MySQL Workbench, a filled blue diamond next to a column means:",
+    "type": "mcq",
+    "options": [
+      "A) The column is a primary key",
+      "B) The column is a foreign key",
+      "C) The column is mandatory (NOT NULL)",
+      "D) The column is optional (nullable)"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 27,
+    "text": "In relational algebra, the SELECT operation (σ) is equivalent to which SQL clause?",
+    "type": "mcq",
+    "options": [
+      "A) The column list in SELECT",
+      "B) The FROM clause",
+      "C) The WHERE clause",
+      "D) The ORDER BY clause"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 28,
+    "text": "In relational algebra, the PROJECT operation (π) is equivalent to which part of SQL?",
+    "type": "mcq",
+    "options": [
+      "A) The WHERE clause",
+      "B) The column list in the SELECT statement",
+      "C) The JOIN condition",
+      "D) The GROUP BY clause"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 29,
+    "text": "What is the result of a Cartesian product (PRODUCT / cross join) between two tables?",
+    "type": "mcq",
+    "options": [
+      "A) Only rows where the join condition matches",
+      "B) All possible combinations of rows from both tables",
+      "C) Rows that appear in both tables",
+      "D) Rows in one table but not the other"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 30,
+    "text": "A NATURAL JOIN automatically matches tables based on:",
+    "type": "mcq",
+    "options": [
+      "A) Primary and foreign key relationships defined in the schema",
+      "B) Column names that are identical in both tables",
+      "C) The ORDER BY clause",
+      "D) Any matching data values in any column"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 31,
+    "text": "Which data type should you use for a column where all values will be exactly 1 character?",
+    "type": "mcq",
+    "options": [
+      "A) VARCHAR(1)",
+      "B) TEXT",
+      "C) CHAR(1)",
+      "D) INT"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 32,
+    "text": "Which constraint ensures that a column cannot contain duplicate values but DOES allow NULL?",
+    "type": "mcq",
+    "options": [
+      "A) PRIMARY KEY",
+      "B) NOT NULL",
+      "C) UNIQUE",
+      "D) CHECK"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 33,
+    "text": "You try to delete a parent table that a child table's foreign key references. What happens?",
+    "type": "mcq",
+    "options": [
+      "A) The parent table is deleted and child rows become NULL",
+      "B) The operation fails unless the child table is deleted first or the FK is removed",
+      "C) Both tables are deleted automatically",
+      "D) The foreign key constraint is automatically dropped"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 34,
+    "text": "Which statement about ON DELETE CASCADE is TRUE?",
+    "type": "mcq",
+    "options": [
+      "A) It prevents deletion of parent rows that have child rows",
+      "B) It auto-deletes child rows when a parent row is deleted",
+      "C) It sets child FK values to NULL when a parent is deleted",
+      "D) It is the default behavior in MySQL"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 35,
+    "text": "In MySQL, how many AUTO_INCREMENT columns can a table have?",
+    "type": "mcq",
+    "options": [
+      "A) Unlimited",
+      "B) Two maximum",
+      "C) Exactly one, and it must be the primary key (or indexed)",
+      "D) None -- auto_increment is not supported in MySQL"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 36,
+    "text": "What happens when you try to roll back an AUTO_INCREMENT value to a lower number?",
+    "type": "mcq",
+    "options": [
+      "A) It succeeds if you use ALTER TABLE",
+      "B) It succeeds only if no rows exist in the table",
+      "C) The rollback is silently ignored",
+      "D) MySQL throws an error"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 37,
+    "text": "Which DML operation are INSERT, UPDATE, and DELETE classified under?",
+    "type": "mcq",
+    "options": [
+      "A) DDL",
+      "B) DCL",
+      "C) DML",
+      "D) TCL"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 38,
+    "text": "You run: UPDATE patient SET phone = '0000'; without a WHERE clause. What happens?",
+    "type": "mcq",
+    "options": [
+      "A) Nothing -- UPDATE requires a WHERE clause to execute",
+      "B) Only the first row is updated",
+      "C) ALL rows in the patient table are updated",
+      "D) MySQL throws a syntax error"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 39,
+    "text": "You need to check if a column value is NULL. Which is the CORRECT syntax?",
+    "type": "mcq",
+    "options": [
+      "A) WHERE phone = NULL",
+      "B) WHERE phone IS NULL",
+      "C) WHERE phone == NULL",
+      "D) WHERE phone = 'NULL'"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 40,
+    "text": "The LIKE operator with the pattern '%m%' will match:",
+    "type": "mcq",
+    "options": [
+      "A) Strings that start with m",
+      "B) Strings that end with m",
+      "C) Strings that contain m anywhere",
+      "D) Strings that are exactly one character m"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 41,
+    "text": "What does SELECT DISTINCT do?",
+    "type": "mcq",
+    "options": [
+      "A) Selects the first unique row from each group",
+      "B) Returns only rows where all columns are different",
+      "C) Returns unique values in the specified column(s), removing duplicates",
+      "D) Sorts results in ascending order"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 42,
+    "text": "Which of the following is the correct ORDER BY clause order within a SELECT statement?",
+    "type": "mcq",
+    "options": [
+      "A) ORDER BY must come before WHERE",
+      "B) ORDER BY must come after WHERE but before GROUP BY",
+      "C) ORDER BY must come after GROUP BY, HAVING, and WHERE",
+      "D) ORDER BY can be placed anywhere in the SELECT statement"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 43,
+    "text": "COUNT(phone) vs COUNT(*) -- what is the key difference?",
+    "type": "mcq",
+    "options": [
+      "A) There is no difference",
+      "B) COUNT(phone) counts all rows; COUNT(*) counts only non-NULL phone values",
+      "C) COUNT(phone) counts only non-NULL values; COUNT(*) counts all rows including NULLs",
+      "D) COUNT(*) is invalid syntax"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 44,
+    "text": "Which clause do you use to filter GROUPS after a GROUP BY?",
+    "type": "mcq",
+    "options": [
+      "A) WHERE",
+      "B) HAVING",
+      "C) FILTER",
+      "D) AND"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 45,
+    "text": "In which order does MySQL evaluate the following clauses?",
+    "type": "mcq",
+    "options": [
+      "A) SELECT -> WHERE -> GROUP BY -> HAVING -> FROM",
+      "B) FROM -> WHERE -> GROUP BY -> HAVING -> SELECT",
+      "C) WHERE -> FROM -> GROUP BY -> SELECT -> HAVING",
+      "D) FROM -> GROUP BY -> WHERE -> HAVING -> SELECT"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 46,
+    "text": "Which of the following is INVALID SQL?",
+    "type": "mcq",
+    "options": [
+      "A) SELECT name, COUNT(*) FROM patient GROUP BY name HAVING COUNT(*) > 2;",
+      "B) SELECT name FROM patient WHERE COUNT(*) > 2;",
+      "C) SELECT name, AVG(duration) FROM appointment GROUP BY name;",
+      "D) SELECT COUNT(*) FROM patient;"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 47,
+    "text": "An INNER JOIN between patient and appointment will:",
+    "type": "mcq",
+    "options": [
+      "A) Return all patients, even those with no appointments",
+      "B) Return all appointments, even those with no matching patient",
+      "C) Return only rows where a matching patient exists for each appointment",
+      "D) Return all rows from both tables combined"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 48,
+    "text": "Which join should you use to see ALL patients, including those with no appointments?",
+    "type": "mcq",
+    "options": [
+      "A) INNER JOIN",
+      "B) RIGHT JOIN with appointment on the left",
+      "C) LEFT JOIN with patient as the left table",
+      "D) NATURAL JOIN"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 49,
+    "text": "In which situation does a NATURAL JOIN fail in MySQL?",
+    "type": "mcq",
+    "options": [
+      "A) When the tables are in different databases",
+      "B) When joining more than two tables, or when column names differ",
+      "C) When one of the tables has no primary key",
+      "D) NATURAL JOIN never fails"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 50,
+    "text": "You are joining three tables: appointment, patient, and staff. The correct approach is:",
+    "type": "mcq",
+    "options": [
+      "A) Use two separate JOIN clauses chained together",
+      "B) Use a subquery for the third table",
+      "C) Use a NATURAL JOIN for all three",
+      "D) Three-table joins are not supported in MySQL"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 51,
+    "text": "You want to add a new column to an existing table without losing data. You use:",
+    "type": "mcq",
+    "options": [
+      "A) DROP TABLE and recreate it",
+      "B) ALTER TABLE ... ADD COLUMN",
+      "C) INSERT INTO with the new column",
+      "D) CREATE TABLE ... SELECT"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 52,
+    "text": "A VIEW in SQL is best described as:",
+    "type": "mcq",
+    "options": [
+      "A) A physical copy of data from one or more tables",
+      "B) A virtual table based on a SELECT statement",
+      "C) A stored procedure that returns a result set",
+      "D) An index on one or more columns"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 53,
+    "text": "Which of the following makes a view NON-UPDATABLE?",
+    "type": "mcq",
+    "options": [
+      "A) The view is based on a single table",
+      "B) The view contains a GROUP BY clause",
+      "C) The view has an ORDER BY clause",
+      "D) The view references the primary key"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 54,
+    "text": "What does the EXPLAIN command in MySQL help you identify?",
+    "type": "mcq",
+    "options": [
+      "A) The structure (columns and types) of a table",
+      "B) Whether a query is using an index or doing a full table scan",
+      "C) The foreign key relationships in a database",
+      "D) The query execution time in milliseconds"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 55,
+    "text": "In EXPLAIN output, which value for \"type\" indicates a full table scan (the worst case)?",
+    "type": "mcq",
+    "options": [
+      "A) const",
+      "B) ref",
+      "C) ALL",
+      "D) index"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 56,
+    "text": "A downside of adding indexes to a table is:",
+    "type": "mcq",
+    "options": [
+      "A) SELECT queries become slower",
+      "B) INSERT, UPDATE, and DELETE operations become slower",
+      "C) The primary key constraint is automatically removed",
+      "D) The table can no longer be joined with other tables"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 57,
+    "text": "Which set operation does MySQL support natively?",
+    "type": "mcq",
+    "options": [
+      "A) INTERSECT",
+      "B) EXCEPT",
+      "C) UNION",
+      "D) MINUS"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 58,
+    "text": "To simulate INTERSECT in MySQL, you use:",
+    "type": "mcq",
+    "options": [
+      "A) UNION with both queries",
+      "B) A subquery with IN",
+      "C) A subquery with NOT IN",
+      "D) A LEFT JOIN with NULL check"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 59,
+    "text": "In a subquery, which query executes first?",
+    "type": "mcq",
+    "options": [
+      "A) The outer query",
+      "B) The inner query",
+      "C) They execute simultaneously",
+      "D) The order depends on the database engine"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 60,
+    "text": "Which MySQL function is used to extract a value from a JSON column?",
+    "type": "mcq",
+    "options": [
+      "A) json_parse()",
+      "B) json_value()",
+      "C) json_extract()",
+      "D) json_get()"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 61,
+    "text": "Explain the difference between a DATABASE and a DBMS. Give one example of each.",
+    "type": "short_answer",
+    "options": [],
+    "answer": "A database is the organized collection of data itself (the actual stored information).\nA DBMS is the software system used to create, manage, and interact with that database.\nExample: The collection of patient records, appointment data, and doctor information\nstored on disk = the database. MySQL (the software you install and use to run\nqueries on that data) = the DBMS."
+  },
+  {
+    "id": 62,
+    "text": "What is functional dependence? Give a clear example using a real-world scenario.",
+    "type": "short_answer",
+    "options": [],
+    "answer": "B is functionally dependent on A if knowing the value of A always and uniquely\ndetermines the value of B (written A -> B). Example: In a patient table,\npatient_id -> first_name, last_name, dob means that knowing the patient ID\nuniquely determines the name and date of birth. However, phone -> patient_name\nis NOT a functional dependency because two patients (e.g., parent and child)\ncan share the same phone number, so phone does not uniquely determine a name."
+  },
+  {
+    "id": 63,
+    "text": "Describe the three levels of database design (Conceptual, Logical, Physical).",
+    "type": "short_answer",
+    "options": [],
+    "answer": "Conceptual: The highest, most abstract level. Contains entity names and\nentity relationships only. Aimed at non-technical stakeholders.\nLogical: Adds attributes and primary/foreign keys to the conceptual model.\nMany-to-many relationships are resolved using bridge tables. Still not tied\nto any specific DBMS.\nPhysical: The most detailed level. Adds table names, column names, and column\ndata types. Tailored to the chosen DBMS (e.g., MySQL). Includes indexes,\nstorage details, and performance considerations."
+  },
+  {
+    "id": 64,
+    "text": "Explain why a many-to-many (M:N) relationship cannot be directly implemented",
+    "type": "short_answer",
+    "options": [],
+    "answer": "A relational database requires each cell to hold a single value (no multi-valued\ncells). A direct M:N relationship would require one row to reference multiple rows\nin another table simultaneously, which violates this rule. The solution is to create\na bridge (junction) table. This table contains the primary keys from both original\ntables as foreign keys, and each row represents one specific pairing. For example,\na student-course M:N relationship is resolved by a \"enrollment\" bridge table\nwith (student_id, course_id) as the composite primary key."
+  },
+  {
+    "id": 65,
+    "text": "What is a secondary key? How does it differ from a primary key?",
+    "type": "short_answer",
+    "options": [],
+    "answer": "A secondary key is any key used for data retrieval that is NOT the primary key.\nIt is not required to be unique. It narrows down search results but may still\nreturn multiple matches. A primary key MUST be unique and NOT NULL, and there\nis exactly one per table. Example: In Qatar, phone number is a common secondary\nkey -- searching by phone narrows down the list to a few people, but since\nchildren and parents often share numbers, it is not unique and not a primary key."
+  },
+  {
+    "id": 66,
+    "text": "Why is design described as \"iterative\" in this course? What are the practical",
+    "type": "short_answer",
+    "options": [],
+    "answer": "Iterative means you rarely get the correct design in a single pass. You make\neducated guesses, ask stakeholders questions, discover problems, and revise the\nmodel repeatedly. Taking shortcuts early -- like skipping proper normalization or\nignoring business rules -- creates problems later during implementation:\nredundant data, update anomalies, difficulty enforcing constraints, and\nexpensive redesign of tables that already contain live data."
+  },
+  {
+    "id": 67,
+    "text": "Explain the difference between a centralized and a distributed database.",
+    "type": "short_answer",
+    "options": [],
+    "answer": "Centralized: All data in one location. Advantage: simple to administer, one\nconsistent copy of data. Disadvantage: single point of failure (e.g., airline\nsystems going down and canceling thousands of flights).\nDistributed: Data in multiple locations. Advantage: faster local access, redundancy\nmeans one node failing doesn't cause total data loss. Disadvantage: much harder to\nconfigure and maintain, risk of data inconsistency across nodes."
+  },
+  {
+    "id": 68,
+    "text": "What is a surrogate key? Why are surrogate keys the most common type of",
+    "type": "short_answer",
+    "options": [],
+    "answer": "A surrogate key is an artificial, system-generated identifier with no business\nmeaning -- typically an auto-incremented integer. They are the most common PK\nbecause: (1) they are always unique; (2) they never need to change (unlike\nbusiness data like email or phone); (3) they are small integers, making\njoins fast; (4) they are simple to generate with AUTO_INCREMENT and require\nno thought from the developer inserting data.\n--- TOPIC: SQL ---"
+  },
+  {
+    "id": 69,
+    "text": "Explain the difference between WHERE and HAVING. Why can't you use an",
+    "type": "short_answer",
+    "options": [],
+    "answer": "WHERE filters individual rows BEFORE grouping occurs. HAVING filters groups\nAFTER the GROUP BY clause has been applied. Aggregate functions (COUNT, SUM,\nAVG, etc.) operate on groups of rows, not individual rows. Since WHERE runs\nbefore grouping, groups don't yet exist at that point, so aggregate functions\nhave nothing to operate on. The correct clause for filtering by aggregate\nresults is HAVING."
+  },
+  {
+    "id": 70,
+    "text": "Describe what ON DELETE CASCADE does and explain why the course materials",
+    "type": "short_answer",
+    "options": [],
+    "answer": "ON DELETE CASCADE means that when a parent row is deleted, all child rows\nthat reference it via a foreign key are automatically deleted as well.\nThe course materials say it is generally not recommended because in most\nreal systems you want to preserve history. For example, if a patient is\nremoved, you probably still want to keep the appointment records for\nauditing, billing, or medical history purposes. Auto-deleting them silently\nrisks permanently losing important data."
+  },
+  {
+    "id": 71,
+    "text": "What is an index in MySQL? Describe the tradeoff between having too few",
+    "type": "short_answer",
+    "options": [],
+    "answer": "An index is a separate data structure that maps column values to the row\nlocations where they appear -- like the index at the back of a book. It\nspeeds up SELECT queries that use that column in a WHERE clause.\nToo few indexes: queries perform full table scans (type: ALL in EXPLAIN),\nwhich is slow for large tables.\nToo many indexes: INSERT, UPDATE, and DELETE operations become slower because\nevery write must also update all indexes. The database also uses more disk space.\nThe correct approach is to index only columns that are frequently searched."
+  },
+  {
+    "id": 72,
+    "text": "Explain the difference between DROP TABLE, DELETE, and TRUNCATE.",
+    "type": "short_answer",
+    "options": [],
+    "answer": "DELETE: Removes specific rows matching a WHERE condition (or all rows if no WHERE).\nIt can be rolled back before a COMMIT. It does NOT remove the table structure.\nTRUNCATE: Removes ALL rows from a table quickly. Cannot be rolled back in most\nDBMS. Keeps the table structure. Faster than DELETE for clearing a table.\nDROP TABLE: Completely removes the table AND its structure from the database.\nCannot be undone. Use when you no longer need the table at all."
+  },
+  {
+    "id": 73,
+    "text": "A VIEW does not store data. Explain what actually happens when you",
+    "type": "short_answer",
+    "options": [],
+    "answer": "When you query a view, MySQL re-executes the underlying SELECT statement\nthat defines the view and returns the results as if it were a real table.\nNo data is physically stored in the view itself.\nUseful situations: (1) Security -- you can grant users access to a view\nthat shows only certain columns or rows, hiding sensitive data. (2) Simplification\n-- complex multi-table joins or calculations can be defined once as a view,\nthen queried simply with SELECT * FROM view_name."
+  },
+  {
+    "id": 74,
+    "text": "Explain what a full table scan is, how to detect one in MySQL,",
+    "type": "short_answer",
+    "options": [],
+    "answer": "A full table scan means MySQL reads every row in the table to find matching\nresults, rather than jumping directly to relevant rows. This is slow for\nlarge tables. Detection: run EXPLAIN before the query -- look for type: ALL\nand key: NULL, which means no index was used.\nFix: create an index on the column being searched in the WHERE clause.\nExample: CREATE INDEX idx_phone ON patient(phone); -- then re-run EXPLAIN\nand you should see type: ref or const instead of ALL."
+  },
+  {
+    "id": 75,
+    "text": "Explain the difference between SELECTION and PROJECTION in relational algebra,",
+    "type": "short_answer",
+    "options": [],
+    "answer": "Selection (σ) filters rows based on a condition -- it is a horizontal operation.\nProjection (π) filters columns -- it is a vertical operation.\nIn SQL, the confusion arises because the keyword SELECT performs projection\n(choosing which columns to show), while the WHERE clause performs selection\n(filtering rows). Students read \"SELECT\" and think it means \"selection\" from\nrelational algebra, but it actually means projection. The WHERE clause is the\nreal \"selection\" operator.\n--- TOPIC: Design & Mapping ---"
+  },
+  {
+    "id": 76,
+    "text": "Given this business scenario: \"Each student can enroll in many courses, and",
+    "type": "short_answer",
+    "options": [],
+    "answer": "This is a M:N relationship. You cannot implement it directly.\nStep 1: Create the student table with student_id as PK.\nStep 2: Create the course table with course_id as PK.\nStep 3: Create a bridge table (e.g., enrollment) with:\n- student_id (FK referencing student)\n- course_id (FK referencing course)\n- The composite (student_id, course_id) becomes the PK.\nStep 4: You may add additional attributes to the bridge table\n(e.g., grade, semester) if the relationship itself has properties."
+  },
+  {
+    "id": 77,
+    "text": "In a 1:1 relationship where both sides are optional (an instructor may or",
+    "type": "short_answer",
+    "options": [],
+    "answer": "When both sides are optional, the database designer can choose either side\nfor the foreign key placement. The practical consideration is: which entity\nis more likely to have the association? If most instructors eventually get\nan office, put the FK in the instructor table. If offices are often unassigned\nfor long periods, put the FK in the office table. There is no single universally\ncorrect answer -- it is a design judgment call."
+  },
+  {
+    "id": 78,
+    "text": "What features does the Logical model add compared to the Conceptual model?",
+    "type": "short_answer",
+    "options": [],
+    "answer": "The logical model adds: attributes for each entity, primary keys, and foreign\nkeys. It also resolves M:N relationships using bridge tables.\nData types are not specified at the logical level because the logical model\nis intentionally independent of any specific DBMS. Different systems handle\ntypes differently (e.g., MySQL's VARCHAR vs. Oracle's VARCHAR2). Specifying\ntypes would tie the design to one platform, defeating the purpose of the\nlogical model as a portable, DBMS-agnostic representation.\n--- TOPIC: MongoDB ---"
+  },
+  {
+    "id": 79,
+    "text": "Explain the difference between EMBEDDING and REFERENCING in MongoDB.",
+    "type": "short_answer",
+    "options": [],
+    "answer": "Embedding: Storing related data inside the same document.\nAdvantage: All data retrieved in a single query; supports atomic operations.\nDisadvantage: Document can grow large (16MB limit); overhead if you often\nonly need part of the document.\nReferencing: Storing an _id reference to a document in another collection\n(like a foreign key in SQL).\nAdvantage: Smaller documents; data doesn't get duplicated; frequently accessed\ndata can be queried independently.\nDisadvantage: May require multiple queries to retrieve all related data."
+  },
+  {
+    "id": 80,
+    "text": "What is the 16MB document limit in MongoDB, and why does it exist?",
+    "type": "short_answer",
+    "options": [],
+    "answer": "MongoDB limits each document to 16MB. This exists to ensure no single document\nconsumes too much RAM during processing or too much bandwidth during replication\nbetween cluster nodes. It influences design by discouraging unbounded array growth\n-- if visits or comments can number in the thousands, embedding them all would\neventually hit the limit. In those cases, referencing (storing child documents\nin a separate collection) is preferred."
+  },
+  {
+    "id": 81,
+    "text": "Describe the One-to-Few, One-to-Many, and One-to-Squillions patterns in MongoDB.",
+    "type": "short_answer",
+    "options": [],
+    "answer": "One-to-Few (embed directly): Use when the \"many\" side has only 2-20 items\nand you rarely need to query those items independently. Example: multiple\naddresses for one patient.\nOne-to-Many (array of references in parent): Use when there are up to a few\nthousand child records and the child documents may need to stand alone.\nExample: a patient with many visits stored in a separate visits collection,\nwith an array of visit _ids in the patient document.\nOne-to-Squillions (parent reference in child): Use when child records are\nextremely numerous. Store a reference to the parent in each child document\n(like a SQL foreign key). Example: log entries for a server -- potentially\nmillions of logs per server."
+  },
+  {
+    "id": 82,
+    "text": "What is $elemMatch in MongoDB and when is it necessary?",
+    "type": "short_answer",
+    "options": [],
+    "answer": "$elemMatch is a query operator used to search arrays of embedded objects.\nIt specifies that ALL conditions inside the $elemMatch must match within\nthe SAME array element. It is necessary when you have an array of objects\nand you need to find documents where a single element satisfies multiple\nconditions simultaneously. Without $elemMatch, MongoDB would check each\ncondition against any element in the array independently, potentially\nproducing incorrect matches."
+  },
+  {
+    "id": 83,
+    "text": "Explain what $unwind does in a MongoDB aggregation pipeline.",
+    "type": "short_answer",
+    "options": [],
+    "answer": "$unwind deconstructs an array field from the input documents and outputs\none document per array element. For example, if a patient document has a\nvisits array with 3 visits, $unwind produces 3 separate documents, each\nwith one of the original visits and all the other patient fields intact.\nThis makes array data look and behave like a table, making it much easier\nto filter, group, and aggregate individual array elements. It is useful\nwhen you need to count visits per doctor, filter specific visit dates, or\ncompute statistics at the visit level rather than the patient level."
+  },
+  {
+    "id": 84,
+    "text": "Compare the MongoDB aggregation pipeline to SQL GROUP BY.",
+    "type": "short_answer",
+    "options": [],
+    "answer": "$match (before $group)  --> SQL WHERE   (filter rows before grouping)\n$group                  --> SQL GROUP BY + aggregate functions (SUM, AVG, etc.)\n$match (after $group)   --> SQL HAVING  (filter groups after aggregation)\n$project                --> SQL SELECT column list (choose which fields to show)\n$sort                   --> SQL ORDER BY (sort results)\nKey difference: in SQL, these are fixed clauses in a fixed order.\nIn MongoDB, pipeline stages can be reordered and repeated as needed.\n--- TOPIC: Mixed ---"
+  },
+  {
+    "id": 85,
+    "text": "Why does the course say that JOINs sound \"like the opposite of normalization\"?",
+    "type": "short_answer",
+    "options": [],
+    "answer": "Normalization is the process of splitting data across multiple tables to\neliminate redundancy and anomalies. JOINs are the mechanism for recombining\nthat split data at query time to produce a unified result. They appear to be\nopposites because normalization separates data while joins reunite it.\nHowever, they work together: we normalize to store data cleanly, then use\nJOINs to reassemble the data we need for specific queries without duplicating\nstorage."
+  },
+  {
+    "id": 86,
+    "text": "What is the difference between a relational database (MySQL) and a",
+    "type": "short_answer",
+    "options": [],
+    "answer": "Relational (MySQL): Fixed schema, all records have the same structure,\nrelationships enforced via FK constraints, queries via SQL.\nDocument (MongoDB): Flexible schema, each document can have different fields,\nno enforced relationships, queries via MQL.\nMySQL better: Banking system -- data is highly structured, relationships are\ncritical, and consistency matters.\nMongoDB better: A product catalog for an e-commerce site where different product\ncategories have completely different attributes -- rigid schemas would waste space\nor require many nullable columns."
+  },
+  {
+    "id": 87,
+    "text": "List the five general rules for MongoDB document design from the course.",
+    "type": "short_answer",
+    "options": [],
+    "answer": "Rule 1: Favor embedding unless there is a compelling reason not to.\nRule 2: Needing to access an object on its own is a compelling reason not to embed it.\nRule 3: Avoid joins/lookups if possible, but don't be afraid if they give a better schema.\nRule 4: Arrays should not grow without bound (more than a couple hundred = use references).\nRule 5: Structure data to match your application's actual query and update patterns."
+  },
+  {
+    "id": 88,
+    "text": "What are the constraints available in MySQL DDL? Briefly describe each one.",
+    "type": "short_answer",
+    "options": [],
+    "answer": "NOT NULL: Column must always have a value; cannot be empty.\nUNIQUE: All values in the column must be different; allows one NULL.\nDEFAULT: Provides a fallback value when no value is supplied during INSERT.\nCHECK: Validates that values satisfy a specified condition (e.g., age >= 18).\nPRIMARY KEY: Uniquely identifies each row; combines UNIQUE and NOT NULL; one per table.\nFOREIGN KEY: References the primary key of another table; enforces referential integrity."
+  },
+  {
+    "id": 89,
+    "text": "In MySQL Workbench physical modeling, what do the following symbols represent?",
+    "type": "short_answer",
+    "options": [],
+    "answer": "Yellow key: The column is a primary key.\nRed key: The column is both a foreign key AND part of the primary key\n(common in bridge tables).\nBlue filled diamond: The column is mandatory (NOT NULL).\nRed open diamond: The column is an optional foreign key (nullable FK)."
+  },
+  {
+    "id": 90,
+    "text": "Explain why the course materials warn: \"Specifying an incorrect condition",
+    "type": "short_answer",
+    "options": [],
+    "answer": "UPDATE and DELETE statements without a WHERE clause apply to EVERY row in the\ntable. Even a WHERE clause with a subtle error (wrong column, wrong value)\ncould match far more rows than intended. Best practices: (1) Always double-check\nyour WHERE condition with a SELECT first to confirm which rows it matches before\nrunning UPDATE/DELETE. (2) Work in a transaction so you can ROLLBACK if\nsomething goes wrong before committing. (3) Make backups before running\nbulk data operations.\n================================================================\nSECTION C -- MYSQL QUERY WRITING: BASIC (Q91 - Q112)\nWrite the exact SQL query for each task.\nUse tables: patient(pid, first_name, last_name, phone)\nappointment(apid, pid, doctor_id, start_time, duration)\ndoctor(did, first_name, last_name, phone)\nproduct(id, sku, name, regular_price, attrib1name, attribute1)\n================================================================"
+  },
+  {
+    "id": 91,
+    "text": "Select all columns from the patient table.",
+    "type": "short_answer",
+    "options": [],
+    "answer": "SELECT * FROM patient;"
+  },
+  {
+    "id": 92,
+    "text": "Select only the first_name and phone columns from the patient table.",
+    "type": "short_answer",
+    "options": [],
+    "answer": "SELECT first_name, phone FROM patient;"
+  },
+  {
+    "id": 93,
+    "text": "Insert a new patient with pid=500, first_name='Sara', last_name='Ali', phone='5550-1111'.",
+    "type": "short_answer",
+    "options": [],
+    "answer": "INSERT INTO patient VALUES (500, 'Sara', 'Ali', '5550-1111');"
+  },
+  {
+    "id": 94,
+    "text": "Insert two patients in a single INSERT statement:",
+    "type": "short_answer",
+    "options": [],
+    "answer": "INSERT INTO patient VALUES\n(501, 'Ahmed', 'Hassan', '5550-2222'),\n(502, 'Nour',  'Salem',  '5550-3333');"
+  },
+  {
+    "id": 95,
+    "text": "Find all patients whose last_name is 'Ali'.",
+    "type": "short_answer",
+    "options": [],
+    "answer": "SELECT * FROM patient WHERE last_name = 'Ali';"
+  },
+  {
+    "id": 96,
+    "text": "Find all appointments where duration is greater than 30.",
+    "type": "short_answer",
+    "options": [],
+    "answer": "SELECT * FROM appointment WHERE duration > 30;"
+  },
+  {
+    "id": 97,
+    "text": "Find all products where regular_price is between 10 and 50 (inclusive).",
+    "type": "short_answer",
+    "options": [],
+    "answer": "SELECT * FROM product WHERE regular_price BETWEEN 10 AND 50;"
+  },
+  {
+    "id": 98,
+    "text": "Find all patients whose phone number is NULL.",
+    "type": "short_answer",
+    "options": [],
+    "answer": "SELECT * FROM patient WHERE phone IS NULL;"
+  },
+  {
+    "id": 99,
+    "text": "Find all patients whose first_name starts with the letter 'M'.",
+    "type": "short_answer",
+    "options": [],
+    "answer": "SELECT * FROM patient WHERE first_name LIKE 'M%';"
+  },
+  {
+    "id": 100,
+    "text": "Find all patients whose first_name contains the letter 'a' anywhere.",
+    "type": "short_answer",
+    "options": [],
+    "answer": "SELECT * FROM patient WHERE first_name LIKE '%a%';"
+  },
+  {
+    "id": 101,
+    "text": "Find all patients with pid IN the list (232, 334, 400).",
+    "type": "short_answer",
+    "options": [],
+    "answer": "SELECT * FROM patient WHERE pid IN (232, 334, 400);"
+  },
+  {
+    "id": 102,
+    "text": "Find all appointments where duration > 20 AND pid = 232.",
+    "type": "short_answer",
+    "options": [],
+    "answer": "SELECT * FROM appointment WHERE duration > 20 AND pid = 232;"
+  },
+  {
+    "id": 103,
+    "text": "List all products ordered by regular_price ascending.",
+    "type": "short_answer",
+    "options": [],
+    "answer": "SELECT * FROM product ORDER BY regular_price ASC;"
+  },
+  {
+    "id": 104,
+    "text": "List all products ordered by regular_price descending, then by name ascending.",
+    "type": "short_answer",
+    "options": [],
+    "answer": "SELECT * FROM product ORDER BY regular_price DESC, name ASC;"
+  },
+  {
+    "id": 105,
+    "text": "Update the phone number to '9999-0000' for the patient with pid = 232.",
+    "type": "short_answer",
+    "options": [],
+    "answer": "UPDATE patient SET phone = '9999-0000' WHERE pid = 232;"
+  },
+  {
+    "id": 106,
+    "text": "Delete the patient with pid = 400.",
+    "type": "short_answer",
+    "options": [],
+    "answer": "DELETE FROM patient WHERE pid = 400;"
+  },
+  {
+    "id": 107,
+    "text": "Create the patient table with:",
+    "type": "short_answer",
+    "options": [],
+    "answer": "CREATE TABLE patient (\npid        INT NOT NULL AUTO_INCREMENT PRIMARY KEY,\nfirst_name VARCHAR(50) NOT NULL,\nlast_name  VARCHAR(50) NOT NULL,\nphone      VARCHAR(20)\n);"
+  },
+  {
+    "id": 108,
+    "text": "Add a column called date_of_birth (DATE type) to the patient table.",
+    "type": "short_answer",
+    "options": [],
+    "answer": "ALTER TABLE patient ADD COLUMN date_of_birth DATE;"
+  },
+  {
+    "id": 109,
+    "text": "Drop the phone column from the patient table.",
+    "type": "short_answer",
+    "options": [],
+    "answer": "ALTER TABLE patient DROP COLUMN phone;"
+  },
+  {
+    "id": 110,
+    "text": "Rename the column 'phone' to 'contact_number' and change its type to VARCHAR(30).",
+    "type": "short_answer",
+    "options": [],
+    "answer": "ALTER TABLE patient CHANGE phone contact_number VARCHAR(30);"
+  },
+  {
+    "id": 111,
+    "text": "Create an index on the phone column of the patient table.",
+    "type": "short_answer",
+    "options": [],
+    "answer": "CREATE INDEX idx_phone ON patient(phone);"
+  },
+  {
+    "id": 112,
+    "text": "Show the query execution plan for a query that searches patient by phone number.",
+    "type": "short_answer",
+    "options": [],
+    "answer": "EXPLAIN SELECT * FROM patient WHERE phone = '5550-1111';\n================================================================\nSECTION D -- MYSQL QUERY WRITING: ADVANCED (Q113 - Q135)\n================================================================"
+  },
+  {
+    "id": 113,
+    "text": "Count the total number of patients in the patient table.",
+    "type": "short_answer",
+    "options": [],
+    "answer": "SELECT COUNT(*) FROM patient;"
+  },
+  {
+    "id": 114,
+    "text": "Find the total, minimum, maximum, and average duration",
+    "type": "short_answer",
+    "options": [],
+    "answer": "SELECT SUM(duration)  AS total_duration,\nMIN(duration)  AS min_duration,\nMAX(duration)  AS max_duration,\nAVG(duration)  AS avg_duration\nFROM appointment;"
+  },
+  {
+    "id": 115,
+    "text": "Count the number of appointments for each patient (grouped by pid).",
+    "type": "short_answer",
+    "options": [],
+    "answer": "SELECT pid, COUNT(*) AS appointment_count\nFROM appointment\nGROUP BY pid;"
+  },
+  {
+    "id": 116,
+    "text": "Count the number of appointments per patient, but only show",
+    "type": "short_answer",
+    "options": [],
+    "answer": "SELECT pid, COUNT(*) AS appointment_count\nFROM appointment\nGROUP BY pid\nHAVING COUNT(*) > 2;"
+  },
+  {
+    "id": 117,
+    "text": "Find all products with a price equal to the minimum price in the table.",
+    "type": "short_answer",
+    "options": [],
+    "answer": "SELECT * FROM product\nWHERE regular_price = (SELECT MIN(regular_price) FROM product);"
+  },
+  {
+    "id": 118,
+    "text": "Find all appointments where duration is above the average duration.",
+    "type": "short_answer",
+    "options": [],
+    "answer": "SELECT * FROM appointment\nWHERE duration > (SELECT AVG(duration) FROM appointment);"
+  },
+  {
+    "id": 119,
+    "text": "List all distinct values in the attribute1 column of the product table.",
+    "type": "short_answer",
+    "options": [],
+    "answer": "SELECT DISTINCT attribute1 FROM product;"
+  },
+  {
+    "id": 120,
+    "text": "Perform an INNER JOIN to show appointment details alongside",
+    "type": "short_answer",
+    "options": [],
+    "answer": "SELECT a.apid, a.start_time, a.duration,\np.first_name, p.last_name\nFROM appointment a\nJOIN patient p ON a.pid = p.pid;"
+  },
+  {
+    "id": 121,
+    "text": "Perform a LEFT JOIN to show ALL patients and any appointment",
+    "type": "short_answer",
+    "options": [],
+    "answer": "SELECT p.pid, p.first_name, p.last_name,\na.apid, a.start_time\nFROM patient p\nLEFT JOIN appointment a ON p.pid = a.pid;"
+  },
+  {
+    "id": 122,
+    "text": "Join THREE tables: appointment, patient, and doctor.",
+    "type": "short_answer",
+    "options": [],
+    "answer": "SELECT p.first_name  AS patient_name,\nd.first_name  AS doctor_name,\na.start_time\nFROM appointment a\nJOIN patient p ON a.pid      = p.pid\nJOIN doctor  d ON a.doctor_id = d.did;"
+  },
+  {
+    "id": 123,
+    "text": "Using UNION, list all first names from BOTH the patient table",
+    "type": "short_answer",
+    "options": [],
+    "answer": "SELECT first_name FROM patient\nUNION\nSELECT first_name FROM doctor;"
+  },
+  {
+    "id": 124,
+    "text": "Simulate INTERSECT: find first names that appear in BOTH",
+    "type": "short_answer",
+    "options": [],
+    "answer": "SELECT first_name FROM patient\nWHERE first_name IN (SELECT first_name FROM doctor);"
+  },
+  {
+    "id": 125,
+    "text": "Simulate DIFFERENCE: find first names in the doctor table",
+    "type": "short_answer",
+    "options": [],
+    "answer": "SELECT first_name FROM doctor\nWHERE first_name NOT IN (SELECT first_name FROM patient);"
+  },
+  {
+    "id": 126,
+    "text": "Create a VIEW called active_appointments that shows patient",
+    "type": "short_answer",
+    "options": [],
+    "answer": "CREATE VIEW active_appointments AS\nSELECT p.first_name, p.last_name, a.start_time\nFROM patient p\nJOIN appointment a ON p.pid = a.pid\nWHERE a.duration > 20;"
+  },
+  {
+    "id": 127,
+    "text": "Create the appointment table with:",
+    "type": "short_answer",
+    "options": [],
+    "answer": "CREATE TABLE appointment (\napid       INT      NOT NULL AUTO_INCREMENT PRIMARY KEY,\npid        INT      NOT NULL,\ndoctor_id  INT      NOT NULL,\nstart_time DATETIME NOT NULL,\nduration   INT      NOT NULL DEFAULT 15,\nCONSTRAINT fk_appt_patient FOREIGN KEY (pid)       REFERENCES patient(pid),\nCONSTRAINT fk_appt_doctor  FOREIGN KEY (doctor_id) REFERENCES doctor(did)\n);"
+  },
+  {
+    "id": 128,
+    "text": "Add a foreign key constraint named fk_appt_doc to the appointment table",
+    "type": "short_answer",
+    "options": [],
+    "answer": "ALTER TABLE appointment ADD CONSTRAINT fk_appt_doc\nFOREIGN KEY (doctor_id) REFERENCES doctor(did);"
+  },
+  {
+    "id": 129,
+    "text": "Remove the foreign key constraint named fk_appt_doc from appointment.",
+    "type": "short_answer",
+    "options": [],
+    "answer": "ALTER TABLE appointment DROP CONSTRAINT fk_appt_doc;"
+  },
+  {
+    "id": 130,
+    "text": "Show the GROUP BY result for number of appointments per doctor,",
+    "type": "short_answer",
+    "options": [],
+    "answer": "SELECT doctor_id, COUNT(*) AS appointment_count\nFROM appointment\nGROUP BY doctor_id\nORDER BY appointment_count DESC;"
+  },
+  {
+    "id": 131,
+    "text": "Find the average duration of appointments for each patient,",
+    "type": "short_answer",
+    "options": [],
+    "answer": "SELECT pid, AVG(duration) AS avg_duration\nFROM appointment\nGROUP BY pid\nHAVING AVG(duration) > 25;"
+  },
+  {
+    "id": 132,
+    "text": "Count appointments per doctor for appointments where duration > 15,",
+    "type": "short_answer",
+    "options": [],
+    "answer": "SELECT doctor_id, COUNT(*) AS long_appt_count\nFROM appointment\nWHERE duration > 15\nGROUP BY doctor_id\nHAVING COUNT(*) > 3;"
+  },
+  {
+    "id": 133,
+    "text": "Create a view called clinic_schedule that joins appointment, patient,",
+    "type": "short_answer",
+    "options": [],
+    "answer": "CREATE VIEW clinic_schedule AS\nSELECT CONCAT(p.first_name, ' ', p.last_name) AS patient_name,\nCONCAT(d.first_name, ' ', d.last_name) AS doctor_name,\na.start_time,\na.duration\nFROM appointment a\nJOIN patient p ON a.pid       = p.pid\nJOIN doctor  d ON a.doctor_id = d.did;"
+  },
+  {
+    "id": 134,
+    "text": "Write the SQL to create the appointment table with ON DELETE CASCADE",
+    "type": "short_answer",
+    "options": [],
+    "answer": "CREATE TABLE appointment (\napid       INT      NOT NULL AUTO_INCREMENT PRIMARY KEY,\npid        INT      NOT NULL,\nstart_time DATETIME NOT NULL,\nduration   INT      NOT NULL DEFAULT 15,\nCONSTRAINT fk_appt_patient FOREIGN KEY (pid)\nREFERENCES patient(pid)\nON DELETE CASCADE\n);"
+  },
+  {
+    "id": 135,
+    "text": "Write the query to find all products where the name starts with 'Ajax',",
+    "type": "short_answer",
+    "options": [],
+    "answer": "SELECT attribute1, COUNT(*)\nFROM product\nWHERE name LIKE 'Ajax%' AND attrib1name = 'Size'\nGROUP BY attribute1;\n================================================================\nSECTION E -- MONGODB (Q136 - Q150)\nCovers: insert, find, update, delete, aggregation, arrays,\nembedded objects, indexes.\n================================================================"
+  },
+  {
+    "id": 136,
+    "text": "[MCQ] In MongoDB, what is the equivalent of a MySQL TABLE?",
+    "type": "mcq",
+    "options": [
+      "A) Document",
+      "B) Database",
+      "C) Collection",
+      "D) Field"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 137,
+    "text": "[MCQ] Every MongoDB document automatically contains which field?",
+    "type": "mcq",
+    "options": [
+      "A) name",
+      "B) _id",
+      "C) primary_key",
+      "D) doc_id"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 138,
+    "text": "[MCQ] Searching for a document by any field OTHER than _id (without an index) causes:",
+    "type": "mcq",
+    "options": [
+      "A) An error -- only _id can be searched",
+      "B) A fast index lookup",
+      "C) A full collection scan (slow)",
+      "D) An automatic index to be created"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 139,
+    "text": "[MCQ] Which aggregation stage is equivalent to SQL's HAVING clause?",
+    "type": "mcq",
+    "options": [
+      "A) $match placed BEFORE $group",
+      "B) $match placed AFTER $group",
+      "C) $project",
+      "D) $filter"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 140,
+    "text": "[MCQ] What does $unwind do in an aggregation pipeline?",
+    "type": "mcq",
+    "options": [
+      "A) Sorts array elements in ascending order",
+      "B) Removes all arrays from a document",
+      "C) Creates one output document per array element",
+      "D) Merges two arrays into one"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 141,
+    "text": "[Written] Write the MongoDB command to insert ONE document into",
+    "type": "short_answer",
+    "options": [],
+    "answer": "db.patients.insertOne({\nfirst_name: \"Ali\",\nlast_name:  \"Hassan\",\nage:        30,\nphone:      [\"5551-0000\", \"5551-1111\"]\n})"
+  },
+  {
+    "id": 142,
+    "text": "[Written] Write the MongoDB query to find all patients where age > 25,",
+    "type": "short_answer",
+    "options": [],
+    "answer": "db.patients.find(\n{ age: { $gt: 25 } },\n{ first_name: 1, last_name: 1, _id: 0 }\n)"
+  },
+  {
+    "id": 143,
+    "text": "[Query] Write the MongoDB query to update the phone field of the patient",
+    "type": "short_answer",
+    "options": [],
+    "answer": "db.patients.updateOne(\n{ first_name: \"Ali\" },\n{ $set: { phone: \"9999-0000\" } }\n)"
+  },
+  {
+    "id": 144,
+    "text": "[Query] Write the MongoDB query to delete all patients with age less than 18.",
+    "type": "short_answer",
+    "options": [],
+    "answer": "db.patients.deleteMany({ age: { $lt: 18 } })"
+  },
+  {
+    "id": 145,
+    "text": "[Query] Write the aggregation pipeline to compute the total number of",
+    "type": "short_answer",
+    "options": [],
+    "answer": "db.appointments.aggregate([\n{ $group: {\n_id: \"$doctor_name\",\ntotal: { $sum: 1 }\n}},\n{ $sort: { total: -1 } }\n])"
+  },
+  {
+    "id": 146,
+    "text": "[Query] From a 'cars' collection (fields: manufacturer, price), write the",
+    "type": "short_answer",
+    "options": [],
+    "answer": "db.cars.aggregate([\n{ $group: {\n_id: \"$manufacturer\",\ntotal: { $sum: \"$price\" }\n}},\n{ $match: { total: { $lt: 50000 } } },\n{ $sort: { total: 1 } }\n])"
+  },
+  {
+    "id": 147,
+    "text": "[Query] From the 'patients' collection (with embedded last_vitals object",
+    "type": "short_answer",
+    "options": [],
+    "answer": "db.patients.find({ \"last_vitals.weight\": { $gt: 80 } })"
+  },
+  {
+    "id": 148,
+    "text": "[Query] From the 'patients' collection (with a visits array of objects",
+    "type": "short_answer",
+    "options": [],
+    "answer": "db.patients.find({\n\"visits\": { $elemMatch: { \"doctor\": \"Taylor\" } }\n})"
+  },
+  {
+    "id": 149,
+    "text": "[Written] Explain when you would use EMBEDDING versus REFERENCING in MongoDB.",
+    "type": "short_answer",
+    "options": [],
+    "answer": "Embedding: Use when related data is small, always accessed with the parent,\nand doesn't need to be queried independently. Example: embed a patient's\nlast_vitals (height, weight, heart_rate) directly inside the patient document\nbecause vitals are always viewed as part of the patient record, they are few\nin number, and we never query vitals without wanting the patient info too.\nReferencing: Use when data can grow large, needs independent access, or is\nshared across multiple documents. Example: store visits in a separate 'visits'\ncollection and include a patient_id field in each visit document (like a FK).\nThis is because a patient can have hundreds of visits over years, and medical\nstaff may want to query all visits across all patients without loading every\npatient's full document."
+  },
+  {
+    "id": 150,
+    "text": "[Query] Create a single-field ascending index on the 'manufacturer' field",
+    "type": "short_answer",
+    "options": [],
+    "answer": "-- Step 1: Create the index\ndb.cars.createIndex({ manufacturer: 1 })\n-- Step 2: Run query with explain to verify index use\ndb.cars.find({ manufacturer: \"Toyota\" }).explain(\"executionStats\")\n-- In the output, look for:\n--   \"stage\": \"IXSCAN\"  --> index is being used (GOOD)\n--   \"stage\": \"COLLSCAN\" --> no index used (BAD)\n================================================================\nEND OF QUESTION BANK\nTotal: 150 Questions\nSection A (MCQ):             Q1  - Q60   [60 questions]\nSection B (Written):         Q61 - Q90   [30 questions]\nSection C (MySQL Basic):     Q91 - Q112  [22 questions]\nSection D (MySQL Advanced):  Q113 - Q135 [23 questions]\nSection E (MongoDB):         Q136 - Q150 [15 questions]\n================================================================"
+  }
+]
