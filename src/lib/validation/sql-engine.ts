@@ -8,9 +8,9 @@ export async function initSqlEngine() {
   try {
     console.log("Initializing SQL.js engine...");
     SQL = await initSqlJs({
-      // We expect sql-wasm.wasm to be in the public folder
       locateFile: file => {
-        const url = `/${file}`;
+        // Using unpkg CDN guarantees the wasm file is found, bypassing Next.js asset pipeline issues
+        const url = `https://unpkg.com/sql.js@1.14.1/dist/${file}`;
         console.log(`SQL.js locating file: ${url}`);
         return url;
       }
