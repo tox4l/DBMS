@@ -1,23 +1,5 @@
 import mingo from 'mingo';
-
-
-// Define initial dataset
-const INITIAL_DATA = {
-  patients: [
-    { _id: 1, first_name: "Mohammed", last_name: "Al Walkra", phone: "4431-1132" },
-    { _id: 2, first_name: "Fatima", last_name: "Jadeeda", phone: "5554-1123" },
-    { _id: 3, first_name: "Test", last_name: "Subject", phone: "5555-1111" }
-  ],
-  doctors: [
-    { _id: 1, name: "Dr. Smith", specialty: "Cardiology" },
-    { _id: 2, name: "Dr. Jones", specialty: "Neurology" }
-  ],
-  cars: [
-    { _id: 1, manufacturer: "Toyota", price: 15000 },
-    { _id: 2, manufacturer: "Volvo", price: 20000 },
-    { _id: 3, manufacturer: "Honda", price: 8000 }
-  ]
-};
+import { EXTENDED_MONGO_SEED } from '@/data/seed-mongo';
 
 export interface MongoValidationResult {
   success: boolean;
@@ -154,7 +136,7 @@ export async function executeMongoValidate(
   userCode: string,
   expectedCode?: string
 ): Promise<MongoValidationResult> {
-  const userDb = new MockDb(INITIAL_DATA);
+  const userDb = new MockDb(EXTENDED_MONGO_SEED);
   const start = performance.now();
   let actual: any[] = [];
   let error: string | undefined;
@@ -179,7 +161,7 @@ export async function executeMongoValidate(
   let expected: any[] = [];
 
   if (!error && expectedCode) {
-    const expectedDb = new MockDb(INITIAL_DATA);
+    const expectedDb = new MockDb(EXTENDED_MONGO_SEED);
     try {
       const expRes = runMongoCode(expectedCode, expectedDb);
       const match = expectedCode.match(/db\.([a-zA-Z0-9_]+)\.(insert|update|delete)/);

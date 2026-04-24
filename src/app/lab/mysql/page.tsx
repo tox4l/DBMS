@@ -96,11 +96,49 @@ export default function MySQLLab() {
             </div>
             
             <div className="mt-4">
-               <h3 className="text-xs font-bold text-zinc-500 mb-2">Available Tables:</h3>
-               <p className="text-xs text-zinc-400 font-mono">patient (pid, first_name, last_name, phone, date_of_birth)<br/>
-               doctor (id, name, specialty)<br/>
-               appointment (apid, pid, doctor, start_time, duration)<br/>
-               product (prod_code, name, regular_price, attribute1)</p>
+               <h3 className="text-xs font-bold text-zinc-500 mb-2 mt-4 uppercase tracking-wider">Available Databases</h3>
+               
+               <div className="space-y-4 max-h-[150px] overflow-y-auto pr-2 custom-scrollbar">
+                 <div>
+                   <h4 className="text-[10px] font-bold text-primary mb-1">University</h4>
+                   <p className="text-[11px] text-zinc-400 font-mono leading-tight">
+                     Students(StudentID, Name, Email, DOB, Major, GPA, EnrollmentDate)<br/>
+                     Courses(CourseID, CourseName, Credits, DepartmentID, InstructorID)<br/>
+                     Instructors(InstructorID, Name, Email, DepartmentID, Salary, HireDate)<br/>
+                     Departments(DepartmentID, DeptName, Building, Budget)<br/>
+                     Enrollments(EnrollmentID, StudentID, CourseID, Semester, Grade)
+                   </p>
+                 </div>
+                 
+                 <div>
+                   <h4 className="text-[10px] font-bold text-primary mb-1">Company</h4>
+                   <p className="text-[11px] text-zinc-400 font-mono leading-tight">
+                     Employees(EmpID, Name, DeptID, ManagerID, Salary, HireDate)<br/>
+                     CompDepartments(DeptID, DeptName, Location, Budget)<br/>
+                     Projects(ProjectID, ProjectName, StartDate, EndDate, Budget)<br/>
+                     EmpProjects(EmpID, ProjectID, HoursWorked, Role)
+                   </p>
+                 </div>
+
+                 <div>
+                   <h4 className="text-[10px] font-bold text-primary mb-1">E-Commerce</h4>
+                   <p className="text-[11px] text-zinc-400 font-mono leading-tight">
+                     Customers(CustomerID, Name, Email, City, Country)<br/>
+                     Orders(OrderID, CustomerID, OrderDate, TotalAmount, Status)<br/>
+                     EProducts(ProductID, Name, Category, Price, Stock)<br/>
+                     OrderItems(ItemID, OrderID, ProductID, Quantity, UnitPrice)
+                   </p>
+                 </div>
+                 
+                 <div>
+                   <h4 className="text-[10px] font-bold text-primary mb-1">Legacy Clinic</h4>
+                   <p className="text-[11px] text-zinc-400 font-mono leading-tight">
+                     patient (pid, first_name, last_name, phone, date_of_birth)<br/>
+                     doctor (id, name, specialty)<br/>
+                     appointment (apid, pid, doctor, start_time, duration)
+                   </p>
+                 </div>
+               </div>
             </div>
           </div>
         </div>

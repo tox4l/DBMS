@@ -1,0 +1,231 @@
+SQL Study Guide
+Practical Lab 3 — Hotel Database
+SELECT • INSERT • UPDATE • DELETE
+SELECT Queries (Read Data)
+Q1 • 2 pts SELECT Services Menu — Ordered by Price (Highest First)
+The hotel would like to produce a menu of services available to its guests. The menu will be arranged
+numerically with the highest priced items appearing at the top of the list. Write the SQL query that produces
+this report.
+SELECT description, price
+FROM service
+ORDER BY price DESC;
+Key concept: ORDER BY col DESC puts the highest value first. ASC (default) puts the lowest first.
+Q2 • 2 pts SELECT Average Price of All Services
+The hotel management is under investigation claiming that the prices of their services are too high. Write a
+query that computes the average price of the services on the service menu.
+SELECT AVG(price) AS average_price
+FROM service;
+Key concept: AVG() is an aggregate function — it computes a single value across all rows in the table.
+Q3 • 2 pts SELECT Count How Many Times 'Lindi' Stayed
+The hotel would like to know how many times the customer whose first name is 'Lindi' stayed at their hotel.
+You may use multiple queries to find the answer. Explain in your answer what you are looking for with each
+query. The final answer must be the actual number of stays.-- Step 1: Find Lindi's customer_id
+SELECT customer_id, name
+FROM customer
+WHERE name LIKE 'Lindi%';-- Step 2: Count her bookings using her customer_id
+SELECT COUNT(*) AS number_of_stays
+FROM booking
+WHERE customer_id = 1; -- replace 1 with Lindi's actual id
+Key concept: Use LIKE 'Lindi%' to find names starting with Lindi. Then COUNT(*) counts all matching
+rows.
+Q4 • 2 pts SELECT Count Bookings Where Checkout IS NULL
+Although this should not happen, the designer of the database allowed for NULL in the checkout column.
+Count the number of bookings where the checkout date has been set to the value of NULL.
+SELECT COUNT(*) AS null_checkouts
+FROM booking
+WHERE checkout IS NULL;
+Key concept: Never use = NULL in SQL. Always use IS NULL to check for missing values.
+Q5 • 2 pts SELECT Room Count Per Category
+Create a result showing a list of room category numbers along with the number of rooms of that category.
+SELECT category_id AS category, COUNT(*) AS room_count
+FROM room
+GROUP BY category_id;
+Key concept: GROUP BY groups all rooms by their category_id, then COUNT(*) counts how many rooms
+are in each group.
+INSERT Queries (Add New Data)
+Q6 • 2 pts INSERT INSERT Yourself as a Customer
+Write the SQL query that creates you as a customer. Use your own name and your university email address
+for the email.
+INSERT INTO customer (name, email)
+VALUES ('Alhanoof Al Bulushi', 'alhanoof@university.edu.om');
+Key concept: INSERT INTO specifies the table and columns. VALUES provides the actual data. Use your
+real name and university email!
+Q10 • 2 pts INSERT INSERT a Booking for Yourself
+Write the SQL statement(s) required to book yourself into an Apartment for 5 days starting from today. You
+do not need to check whether the room is available, but you must explain what each statement is doing.
+You can make up any customer id number for yourself.-- Step 1: Find the room_id of an Apartment (category for Apartment)
+SELECT room_id FROM room
+WHERE category_id = (
+SELECT category_id FROM category WHERE name = 'Apartment'
+)
+LIMIT 1;-- Step 2: Insert the booking (use today's date + 5 days for checkout)
+INSERT INTO booking (room_id, customer_id, checkin, checkout)
+VALUES (5, 99, '2026-03-29', '2026-04-03');-- room_id = apartment room found above-- customer_id = your own id from Q6-- checkin = today, checkout = today + 5 days
+Key concept: INSERT can require multiple steps — first find the room, then insert the booking. Explain
+each step clearly!
+UPDATE Queries (Modify Existing Data)
+Q7 • 2 pts UPDATE UPDATE Room 50 to Deluxe Suite
+The hotel has upgraded room 50 to be a Deluxe Suite by including some additional services for free. Write
+the query or queries needed for this to be corrected in the database.-- Step 1: Find the category_id for 'Deluxe Suite'
+SELECT category_id FROM category
+WHERE name = 'Deluxe Suite';-- Step 2: Update room 50 with that category_id
+UPDATE room
+SET category_id = 4 -- replace 4 with the actual Deluxe Suite category_id
+WHERE room_id = 50;
+Key concept: UPDATE sets new values. Always use WHERE to target a specific row — without WHERE
+you update EVERY row!
+Q8 • 2 pts UPDATE UPDATE Jess Valde's Email Address
+Modify the email address of the customer 'Jess Valde' to be 'jess.valde@gmail.com'.
+UPDATE customer
+SET email = 'jess.valde@gmail.com'
+WHERE name = 'Jess Valde';
+Key concept: SET specifies the column and new value. WHERE targets only the specific customer.
+Without WHERE, ALL emails would change!
+DELETE Queries (Remove Data)
+Q9 • 2 pts
+DELETE
+DELETE Ibrahim Nasrallah's Booking
+The customer 'Ibrahim Nasrallah' has one booking that needs to be deleted. You may utilize multiple
+statements to solve this problem but please list all of them and explain what you used them for. Do not use
+any joins or subqueries to solve this problem.-- Step 1: Find Ibrahim's customer_id
+SELECT customer_id, name
+FROM customer
+WHERE name = 'Ibrahim Nasrallah';-- Step 2: Find his booking_id using his customer_id
+SELECT * FROM booking-- Step 3: Delete his booking
+DELETE FROM booking
+WHERE customer_id = 25; -- replace 25 with Ibrahim's actual customer_id
+WHERE customer_id = 25; -- replace with Ibrahim's actual customer_id
+Key concept: DELETE removes rows. Always find the exact record first with SELECT, then delete it with
+WHERE. No JOINs or subqueries allowed here!
+Quick Reference Cheat Sheet
+Statement Purpose Key syntax
+SELECT Read data from table SELECT col FROM table WHERE condition;
+ORDER BY Sort results ORDER BY col DESC / ASC
+AVG() Calculate average SELECT AVG(price) AS avg_price FROM table;
+COUNT(*) Count rows SELECT COUNT(*) FROM table WHERE ...;
+LIKE Pattern matching WHERE name LIKE 'Lindi%' (% = wildcard)
+IS NULL Check for missing values WHERE checkout IS NULL
+GROUP BY Group rows for aggregates GROUP BY category_id
+INSERT Add a new row INSERT INTO t (col1,col2) VALUES (v1,v2);
+UPDATE Modify existing rows UPDATE t SET col=val WHERE condition;
+DELETE Remove rows DELETE FROM t WHERE condition;
+WARNING! Always use WHERE with UPDATE and DELETE — otherwise ALL rows are affected!
+Good luck on your lab! You are fully prepared.
+
+
+
+
+Advanced SQL Study Guide
+Practical Lab 4 — Hotel & Art Gallery Databases
+ Hotel Lab
+Question 1 (3 points) — Subquery
+Produce a list of the service items whose price is larger than the average price of all service items. A subquery
+must be used to compute the average price. The table must be ordered alphabetically on the service name.
+SELECT description AS service, price FROM service WHERE price > (SELECT AVG(price) FROM service)
+ORDER BY description ASC;
+Key concept: Use a subquery in WHERE because AVG() can't be used directly there.
+Question 2 (4 points) — GROUP BY + SUM + LIMIT
+The hotel would like to reward the top spenders of its guests staying in the hotel who have spent money on
+services. Write a query that computes the total amount spent by guest and arranges this information from the
+highest spender to the lowest. Show only the first 5 rows.
+SELECT customer.name AS name, SUM(service.price) AS total_spend FROM customer JOIN purchase ON
+purchase.customer_id = customer.customer_id JOIN service ON purchase.service_id =
+service.service_id GROUP BY customer.name ORDER BY total_spend DESC LIMIT 5;
+Key concept: GROUP BY groups rows per customer so SUM() can add up each customer's purchases.
+Question 3 (4 points) — Multi-table JOIN + Date Filter
+The hotel requires a summary of who is in the hotel on April 16, 2024. You need to look at the check-in and
+check-out dates. The headers must be customer, room_number, category.
+SELECT customer.name AS customer, room.room_id AS room_number, category.name AS category FROM
+customer JOIN booking ON customer.customer_id = booking.customer_id JOIN room ON booking.room_id
+= room.room_id JOIN category ON room.category_id = category.category_id WHERE checkin &lt;=
+'2024-04-16' AND checkout &gt;= '2024-04-16';
+Key concept: Use <= and >= to find guests whose stay covers the target date (not just checked in that day).
+Question 4 (3 points) — NOT IN Exclusion
+The hotel would like to contact customers who have not yet made a booking. Write the query that produces this
+list showing their name and email.
+SELECT name, email FROM customer WHERE customer_id NOT IN (SELECT customer_id FROM booking);
+Key concept: NOT IN with a subquery finds customers who have NO matching record in the booking table.
+Question 5 (2 points) — Index Theory
+Consider the following query. Explain what index would help improve the performance of this query. Mention
+the table and column that requires indexing.-- Given query: SELECT SUM(price) FROM purchase JOIN service ON purchase.service_id =
+service.service_id WHERE description = 'Airport Shuttle'; -- Answer: CREATE INDEX
+idx_description ON service(description); CREATE INDEX idx_service_id ON purchase(service_id);
+Rule: Index the WHERE clause column (description) AND the JOIN column on the bigger table (service_id).
+ Art Gallery Lab (W25-PL4)
+Question 3 (2 points) — CREATE VIEW with 4-Table JOIN
+For inventory purposes, write a query to generate a detailed report of sold artworks along with the artist
+information, organized by invoice.
+CREATE VIEW sold_artworks AS SELECT invoice.invoice_id, artwork.title, artwork.media,
+CONCAT(artist.first_name, ' ', artist.last_name) AS artist_name, invoice_line.price FROM invoice
+JOIN invoice_line ON invoice.invoice_id = invoice_line.invoice_id JOIN artwork ON
+invoice_line.artwork_id = artwork.artwork_id JOIN artist ON artwork.artist_id = artist.artist_id
+ORDER BY invoice.invoice_id;
+Key concept: Chain 4 tables: invoice -> invoice_line -> artwork -> artist. Use CONCAT for full name.
+Question 5 (2 points) — CREATE VIEW for Loaned Artworks
+The sales team needs a list of artworks that are on loan. This list should include the artwork title, media type,
+creation year, and current status. Create view loaned_artworks that will help achieve this goal.
+CREATE VIEW loaned_artworks AS SELECT artwork.title, artwork.media, YEAR(aw_date) AS
+creation_year, aw_status FROM artwork WHERE aw_status = 'loan';
+Key concept: Only one table needed! Use YEAR() to extract the year from a DATE column.
+Question 6 (2 points) — Index Theory
+Considering the following query, explain what index would help improve the performance of this query. Mention
+the table and column that requires indexing.-- Given query: SELECT SUM(price) FROM invoice_line JOIN artwork ON invoice_line.artwork_id =
+artwork.artwork_id WHERE media = 'Sculpture'; -- Answer: CREATE INDEX idx_artwork_id ON
+invoice_line(artwork_id); CREATE INDEX idx_media ON artwork(media);
+Rule: Index the WHERE clause column (media) AND the JOIN column on the bigger table (artwork_id).
+ Quick Reference Cheat Sheet
+Concept
+Subquery
+When to use it
+Key syntax
+AVG/MAX in WHERE clause
+WHERE col > (SELECT AVG(col) FROM t)
+GROUP BY
+HAVING
+NOT IN
+SUM/COUNT per group
+Filter after grouping
+Find missing records
+GROUP BY col
+HAVING SUM(col) > value
+WHERE id NOT IN (SELECT id FROM t)
+JOIN chain
+Date range
+CREATE VIEW
+CONCAT
+YEAR()
+Index
+Link 3-4 tables
+Between two dates
+Save a query as a view
+Combine text fields
+Extract year from date
+Speed up WHERE/JOIN
+JOIN t2 ON t1.id = t2.id
+WHERE d <= 'date' AND d2 >= 'date'
+CREATE VIEW name AS SELECT ...
+CONCAT(first, ' ', last)
+YEAR(date_col) AS year
+CREATE INDEX idx ON table(col)
+Good luck on your lab! 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

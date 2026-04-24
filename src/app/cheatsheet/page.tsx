@@ -10,6 +10,7 @@ import { javascript } from "@codemirror/lang-javascript";
 
 // Parse the text into sections
 const parseSections = (text: string, type: "sql" | "mongodb") => {
+  if (!text) return [];
   // Split by the big separator
   const parts = text.split("----------------------------------------------------------------");
   
@@ -21,7 +22,7 @@ const parseSections = (text: string, type: "sql" | "mongodb") => {
     if (!part.trim()) continue;
     
     // The title is the first line, then there is another separator
-    const lines = part.split("\\n");
+    const lines = part.split("\n");
     const titleLine = lines.find(l => l.trim().length > 0);
     
     // We expect the next part to contain the actual code
@@ -47,20 +48,17 @@ export default function CheatsheetPage() {
   const [activeTab, setActiveTab] = useState<"sql_basic" | "sql_adv" | "mongo_basic" | "mongo_adv">("sql_basic");
   const [searchQuery, setSearchQuery] = useState("");
   
-  const sqlBasic = parseSections(queriesData.basic, "sql").filter(s => !s.title.includes("MONGODB"));
-  const mongoBasic = parseSections(queriesData.basic, "mongodb").filter(s => s.title.includes("MONGODB") || s.title.match(/^[0-9]+\./)); // It's a bit mixed, let's refine
-  
-  // A better approach for parsing based on how it's actually formatted:
-  // Part 1 is SQL, Part 2 is MongoDB. They are separated by:
-  // ================================================================
-  //   PART 2 -- MONGODB BASIC QUERIES
-  // ================================================================
-  
   const extractParts = (text: string) => {
-    const parts = text.split(/================================================================\\s+PART 2 [\\s\\S]+?================================================================/);
+    const splitIndex = text.indexOf("PART 2");
+    if (splitIndex === -1) {
+      return { sql: parseSections(text, "sql"), mongo: [] };
+    }
     
-    const sqlText = parts[0] || "";
-    const mongoText = parts[1] || "";
+    // Split right before the equals signs that precede PART 2
+    const delimiterIndex = text.lastIndexOf("===", splitIndex);
+    
+    const sqlText = text.substring(0, delimiterIndex > -1 ? delimiterIndex : splitIndex);
+    const mongoText = text.substring(splitIndex);
     
     return {
       sql: parseSections(sqlText, "sql"),

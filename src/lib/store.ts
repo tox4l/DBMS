@@ -27,6 +27,9 @@ interface AppState {
   mistakeBank: Record<string, Mistake>;
   bestSetScores: Record<string, number>; // key: "moduleId-setId"
   
+  // SQL Mastery Progress
+  sqlMasteryProgress: Record<number, number>; // key: stage (1-6), value: best score (%)
+  
   addXP: (amount: number) => void;
   markModuleCompleted: (id: number) => void;
   recordQuestionAnswer: (id: number, isCorrect: boolean, moduleTitle: string) => void;
@@ -36,6 +39,9 @@ interface AppState {
   recordMistake: (mistake: Omit<Mistake, "id" | "frequency" | "timestamp" | "resolved">) => void;
   resolveMistake: (id: string) => void;
   recordSetScore: (moduleId: number, setId: number, score: number) => void;
+  
+  // SQL Mastery
+  recordSqlMasteryScore: (stage: number, score: number) => void;
 }
 
 export const useAppStore = create<AppState>()(
@@ -49,6 +55,7 @@ export const useAppStore = create<AppState>()(
       lastActive: null,
       mistakeBank: {},
       bestSetScores: {},
+      sqlMasteryProgress: {},
       
       addXP: (amount) => set((state) => ({ xp: state.xp + amount })),
       
@@ -148,11 +155,25 @@ export const useAppStore = create<AppState>()(
       recordSetScore: (moduleId, setId, score) => set((state) => {
         const key = `${moduleId}-${setId}`;
         const currentBest = state.bestSetScores[key] || 0;
+        
         if (score > currentBest) {
           return {
             bestSetScores: {
               ...state.bestSetScores,
               [key]: score
+            }
+          };
+        }
+        return state;
+      }),
+
+      recordSqlMasteryScore: (stage, score) => set((state) => {
+        const currentBest = state.sqlMasteryProgress[stage] || 0;
+        if (score > currentBest) {
+          return {
+            sqlMasteryProgress: {
+              ...state.sqlMasteryProgress,
+              [stage]: score
             }
           };
         }

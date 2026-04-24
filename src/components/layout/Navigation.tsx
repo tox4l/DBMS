@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
-import { Home, BookOpen, PenTool, Database, BarChart3, LayoutTemplate, Zap, Search, ShieldAlert } from "lucide-react";
+import { Home, BookOpen, PenTool, Database, BarChart3, LayoutTemplate, Zap, Search, ShieldAlert, Link2, Code2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { clsx } from "clsx";
 import { useAppStore } from "@/lib/store";
@@ -14,6 +14,8 @@ const navItems = [
   { name: "Practice", href: "/practice", icon: PenTool },
   { name: "Mistakes", href: "/mistakes", icon: ShieldAlert },
   { name: "Query Lab", href: "/lab", icon: Database },
+  { name: "SQL Mastery", href: "/sql-mastery", icon: Code2 },
+  { name: "Relationships", href: "/relationships", icon: Link2 },
   { name: "Tables", href: "/tables", icon: LayoutTemplate },
   { name: "Cheatsheet", href: "/cheatsheet", icon: Zap },
   { name: "Progress", href: "/dashboard", icon: BarChart3 },

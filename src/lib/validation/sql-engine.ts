@@ -31,54 +31,7 @@ export function createDatabase() {
   return new SQL.Database();
 }
 
-// A predefined schema that covers the course materials (Patients, Doctors, Students, Courses, Products)
-export const SEED_SCHEMA = `
-CREATE TABLE patient (
-  pid INT PRIMARY KEY,
-  first_name VARCHAR(50),
-  last_name VARCHAR(50),
-  phone VARCHAR(20),
-  date_of_birth DATE
-);
-
-CREATE TABLE doctor (
-  id INT PRIMARY KEY,
-  name VARCHAR(50),
-  specialty VARCHAR(50)
-);
-
-CREATE TABLE appointment (
-  apid INT PRIMARY KEY,
-  pid INT,
-  doctor INT,
-  start_time DATETIME,
-  duration INT,
-  FOREIGN KEY (pid) REFERENCES patient(pid),
-  FOREIGN KEY (doctor) REFERENCES doctor(id)
-);
-
-CREATE TABLE product (
-  prod_code INT PRIMARY KEY,
-  name VARCHAR(50),
-  regular_price DECIMAL(10,2),
-  attribute1 VARCHAR(20)
-);
-
--- Seed some initial data
-INSERT INTO patient VALUES (232, 'Mohammed', 'Al Walkra', '4431-1132', '1990-01-01');
-INSERT INTO patient VALUES (334, 'Fatima', 'Shamal', '5554-1123', '1995-05-15');
-INSERT INTO patient VALUES (400, 'Test', 'Subject', '5555-1111', '2000-10-10');
-
-INSERT INTO doctor VALUES (1, 'Dr. Smith', 'Cardiology');
-INSERT INTO doctor VALUES (2, 'Dr. Jones', 'Neurology');
-
-INSERT INTO appointment VALUES (1, 232, 1, '2026-05-01 10:00:00', 30);
-INSERT INTO appointment VALUES (2, 334, 2, '2026-05-02 14:00:00', 45);
-
-INSERT INTO product VALUES (1, 'Ajax Soap', 5.99, 'L');
-INSERT INTO product VALUES (2, 'Bleach', 3.99, 'M');
-INSERT INTO product VALUES (3, 'Ajax Cleaner', 15.00, 'L');
-`;
+import { EXTENDED_SEED_SCHEMA } from '@/data/seed-sql';
 
 export interface QueryResult {
   columns: string[];
@@ -102,9 +55,9 @@ export async function executeAndValidate(
   
   // Initialize master buffer if it doesn't exist
   if (!masterDbBuffer && SQL) {
-    console.log("Seeding master database schema...");
+    console.log("Seeding extended master database schema...");
     const tempDb = new SQL.Database();
-    tempDb.run(SEED_SCHEMA);
+    tempDb.run(EXTENDED_SEED_SCHEMA);
     masterDbBuffer = tempDb.export();
     tempDb.close();
   }

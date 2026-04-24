@@ -1,6 +1,7 @@
 import ThreeHero from "@/components/layout/ThreeHero";
-import { ArrowRight, PlayCircle, BookOpen, PenTool, Database, Award } from "lucide-react";
+import { ArrowRight, PlayCircle, BookOpen, PenTool, Database, Award, Code2, Link2 } from "lucide-react";
 import Link from "next/link";
+import HeroCountdown from "@/components/layout/HeroCountdown";
 
 export default function Home() {
   return (
@@ -45,7 +46,24 @@ export default function Home() {
               <Database className="w-5 h-5 text-primary" />
               Query Lab
             </Link>
+            <Link 
+              href="/sql-mastery"
+              className="px-8 py-4 rounded-full bg-white/5 border border-white/10 font-bold text-lg hover:bg-zinc-900 transition-colors flex items-center gap-2"
+            >
+              <Code2 className="w-5 h-5 text-[#0ea5e9]" />
+              SQL Mastery
+            </Link>
+            
+            <Link 
+              href="/relationships"
+              className="px-8 py-4 rounded-full bg-white/5 border border-white/10 font-bold text-lg hover:bg-zinc-900 transition-colors flex items-center gap-2"
+            >
+              <Link2 className="w-5 h-5 text-purple-400" />
+              Relationships
+            </Link>
           </div>
+          
+          <HeroCountdown />
         </header>
 
         {/* Dashboard Stats */}

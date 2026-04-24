@@ -3,6 +3,7 @@ import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/layout/Navigation";
 import GlobalSearch from "@/components/layout/GlobalSearch";
+import CountdownBanner from "@/components/layout/CountdownBanner";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
@@ -29,7 +30,8 @@ export default function RootLayout({
       >
         <GlobalSearch />
         <Navigation />
-        <main className="flex-1 w-full pb-20 md:pb-0 overflow-x-hidden">
+        <main className="flex-1 w-full pb-20 md:pb-0 overflow-x-hidden relative">
+          <CountdownBanner />
           {children}
         </main>
       </body>

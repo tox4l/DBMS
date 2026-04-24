@@ -85,7 +85,7 @@ export default function MongoLab() {
             </div>
             
             <div className="text-xs text-zinc-400 font-mono">
-               <strong>Collections:</strong> patients, doctors, cars <br/>
+               <strong>Collections:</strong> patients, doctors, appointments, products, departments, instructors, courses, students, employees, comp_departments, company_projects, customers, ecommerce_products, orders <br/>
                <strong>Methods:</strong> find(query, projection), insertOne(doc), updateOne(query, update), deleteOne(query)
             </div>
           </div>
