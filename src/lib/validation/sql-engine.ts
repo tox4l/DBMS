@@ -5,11 +5,22 @@ let masterDbBuffer: Uint8Array | null = null;
 
 export async function initSqlEngine() {
   if (SQL) return SQL;
-  SQL = await initSqlJs({
-    // Fetch the WebAssembly file from the public directory
-    locateFile: file => `/${file}`
-  });
-  return SQL;
+  try {
+    console.log("Initializing SQL.js engine...");
+    SQL = await initSqlJs({
+      // We expect sql-wasm.wasm to be in the public folder
+      locateFile: file => {
+        const url = `/${file}`;
+        console.log(`SQL.js locating file: ${url}`);
+        return url;
+      }
+    });
+    console.log("SQL.js engine initialized.");
+    return SQL;
+  } catch (err) {
+    console.error("SQL.js initialization failed:", err);
+    throw err;
+  }
 }
 
 export function createDatabase() {
@@ -91,9 +102,11 @@ export async function executeAndValidate(
   
   // Initialize master buffer if it doesn't exist
   if (!masterDbBuffer && SQL) {
+    console.log("Seeding master database schema...");
     const tempDb = new SQL.Database();
     tempDb.run(SEED_SCHEMA);
     masterDbBuffer = tempDb.export();
+    tempDb.close();
   }
   
   // Create a fresh DB instance for user from the cached buffer (Instant)
@@ -106,7 +119,7 @@ export async function executeAndValidate(
   try {
     actual = userDb.exec(userQuery);
   } catch (err: any) {
-    let errStr = err.message || "An unknown SQL error occurred.";
+    let errStr = typeof err === 'string' ? err : (err.message || "An unknown SQL error occurred.");
     // Clean up cryptic sqlite errors
     if (errStr.includes("near") || errStr.includes("syntax error")) {
       errStr = `Syntax Error: ${errStr}`;
@@ -116,6 +129,8 @@ export async function executeAndValidate(
       errStr = `Column Not Found: ${errStr}`;
     }
     error = errStr;
+  } finally {
+    userDb.close();
   }
   
   const timeMs = performance.now() - start;
@@ -134,6 +149,8 @@ export async function executeAndValidate(
       }
     } catch (e) {
       console.error("Expected query invalid:", e);
+    } finally {
+      expectedDb.close();
     }
   } else if (!expectedQuery && !error) {
     // If no expected query is provided, it's a free practice query.

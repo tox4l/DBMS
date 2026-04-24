@@ -95,8 +95,8 @@ export const useAppStore = create<AppState>()(
       }),
 
       recordMistake: (mistakeData) => set((state) => {
-        // Generate a simple ID based on question text
-        const id = Buffer.from(mistakeData.questionText).toString('base64').substring(0, 32);
+        // Use a simple hash instead of Buffer (which is Node-only)
+        const id = btoa(mistakeData.questionText.substring(0, 100)).replace(/[^a-zA-Z0-0]/g, '').substring(0, 32);
         const existing = state.mistakeBank[id];
         
         const timestamp = new Date().toISOString();
