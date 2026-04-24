@@ -1,188 +1,137 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle2, XCircle, ChevronRight, Zap, RefreshCw } from "lucide-react";
-import questionsData from "@/data/questions.json";
-import generatedQuestionsData from "@/data/generated-questions.json";
+import { ChevronDown, Play, Trophy, Crosshair, Target, Clock, Zap } from "lucide-react";
 import { useAppStore } from "@/lib/store";
+import modulesData from "@/data/modules.json";
+import questionsData from "@/data/questions.json";
 import { clsx } from "clsx";
 
-export default function PracticePage() {
-  const allQuestions = useMemo(() => {
-    return [...questionsData, ...generatedQuestionsData];
-  }, []);
+const SETS = [
+  { id: 1, title: "Fundamentals", desc: "Easy difficulty concepts to build your base.", diff: "easy", icon: Target },
+  { id: 2, title: "Core Concepts", desc: "Medium difficulty standard questions.", diff: "medium", icon: Zap },
+  { id: 3, title: "Advanced & Edge Cases", desc: "Hard questions to test deep understanding.", diff: "hard", icon: Crosshair },
+  { id: 4, title: "Trap Questions", desc: "Common misconceptions and tricky wording.", diff: "trap", icon: Crosshair },
+  { id: 5, title: "Mixed Exam Style", desc: "A realistic blend of all difficulties.", diff: "mixed", icon: Trophy }
+];
 
-  const [currentIdx, setCurrentIdx] = useState(0);
-  const [selectedOption, setSelectedOption] = useState<string | null>(null);
-  const [showExplanation, setShowExplanation] = useState(false);
-  const [sessionStreak, setSessionStreak] = useState(0);
-  
-  const { recordQuestionAnswer, xp } = useAppStore();
+export default function PracticeHubPage() {
+  const [expandedMod, setExpandedMod] = useState<number | null>(null);
+  const { bestSetScores } = useAppStore();
 
-  const question = allQuestions[currentIdx];
-  const isAnswered = showExplanation;
-
-  // Derive if correct based on whether the selected option letter matches the answer text
-  const getCorrectLetter = (answerText: string) => {
-    // The answer is usually like "A", "B", etc. We just take the first letter if it's MCQ
-    const match = answerText.match(/^[A-D]/);
-    return match ? match[0] : null;
+  const toggleMod = (id: number) => {
+    setExpandedMod(expandedMod === id ? null : id);
   };
 
-  const handleSelect = (opt: string) => {
-    if (isAnswered) return;
-    setSelectedOption(opt);
-    
-    // Check correctness
-    const correctLetter = getCorrectLetter(question.answer);
-    const selectedLetter = opt.charAt(0);
-    const isCorrect = selectedLetter === correctLetter;
-    
-    recordQuestionAnswer(question.id, isCorrect, `Module ${(question as any).moduleId || 'Unknown'}`);
-    
-    if (isCorrect) {
-      setSessionStreak(s => s + 1);
-    } else {
-      setSessionStreak(0);
+  const getQuestionCount = (modId: number, setType: string) => {
+    if (setType === "mixed") {
+      return questionsData.filter((q: any) => q.moduleId === modId).length;
     }
-    
-    setShowExplanation(true);
+    return questionsData.filter((q: any) => q.moduleId === modId && q.difficulty === setType).length;
   };
-
-  const handleNext = () => {
-    setSelectedOption(null);
-    setShowExplanation(false);
-    setCurrentIdx((prev) => (prev + 1) % allQuestions.length);
-  };
-
-  if (!question) return <div>No questions available.</div>;
 
   return (
-    <div className="p-6 md:p-12 max-w-4xl mx-auto flex flex-col min-h-[calc(100vh-80px)]">
-      <header className="mb-8 flex justify-between items-end">
-        <div>
-          <h1 className="text-3xl md:text-4xl font-black font-outfit mb-2">Practice Mode</h1>
-          <p className="text-zinc-400">Question {currentIdx + 1} of {allQuestions.length}</p>
-        </div>
-        <div className="flex gap-4">
-          <div className="glass-panel px-4 py-2 rounded-xl flex items-center gap-2">
-            <Zap className={clsx("w-5 h-5", sessionStreak > 2 ? "text-accent animate-pulse" : "text-zinc-500")} />
-            <span className="font-bold">{sessionStreak} Streak</span>
-          </div>
-          <div className="glass-panel px-4 py-2 rounded-xl flex items-center gap-2">
-            <span className="text-primary font-bold">{xp} XP</span>
-          </div>
-        </div>
-      </header>
+    <div className="min-h-screen bg-[#020202] p-6 md:p-12">
+      <div className="max-w-6xl mx-auto">
+        
+        <header className="mb-16">
+          <h1 className="text-5xl font-black font-outfit text-white mb-4 uppercase tracking-tight text-glow">
+            Practice Hub
+          </h1>
+          <p className="text-zinc-400 max-w-2xl text-lg">
+            Master the curriculum by completing structured question sets. Select a module below to view available drills.
+          </p>
+        </header>
 
-      <div className="flex-1 flex flex-col justify-center">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentIdx}
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            transition={{ duration: 0.3 }}
-            className="glass-panel p-6 md:p-10 rounded-3xl w-full"
-          >
-            <div className="flex gap-2 mb-6">
-              <span className="px-3 py-1 rounded-full bg-white/5 text-xs font-medium text-zinc-400">
-                {question.type === 'mcq' ? 'Multiple Choice' : 'Short Answer'}
-              </span>
-              {(question as any).isGenerated && (
-                <span className="px-3 py-1 rounded-full bg-primary/20 text-xs font-medium text-primary">
-                  AI Generated
-                </span>
-              )}
-            </div>
-
-            <h2 className="text-2xl md:text-3xl font-medium mb-8 leading-relaxed">
-              {question.text}
-            </h2>
-
-            {question.type === 'mcq' ? (
-              <div className="space-y-4">
-                {question.options?.map((opt: string, i: number) => {
-                  const correctLetter = getCorrectLetter(question.answer);
-                  const optLetter = opt.charAt(0);
-                  
-                  let stateClass = "border-white/10 hover:border-primary/50 hover:bg-white/5";
-                  
-                  if (isAnswered) {
-                    if (optLetter === correctLetter) {
-                      stateClass = "border-green-500/50 bg-green-500/10 text-green-400";
-                    } else if (selectedOption === opt && optLetter !== correctLetter) {
-                      stateClass = "border-red-500/50 bg-red-500/10 text-red-400";
-                    } else {
-                      stateClass = "border-white/5 opacity-50";
-                    }
-                  } else if (selectedOption === opt) {
-                    stateClass = "border-primary bg-primary/10";
-                  }
-
-                  return (
-                    <button
-                      key={i}
-                      onClick={() => handleSelect(opt)}
-                      disabled={isAnswered}
-                      className={clsx(
-                        "w-full text-left p-4 rounded-xl border transition-all duration-300 flex items-center justify-between",
-                        stateClass
-                      )}
-                    >
-                      <span className="text-lg">{opt}</span>
-                      {isAnswered && optLetter === correctLetter && <CheckCircle2 className="w-6 h-6 text-green-500" />}
-                      {isAnswered && selectedOption === opt && optLetter !== correctLetter && <XCircle className="w-6 h-6 text-red-500" />}
-                    </button>
-                  );
-                })}
-              </div>
-            ) : (
-              <div className="bg-white/5 p-6 rounded-xl border border-white/10">
-                <p className="text-zinc-300 italic mb-6">Self-evaluation question. Think of your answer, then reveal.</p>
-                {!isAnswered ? (
-                  <button 
-                    onClick={() => setShowExplanation(true)}
-                    className="w-full py-4 rounded-xl bg-primary text-black font-bold hover:bg-primary-hover transition-colors"
-                  >
-                    Reveal Answer
-                  </button>
-                ) : (
-                  <div className="text-green-400 whitespace-pre-wrap font-mono text-sm">
-                    {question.answer}
+        <div className="space-y-6">
+          {modulesData.map((mod) => {
+            const isExpanded = expandedMod === mod.id;
+            
+            return (
+              <div key={mod.id} className="glass-panel rounded-3xl border border-white/5 overflow-hidden transition-all duration-300">
+                
+                {/* Module Header */}
+                <button 
+                  onClick={() => toggleMod(mod.id)}
+                  className="w-full text-left p-6 flex items-center justify-between hover:bg-white/[0.02] transition-colors"
+                >
+                  <div className="flex items-center gap-6">
+                    <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center font-black text-2xl text-primary font-outfit">
+                      M{mod.id}
+                    </div>
+                    <div>
+                      <h2 className="text-2xl font-bold font-outfit text-white">{mod.title}</h2>
+                      <p className="text-zinc-500 text-sm mt-1">5 structured sets available</p>
+                    </div>
                   </div>
-                )}
-              </div>
-            )}
-          </motion.div>
-        </AnimatePresence>
+                  <ChevronDown className={clsx("w-6 h-6 text-zinc-400 transition-transform duration-300", isExpanded && "rotate-180")} />
+                </button>
 
-        <AnimatePresence>
-          {isAnswered && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="mt-8 glass-panel p-6 rounded-2xl flex flex-col md:flex-row gap-6 justify-between items-center"
-            >
-              <div className="flex-1">
-                {question.type === 'mcq' && (
-                  <>
-                    <h3 className="text-lg font-bold mb-2">Explanation</h3>
-                    <p className="text-zinc-400 whitespace-pre-wrap">{question.answer}</p>
-                  </>
-                )}
+                {/* Expanded Sets Grid */}
+                <AnimatePresence>
+                  {isExpanded && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className="border-t border-white/5"
+                    >
+                      <div className="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        
+                        {SETS.map((set) => {
+                          const Icon = set.icon;
+                          const qCount = getQuestionCount(mod.id, set.diff);
+                          const scoreKey = `${mod.id}-${set.id}`;
+                          const bestScore = bestSetScores[scoreKey] || 0;
+                          
+                          return (
+                            <div key={set.id} className="bg-black/40 rounded-2xl border border-white/5 p-6 flex flex-col hover:border-white/10 transition-colors relative overflow-hidden group">
+                              <div className="flex justify-between items-start mb-4">
+                                <div className="p-3 rounded-xl bg-white/5 text-zinc-300">
+                                  <Icon className="w-5 h-5" />
+                                </div>
+                                {bestScore > 0 && (
+                                  <div className="px-3 py-1 rounded-full bg-green-500/10 text-green-400 text-xs font-bold border border-green-500/20">
+                                    Best: {bestScore}%
+                                  </div>
+                                )}
+                              </div>
+                              
+                              <h3 className="text-lg font-bold text-white mb-2">{set.title}</h3>
+                              <p className="text-zinc-500 text-sm mb-6 flex-1">{set.desc}</p>
+                              
+                              <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/5">
+                                <div className="flex items-center gap-4 text-xs font-bold text-zinc-400">
+                                  <span className="flex items-center gap-1"><Target className="w-3 h-3" /> {qCount} Qs</span>
+                                  <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> ~{Math.ceil(qCount * 1.5)}m</span>
+                                </div>
+                                
+                                {qCount > 0 ? (
+                                  <Link 
+                                    href={`/practice/${mod.id}/${set.id}`}
+                                    className="w-10 h-10 rounded-full bg-primary text-black flex items-center justify-center hover:bg-primary-hover transition-colors group-hover:scale-110 active:scale-95"
+                                  >
+                                    <Play className="w-4 h-4 ml-1" />
+                                  </Link>
+                                ) : (
+                                  <div className="text-xs text-zinc-600 font-bold">N/A</div>
+                                )}
+                              </div>
+                            </div>
+                          );
+                        })}
+
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
               </div>
-              <button
-                onClick={handleNext}
-                className="w-full md:w-auto px-8 py-4 rounded-full bg-white text-black font-bold flex items-center justify-center gap-2 hover:bg-zinc-200 transition-colors shrink-0"
-              >
-                Next Question
-                <ChevronRight className="w-5 h-5" />
-              </button>
-            </motion.div>
-          )}
-        </AnimatePresence>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

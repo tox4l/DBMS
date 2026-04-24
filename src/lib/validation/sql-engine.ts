@@ -1,6 +1,7 @@
 import initSqlJs from 'sql.js';
 
 let SQL: initSqlJs.SqlJsStatic | null = null;
+let masterDbBuffer: Uint8Array | null = null;
 
 export async function initSqlEngine() {
   if (SQL) return SQL;
@@ -13,6 +14,9 @@ export async function initSqlEngine() {
 
 export function createDatabase() {
   if (!SQL) throw new Error("SQL engine not initialized");
+  if (masterDbBuffer) {
+    return new SQL.Database(masterDbBuffer);
+  }
   return new SQL.Database();
 }
 
@@ -85,9 +89,15 @@ export async function executeAndValidate(
 ): Promise<ValidationResult> {
   await initSqlEngine();
   
-  // Create a fresh DB instance for user
+  // Initialize master buffer if it doesn't exist
+  if (!masterDbBuffer && SQL) {
+    const tempDb = new SQL.Database();
+    tempDb.run(SEED_SCHEMA);
+    masterDbBuffer = tempDb.export();
+  }
+  
+  // Create a fresh DB instance for user from the cached buffer (Instant)
   const userDb = createDatabase();
-  userDb.run(SEED_SCHEMA);
   
   const start = performance.now();
   let actual: QueryResult[] = [];
@@ -96,7 +106,16 @@ export async function executeAndValidate(
   try {
     actual = userDb.exec(userQuery);
   } catch (err: any) {
-    error = err.message;
+    let errStr = err.message || "An unknown SQL error occurred.";
+    // Clean up cryptic sqlite errors
+    if (errStr.includes("near") || errStr.includes("syntax error")) {
+      errStr = `Syntax Error: ${errStr}`;
+    } else if (errStr.includes("no such table")) {
+      errStr = `Table Not Found: ${errStr}`;
+    } else if (errStr.includes("no such column")) {
+      errStr = `Column Not Found: ${errStr}`;
+    }
+    error = errStr;
   }
   
   const timeMs = performance.now() - start;
@@ -106,7 +125,6 @@ export async function executeAndValidate(
   
   if (!error && expectedQuery) {
     const expectedDb = createDatabase();
-    expectedDb.run(SEED_SCHEMA);
     try {
       expected = expectedDb.exec(expectedQuery);
       

@@ -24,13 +24,16 @@ export default function MySQLLab() {
     }).filter(Boolean);
 
   const handleExecute = async () => {
-    setIsExecuting(true);
-    // Give UI time to update
-    setTimeout(async () => {
+    const timer = setTimeout(() => setIsExecuting(true), 300);
+    try {
       const res = await executeAndValidate(code);
       setResult(res);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      clearTimeout(timer);
       setIsExecuting(false);
-    }, 100);
+    }
   };
 
   return (

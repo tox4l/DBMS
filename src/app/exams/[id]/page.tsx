@@ -1,226 +1,252 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
+import { ArrowLeft, CheckCircle2, AlertTriangle, ShieldCheck, Flag } from "lucide-react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Clock, AlertTriangle, ArrowRight, ArrowLeft } from "lucide-react";
-import questionsData from "@/data/questions.json";
-import generatedQuestionsData from "@/data/generated-questions.json";
-import { useAppStore } from "@/lib/store";
 import { clsx } from "clsx";
+import questionsData from "@/data/questions.json";
+import modulesData from "@/data/modules.json";
+import { useAppStore } from "@/lib/store";
+import QuestionCard from "@/components/shared/QuestionCard";
+import ExamTimer from "@/components/shared/ExamTimer";
 
-export default function ExamSessionPage() {
+// Helper to shuffle array
+const shuffle = (array: any[]) => [...array].sort(() => Math.random() - 0.5);
+
+export default function ModuleExamPage() {
   const params = useParams();
   const router = useRouter();
-  const { addXP } = useAppStore();
-  
-  const [started, setStarted] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(0);
+  const id = parseInt(params.id as string);
+  const mod = modulesData.find((m: any) => m.id === id);
+
+  const { markModuleCompleted, addXP } = useAppStore();
+
+  const [questions, setQuestions] = useState<any[]>([]);
   const [currentIdx, setCurrentIdx] = useState(0);
-  const [answers, setAnswers] = useState<Record<number, string>>({});
-  const [submitted, setSubmitted] = useState(false);
-  
-  // Fake config based on ID
-  const config = useMemo(() => {
-    let title = "Exam";
-    let filterFn = (q: any) => true;
-    let mins = 30;
-    
-    if (params.id === "final") {
-      title = "Final Exam";
-      mins = 60;
-    } else {
-      const modId = parseInt(params.id as string);
-      title = `Module ${modId} Exam`;
-      filterFn = (q: any) => q.moduleId === modId || (!q.moduleId && q.id % 5 === modId % 5);
-      mins = 20;
-    }
-    
-    const allQ = [...questionsData, ...generatedQuestionsData];
-    // Take a random subset of MCQ for the exam
-    const examQuestions = allQ
-      .filter(q => q.type === 'mcq')
-      .filter(filterFn)
-      .sort(() => 0.5 - Math.random())
-      .slice(0, params.id === "final" ? 60 : 15);
-      
-    return { title, questions: examQuestions, minutes: mins };
-  }, [params.id]);
+  const [answers, setAnswers] = useState<Record<number, number>>({});
+  const [flags, setFlags] = useState<Record<number, boolean>>({});
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [score, setScore] = useState(0);
 
   useEffect(() => {
-    if (started && !submitted && timeLeft > 0) {
-      const timer = setInterval(() => setTimeLeft(t => t - 1), 1000);
-      return () => clearInterval(timer);
-    } else if (timeLeft === 0 && started && !submitted) {
-      handleSubmit();
-    }
-  }, [started, submitted, timeLeft]);
+    // Just select 20 random MCQ questions for now
+    const mcqs = questionsData.filter((q: any) => q.type === "mcq");
+    setQuestions(shuffle(mcqs).slice(0, 20));
+  }, []);
 
-  const handleStart = () => {
-    setTimeLeft(config.minutes * 60);
-    setStarted(true);
+  if (!mod || questions.length === 0) {
+    return <div className="p-12 text-center text-zinc-400">Loading Exam...</div>;
+  }
+
+  const handleAnswer = (isCorrect: boolean, selectedIndex: number) => {
+    setAnswers(prev => ({ ...prev, [currentIdx]: selectedIndex }));
+  };
+
+  const toggleFlag = () => {
+    setFlags(prev => ({ ...prev, [currentIdx]: !prev[currentIdx] }));
+  };
+
+  const calculateScore = () => {
+    let correct = 0;
+    questions.forEach((q, idx) => {
+      if (answers[idx] === q.answer.charCodeAt(0) - 65) {
+        correct++;
+      }
+    });
+    return Math.round((correct / questions.length) * 100);
   };
 
   const handleSubmit = () => {
-    setSubmitted(true);
-    // Calculate score
-    const correctCount = config.questions.filter((q, i) => {
-      const selected = answers[i];
-      if (!selected) return false;
-      return selected.charAt(0) === (q.answer.match(/^[A-D]/)?.[0] || '');
-    }).length;
+    if (!confirm("Are you sure you want to submit?")) return;
     
-    const score = Math.round((correctCount / config.questions.length) * 100);
-    if (score >= 60) {
-      addXP(score * 10); // Massive XP for exams
+    const finalScore = calculateScore();
+    setScore(finalScore);
+    setIsSubmitted(true);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    if (finalScore >= 70) {
+      markModuleCompleted(id);
+      addXP(finalScore * 10);
     }
   };
 
-  const formatTime = (seconds: number) => {
-    const m = Math.floor(seconds / 60);
-    const s = seconds % 60;
-    return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+  const handleTimeUp = () => {
+    alert("Time is up! Submitting your exam automatically.");
+    const finalScore = calculateScore();
+    setScore(finalScore);
+    setIsSubmitted(true);
+    
+    if (finalScore >= 70) {
+      markModuleCompleted(id);
+      addXP(finalScore * 10);
+    }
   };
 
-  if (config.questions.length === 0) {
-    return <div className="p-12 text-center text-zinc-400">Loading exam data...</div>;
-  }
-
-  if (!started) {
+  if (isSubmitted) {
+    const passed = score >= 70;
     return (
-      <div className="min-h-screen flex items-center justify-center p-6">
-        <div className="glass-panel p-10 rounded-3xl max-w-xl w-full text-center">
-          <AlertTriangle className="w-16 h-16 text-accent mx-auto mb-6" />
-          <h1 className="text-4xl font-black font-outfit mb-4">{config.title}</h1>
-          <p className="text-zinc-400 mb-8">
-            You will have {config.minutes} minutes to answer {config.questions.length} questions. 
-            Once started, the timer cannot be paused.
-          </p>
-          <button 
-            onClick={handleStart}
-            className="w-full py-4 rounded-xl bg-primary text-black font-bold text-lg hover:bg-primary-hover transition-colors"
+      <div className="min-h-screen bg-black p-6 md:p-12">
+        <div className="max-w-4xl mx-auto">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className={clsx(
+              "p-12 rounded-3xl text-center mb-12 border",
+              passed ? "bg-green-500/10 border-green-500/30" : "bg-red-500/10 border-red-500/30"
+            )}
           >
-            Begin Exam
-          </button>
-        </div>
-      </div>
-    );
-  }
+            {passed ? <ShieldCheck className="w-24 h-24 text-green-500 mx-auto mb-6" /> : <AlertTriangle className="w-24 h-24 text-red-500 mx-auto mb-6" />}
+            <h1 className="text-4xl md:text-6xl font-black font-outfit mb-4 text-white">
+              {score}% - {passed ? "PASSED" : "FAILED"}
+            </h1>
+            <p className="text-zinc-400 text-lg mb-8">
+              {passed ? "Excellent work. You have unlocked the next module." : "You must score at least 70% to pass. Review the traps and try again."}
+            </p>
+            <div className="flex justify-center gap-4">
+              <Link href="/modules" className="px-8 py-3 rounded-xl bg-white/10 text-white font-bold hover:bg-white/20 transition-colors">
+                Return to Dashboard
+              </Link>
+            </div>
+          </motion.div>
 
-  if (submitted) {
-    const correctCount = config.questions.filter((q, i) => {
-      const selected = answers[i];
-      if (!selected) return false;
-      return selected.charAt(0) === (q.answer.match(/^[A-D]/)?.[0] || '');
-    }).length;
-    const score = Math.round((correctCount / config.questions.length) * 100);
-    const passed = score >= 60;
+          <h3 className="text-2xl font-bold text-white mb-6">Review Missed Questions</h3>
+          <div className="space-y-6">
+            {questions.map((q, idx) => {
+              const selectedIdx = answers[idx];
+              const correctIdx = q.answer.charCodeAt(0) - 65;
+              if (selectedIdx === correctIdx && !q.isTrap) return null; // Only show mistakes or traps
 
-    return (
-      <div className="min-h-[calc(100vh-80px)] p-6 flex flex-col items-center justify-center">
-        <motion.div 
-          initial={{ scale: 0.9, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          className="glass-panel p-12 rounded-3xl max-w-2xl w-full text-center"
-        >
-          <div className={clsx("text-8xl font-black font-outfit mb-4", passed ? "text-green-500" : "text-red-500")}>
-            {score}%
-          </div>
-          <h2 className="text-3xl font-bold mb-2">{passed ? "Exam Passed!" : "Exam Failed"}</h2>
-          <p className="text-zinc-400 mb-8">
-            You answered {correctCount} out of {config.questions.length} questions correctly.
-          </p>
-          
-          <button 
-            onClick={() => router.push('/exams')}
-            className="px-8 py-3 rounded-xl bg-white text-black font-bold hover:bg-zinc-200 transition-colors"
-          >
-            Return to Dashboard
-          </button>
-        </motion.div>
-      </div>
-    );
-  }
-
-  const q = config.questions[currentIdx];
-
-  return (
-    <div className="min-h-screen flex flex-col">
-      {/* Exam Header */}
-      <header className="sticky top-0 z-50 glass-panel border-x-0 border-t-0 px-6 py-4 flex items-center justify-between">
-        <div className="font-bold text-lg">{config.title}</div>
-        <div className={clsx("flex items-center gap-2 font-mono text-xl font-bold px-4 py-1 rounded-lg", timeLeft < 300 ? "bg-red-500/20 text-red-500 animate-pulse" : "bg-white/5 text-white")}>
-          <Clock className="w-5 h-5" />
-          {formatTime(timeLeft)}
-        </div>
-        <button 
-          onClick={handleSubmit}
-          className="px-4 py-2 bg-accent text-black font-bold rounded-lg hover:bg-amber-400"
-        >
-          Submit Exam
-        </button>
-      </header>
-
-      {/* Main Area */}
-      <div className="flex-1 max-w-4xl w-full mx-auto p-6 md:p-12 flex flex-col">
-        <div className="mb-8 flex flex-wrap gap-2">
-          {config.questions.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrentIdx(i)}
-              className={clsx(
-                "w-8 h-8 rounded text-sm font-medium transition-colors",
-                currentIdx === i ? "border-2 border-primary" : "border border-white/10",
-                answers[i] ? "bg-primary/20 text-primary" : "bg-white/5 text-zinc-400"
-              )}
-            >
-              {i + 1}
-            </button>
-          ))}
-        </div>
-
-        <div className="flex-1">
-          <h2 className="text-2xl md:text-3xl font-medium mb-8 leading-relaxed">
-            <span className="text-primary mr-3">{currentIdx + 1}.</span>
-            {q.text}
-          </h2>
-
-          <div className="space-y-4">
-            {q.options?.map((opt: string, i: number) => {
-              const isSelected = answers[currentIdx] === opt;
               return (
-                <button
-                  key={i}
-                  onClick={() => {
-                    setAnswers(prev => ({ ...prev, [currentIdx]: opt }));
-                  }}
-                  className={clsx(
-                    "w-full text-left p-4 rounded-xl border transition-all duration-200",
-                    isSelected ? "border-primary bg-primary/10" : "border-white/10 hover:border-white/30 hover:bg-white/5"
-                  )}
-                >
-                  <span className="text-lg">{opt}</span>
-                </button>
+                <div key={idx}>
+                  <div className="text-zinc-500 mb-2 font-bold font-mono">Question {idx + 1}</div>
+                  <QuestionCard 
+                    question={q}
+                    mode="exam"
+                    showResults={true}
+                    userAnswerIndex={selectedIdx}
+                  />
+                </div>
               );
             })}
           </div>
         </div>
+      </div>
+    );
+  }
 
-        <div className="mt-12 flex justify-between">
-          <button 
-            onClick={() => setCurrentIdx(p => Math.max(0, p - 1))}
-            disabled={currentIdx === 0}
-            className="px-6 py-3 rounded-xl bg-white/5 text-white disabled:opacity-30 flex items-center gap-2"
-          >
-            <ArrowLeft className="w-5 h-5" /> Previous
-          </button>
-          <button 
-            onClick={() => setCurrentIdx(p => Math.min(config.questions.length - 1, p + 1))}
-            disabled={currentIdx === config.questions.length - 1}
-            className="px-6 py-3 rounded-xl bg-white/5 text-white disabled:opacity-30 flex items-center gap-2"
-          >
-            Next <ArrowRight className="w-5 h-5" />
-          </button>
+  const currentQ = questions[currentIdx];
+
+  return (
+    <div className="min-h-screen bg-[#020202] flex flex-col">
+      {/* Exam Header */}
+      <div className="sticky top-0 z-40 bg-black/80 backdrop-blur-md border-b border-white/5 px-6 py-4 flex items-center justify-between">
+        <div className="flex items-center gap-4">
+          <Link href="/modules" className="text-zinc-500 hover:text-white transition-colors">
+            <ArrowLeft className="w-5 h-5" />
+          </Link>
+          <div>
+            <h2 className="text-white font-bold font-outfit">{mod.title} Exam</h2>
+            <div className="text-xs font-mono text-zinc-500">Question {currentIdx + 1} of {questions.length}</div>
+          </div>
+        </div>
+        <ExamTimer durationMinutes={30} onTimeUp={handleTimeUp} />
+      </div>
+
+      <div className="flex-1 flex flex-col md:flex-row max-w-[1400px] w-full mx-auto p-6 gap-8">
+        {/* Main Content */}
+        <div className="flex-1 max-w-4xl">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentIdx}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.2 }}
+            >
+              <QuestionCard 
+                question={{
+                  ...currentQ,
+                  correctAnswer: currentQ.answer.charCodeAt(0) - 65,
+                  options: currentQ.options.map((o: string) => o.replace(/^[A-D]\)\\s*/, ''))
+                }}
+                mode="exam"
+                userAnswerIndex={answers[currentIdx]}
+                onAnswer={handleAnswer}
+              />
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Navigation Controls */}
+          <div className="mt-8 flex items-center justify-between">
+            <button
+              onClick={toggleFlag}
+              className={clsx(
+                "px-4 py-2 rounded-xl border flex items-center gap-2 font-bold transition-colors",
+                flags[currentIdx] ? "bg-amber-500/20 border-amber-500/50 text-amber-500" : "bg-white/5 border-white/10 text-zinc-400 hover:text-white"
+              )}
+            >
+              <Flag className="w-4 h-4" /> Flag for Review
+            </button>
+            <div className="flex gap-4">
+              <button
+                disabled={currentIdx === 0}
+                onClick={() => setCurrentIdx(p => p - 1)}
+                className="px-6 py-2 rounded-xl bg-white/5 text-white font-bold disabled:opacity-30 hover:bg-white/10 transition-colors"
+              >
+                Previous
+              </button>
+              {currentIdx === questions.length - 1 ? (
+                <button
+                  onClick={handleSubmit}
+                  className="px-8 py-2 rounded-xl bg-primary text-black font-bold hover:bg-primary-hover shadow-[0_0_20px_rgba(0,255,255,0.2)] transition-all"
+                >
+                  Submit Exam
+                </button>
+              ) : (
+                <button
+                  onClick={() => setCurrentIdx(p => p + 1)}
+                  className="px-8 py-2 rounded-xl bg-white/10 text-white font-bold hover:bg-white/20 transition-colors"
+                >
+                  Next
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* Question Grid Sidebar */}
+        <div className="w-full md:w-72 shrink-0">
+          <div className="glass-panel p-6 rounded-2xl border border-white/5 sticky top-24">
+            <h3 className="text-sm font-bold text-zinc-500 uppercase tracking-widest mb-4">Question Navigator</h3>
+            <div className="grid grid-cols-5 gap-2">
+              {questions.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentIdx(idx)}
+                  className={clsx(
+                    "w-10 h-10 rounded-lg flex items-center justify-center font-mono text-sm font-bold transition-all border",
+                    currentIdx === idx ? "border-primary text-primary bg-primary/10 scale-110" :
+                    flags[idx] ? "border-amber-500/50 text-amber-500 bg-amber-500/10" :
+                    answers[idx] !== undefined ? "border-white/20 text-white bg-white/10" :
+                    "border-white/5 text-zinc-500 hover:bg-white/5"
+                  )}
+                >
+                  {idx + 1}
+                </button>
+              ))}
+            </div>
+            
+            <div className="mt-8 space-y-2 text-xs font-mono text-zinc-500">
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded bg-white/10 border border-white/20" /> Answered
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded bg-amber-500/10 border border-amber-500/50" /> Flagged
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

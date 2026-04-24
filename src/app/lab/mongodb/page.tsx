@@ -13,12 +13,16 @@ export default function MongoLab() {
   const [isExecuting, setIsExecuting] = useState(false);
 
   const handleExecute = async () => {
-    setIsExecuting(true);
-    setTimeout(async () => {
+    const timer = setTimeout(() => setIsExecuting(true), 300);
+    try {
       const res = await executeMongoValidate(code);
       setResult(res);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      clearTimeout(timer);
       setIsExecuting(false);
-    }, 100);
+    }
   };
 
   return (

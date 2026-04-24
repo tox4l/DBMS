@@ -2,14 +2,17 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, BookOpen, PenTool, Database, BarChart3, LayoutTemplate, Zap, Search } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Home, BookOpen, PenTool, Database, BarChart3, LayoutTemplate, Zap, Search, ShieldAlert } from "lucide-react";
 import { motion } from "framer-motion";
 import { clsx } from "clsx";
+import { useAppStore } from "@/lib/store";
 
 const navItems = [
   { name: "Home", href: "/", icon: Home },
   { name: "Modules", href: "/modules", icon: BookOpen },
   { name: "Practice", href: "/practice", icon: PenTool },
+  { name: "Mistakes", href: "/mistakes", icon: ShieldAlert },
   { name: "Query Lab", href: "/lab", icon: Database },
   { name: "Tables", href: "/tables", icon: LayoutTemplate },
   { name: "Cheatsheet", href: "/cheatsheet", icon: Zap },
@@ -18,6 +21,12 @@ const navItems = [
 
 export default function Navigation() {
   const pathname = usePathname();
+  const { mistakeBank } = useAppStore();
+  const [mounted, setMounted] = useState(false);
+  
+  useEffect(() => setMounted(true), []);
+  
+  const unresolvedCount = Object.values(mistakeBank || {}).filter(m => !m.resolved).length;
 
   return (
     <>
@@ -72,6 +81,12 @@ export default function Navigation() {
                 
                 <item.icon className={clsx("w-5 h-5 relative z-10", isActive ? "text-primary" : "")} />
                 <span className="font-medium relative z-10">{item.name}</span>
+                
+                {item.name === "Mistakes" && mounted && unresolvedCount > 0 && (
+                  <span className="relative z-10 ml-auto bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">
+                    {unresolvedCount}
+                  </span>
+                )}
               </Link>
             );
           })}
@@ -107,7 +122,14 @@ export default function Navigation() {
                   transition={{ duration: 0.3 }}
                 />
               )}
-              <item.icon className={clsx("w-6 h-6 mb-1 relative z-10", isActive ? "text-primary" : "text-zinc-400")} />
+              <div className="relative">
+                <item.icon className={clsx("w-6 h-6 mb-1 relative z-10", isActive ? "text-primary" : "text-zinc-400")} />
+                {item.name === "Mistakes" && mounted && unresolvedCount > 0 && (
+                  <span className="absolute -top-1 -right-2 bg-red-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full z-20">
+                    {unresolvedCount > 9 ? '9+' : unresolvedCount}
+                  </span>
+                )}
+              </div>
               <span className={clsx("text-[10px] font-medium relative z-10", isActive ? "text-primary" : "text-zinc-400")}>
                 {item.name}
               </span>

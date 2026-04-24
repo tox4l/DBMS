@@ -9,7 +9,10 @@
       "C) A spreadsheet application used for data analysis",
       "D) A network protocol for sharing files between computers"
     ],
-    "answer": "B"
+    "answer": "B",
+    "moduleId": 1,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 2,
@@ -21,7 +24,10 @@
       "C) Cloud-based distributed nodes",
       "D) Each end-user's local machine"
     ],
-    "answer": "B"
+    "answer": "B",
+    "moduleId": 1,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 3,
@@ -33,7 +39,10 @@
       "C) It is a single point of failure",
       "D) It is difficult to enforce security policies"
     ],
-    "answer": "C"
+    "answer": "C",
+    "moduleId": 1,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 4,
@@ -45,7 +54,10 @@
       "C) A global company that needs data close to regional users",
       "D) A system where administration simplicity is the top priority"
     ],
-    "answer": "C"
+    "answer": "C",
+    "moduleId": 1,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 5,
@@ -57,7 +69,10 @@
       "C) MySQL",
       "D) PostgreSQL"
     ],
-    "answer": "C"
+    "answer": "C",
+    "moduleId": 1,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 6,
@@ -69,7 +84,10 @@
       "C) Keys, constraints, views",
       "D) Schemas, instances, records"
     ],
-    "answer": "B"
+    "answer": "B",
+    "moduleId": 1,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 7,
@@ -81,7 +99,10 @@
       "C) An attribute",
       "D) An entity"
     ],
-    "answer": "D"
+    "answer": "D",
+    "moduleId": 1,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 8,
@@ -93,7 +114,10 @@
       "C) Uppercase",
       "D) Prefixed with \"tbl_\""
     ],
-    "answer": "B"
+    "answer": "B",
+    "moduleId": 1,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 9,
@@ -105,7 +129,10 @@
       "C) 3rd generation (relational)",
       "D) Next generation (NoSQL)"
     ],
-    "answer": "D"
+    "answer": "D",
+    "moduleId": 1,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 10,
@@ -117,7 +144,10 @@
       "C) A limit or rule placed on the data",
       "D) The unique identifier of a record"
     ],
-    "answer": "C"
+    "answer": "C",
+    "moduleId": 1,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 11,
@@ -129,7 +159,10 @@
       "C) A column that references another table",
       "D) An automatically generated integer value"
     ],
-    "answer": "B"
+    "answer": "B",
+    "moduleId": 1,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 12,
@@ -141,7 +174,10 @@
       "C) qid functionally determines name, dob, and address",
       "D) qid, name, dob, and address form a composite key"
     ],
-    "answer": "C"
+    "answer": "C",
+    "moduleId": 1,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 13,
@@ -153,7 +189,10 @@
       "C) Two tables are joined together",
       "D) A surrogate key is not available"
     ],
-    "answer": "A"
+    "answer": "A",
+    "moduleId": 1,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 14,
@@ -165,7 +204,10 @@
       "C) Secondary key",
       "D) Composite key"
     ],
-    "answer": "C"
+    "answer": "C",
+    "moduleId": 1,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 15,
@@ -177,7 +219,10 @@
       "C) The primary key of table A",
       "D) A secondary key of table A"
     ],
-    "answer": "C"
+    "answer": "C",
+    "moduleId": 1,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 16,
@@ -189,7 +234,10 @@
       "C) An artificial, auto-generated key with no business meaning",
       "D) A key that references another table"
     ],
-    "answer": "C"
+    "answer": "C",
+    "moduleId": 2,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 17,
@@ -201,7 +249,10 @@
       "C) Composite key",
       "D) Foreign key"
     ],
-    "answer": "D"
+    "answer": "D",
+    "moduleId": 2,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 18,
@@ -213,7 +264,10 @@
       "C) A and B are functionally dependent if they appear in the same table",
       "D) A determines B if B cannot be NULL"
     ],
-    "answer": "B"
+    "answer": "B",
+    "moduleId": 2,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 19,
@@ -225,7 +279,10 @@
       "C) 1:M",
       "D) M:M"
     ],
-    "answer": "C"
+    "answer": "C",
+    "moduleId": 2,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 20,
@@ -237,7 +294,10 @@
       "C) Merging both tables into one",
       "D) A composite primary key in one of the tables"
     ],
-    "answer": "B"
+    "answer": "B",
+    "moduleId": 2,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 21,
@@ -249,7 +309,10 @@
       "C) In the Instructor table",
       "D) In both tables"
     ],
-    "answer": "C"
+    "answer": "C",
+    "moduleId": 2,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 22,
@@ -261,7 +324,10 @@
       "C) A bridge table is required",
       "D) No foreign key is needed; merge the tables"
     ],
-    "answer": "B"
+    "answer": "B",
+    "moduleId": 2,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 23,
@@ -273,7 +339,10 @@
       "C) Attributes with data types",
       "D) High-level associations"
     ],
-    "answer": "C"
+    "answer": "C",
+    "moduleId": 2,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 24,
@@ -285,7 +354,10 @@
       "C) Primary keys",
       "D) Column data types"
     ],
-    "answer": "D"
+    "answer": "D",
+    "moduleId": 2,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 25,
@@ -297,7 +369,10 @@
       "C) Physical",
       "D) All three levels equally"
     ],
-    "answer": "C"
+    "answer": "C",
+    "moduleId": 2,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 26,
@@ -309,7 +384,10 @@
       "C) The column is mandatory (NOT NULL)",
       "D) The column is optional (nullable)"
     ],
-    "answer": "C"
+    "answer": "C",
+    "moduleId": 2,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 27,
@@ -321,7 +399,10 @@
       "C) The WHERE clause",
       "D) The ORDER BY clause"
     ],
-    "answer": "C"
+    "answer": "C",
+    "moduleId": 2,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 28,
@@ -333,7 +414,10 @@
       "C) The JOIN condition",
       "D) The GROUP BY clause"
     ],
-    "answer": "B"
+    "answer": "B",
+    "moduleId": 2,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 29,
@@ -345,7 +429,10 @@
       "C) Rows that appear in both tables",
       "D) Rows in one table but not the other"
     ],
-    "answer": "B"
+    "answer": "B",
+    "moduleId": 2,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 30,
@@ -357,7 +444,10 @@
       "C) The ORDER BY clause",
       "D) Any matching data values in any column"
     ],
-    "answer": "B"
+    "answer": "B",
+    "moduleId": 2,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 31,
@@ -369,7 +459,10 @@
       "C) CHAR(1)",
       "D) INT"
     ],
-    "answer": "C"
+    "answer": "C",
+    "moduleId": 3,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 32,
@@ -381,7 +474,10 @@
       "C) UNIQUE",
       "D) CHECK"
     ],
-    "answer": "C"
+    "answer": "C",
+    "moduleId": 3,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 33,
@@ -393,7 +489,10 @@
       "C) Both tables are deleted automatically",
       "D) The foreign key constraint is automatically dropped"
     ],
-    "answer": "B"
+    "answer": "B",
+    "moduleId": 3,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 34,
@@ -405,7 +504,10 @@
       "C) It sets child FK values to NULL when a parent is deleted",
       "D) It is the default behavior in MySQL"
     ],
-    "answer": "B"
+    "answer": "B",
+    "moduleId": 3,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 35,
@@ -417,7 +519,10 @@
       "C) Exactly one, and it must be the primary key (or indexed)",
       "D) None -- auto_increment is not supported in MySQL"
     ],
-    "answer": "C"
+    "answer": "C",
+    "moduleId": 3,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 36,
@@ -429,7 +534,10 @@
       "C) The rollback is silently ignored",
       "D) MySQL throws an error"
     ],
-    "answer": "C"
+    "answer": "C",
+    "moduleId": 3,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 37,
@@ -441,7 +549,10 @@
       "C) DML",
       "D) TCL"
     ],
-    "answer": "C"
+    "answer": "C",
+    "moduleId": 3,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 38,
@@ -453,7 +564,10 @@
       "C) ALL rows in the patient table are updated",
       "D) MySQL throws a syntax error"
     ],
-    "answer": "C"
+    "answer": "C",
+    "moduleId": 3,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 39,
@@ -465,7 +579,10 @@
       "C) WHERE phone == NULL",
       "D) WHERE phone = 'NULL'"
     ],
-    "answer": "B"
+    "answer": "B",
+    "moduleId": 3,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 40,
@@ -477,7 +594,10 @@
       "C) Strings that contain m anywhere",
       "D) Strings that are exactly one character m"
     ],
-    "answer": "C"
+    "answer": "C",
+    "moduleId": 3,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 41,
@@ -489,7 +609,10 @@
       "C) Returns unique values in the specified column(s), removing duplicates",
       "D) Sorts results in ascending order"
     ],
-    "answer": "C"
+    "answer": "C",
+    "moduleId": 3,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 42,
@@ -501,7 +624,10 @@
       "C) ORDER BY must come after GROUP BY, HAVING, and WHERE",
       "D) ORDER BY can be placed anywhere in the SELECT statement"
     ],
-    "answer": "C"
+    "answer": "C",
+    "moduleId": 3,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 43,
@@ -513,7 +639,10 @@
       "C) COUNT(phone) counts only non-NULL values; COUNT(*) counts all rows including NULLs",
       "D) COUNT(*) is invalid syntax"
     ],
-    "answer": "C"
+    "answer": "C",
+    "moduleId": 3,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 44,
@@ -525,7 +654,10 @@
       "C) FILTER",
       "D) AND"
     ],
-    "answer": "B"
+    "answer": "B",
+    "moduleId": 3,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 45,
@@ -537,7 +669,10 @@
       "C) WHERE -> FROM -> GROUP BY -> SELECT -> HAVING",
       "D) FROM -> GROUP BY -> WHERE -> HAVING -> SELECT"
     ],
-    "answer": "B"
+    "answer": "B",
+    "moduleId": 3,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 46,
@@ -549,7 +684,10 @@
       "C) SELECT name, AVG(duration) FROM appointment GROUP BY name;",
       "D) SELECT COUNT(*) FROM patient;"
     ],
-    "answer": "B"
+    "answer": "B",
+    "moduleId": 4,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 47,
@@ -561,7 +699,10 @@
       "C) Return only rows where a matching patient exists for each appointment",
       "D) Return all rows from both tables combined"
     ],
-    "answer": "C"
+    "answer": "C",
+    "moduleId": 4,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 48,
@@ -573,7 +714,10 @@
       "C) LEFT JOIN with patient as the left table",
       "D) NATURAL JOIN"
     ],
-    "answer": "C"
+    "answer": "C",
+    "moduleId": 4,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 49,
@@ -585,7 +729,10 @@
       "C) When one of the tables has no primary key",
       "D) NATURAL JOIN never fails"
     ],
-    "answer": "B"
+    "answer": "B",
+    "moduleId": 4,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 50,
@@ -597,7 +744,10 @@
       "C) Use a NATURAL JOIN for all three",
       "D) Three-table joins are not supported in MySQL"
     ],
-    "answer": "A"
+    "answer": "A",
+    "moduleId": 4,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 51,
@@ -609,7 +759,10 @@
       "C) INSERT INTO with the new column",
       "D) CREATE TABLE ... SELECT"
     ],
-    "answer": "B"
+    "answer": "B",
+    "moduleId": 4,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 52,
@@ -621,7 +774,10 @@
       "C) A stored procedure that returns a result set",
       "D) An index on one or more columns"
     ],
-    "answer": "B"
+    "answer": "B",
+    "moduleId": 4,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 53,
@@ -633,7 +789,10 @@
       "C) The view has an ORDER BY clause",
       "D) The view references the primary key"
     ],
-    "answer": "B"
+    "answer": "B",
+    "moduleId": 4,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 54,
@@ -645,7 +804,10 @@
       "C) The foreign key relationships in a database",
       "D) The query execution time in milliseconds"
     ],
-    "answer": "B"
+    "answer": "B",
+    "moduleId": 4,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 55,
@@ -657,7 +819,10 @@
       "C) ALL",
       "D) index"
     ],
-    "answer": "C"
+    "answer": "C",
+    "moduleId": 4,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 56,
@@ -669,7 +834,10 @@
       "C) The primary key constraint is automatically removed",
       "D) The table can no longer be joined with other tables"
     ],
-    "answer": "B"
+    "answer": "B",
+    "moduleId": 4,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 57,
@@ -681,7 +849,10 @@
       "C) UNION",
       "D) MINUS"
     ],
-    "answer": "C"
+    "answer": "C",
+    "moduleId": 4,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 58,
@@ -693,7 +864,10 @@
       "C) A subquery with NOT IN",
       "D) A LEFT JOIN with NULL check"
     ],
-    "answer": "B"
+    "answer": "B",
+    "moduleId": 4,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 59,
@@ -705,7 +879,10 @@
       "C) They execute simultaneously",
       "D) The order depends on the database engine"
     ],
-    "answer": "B"
+    "answer": "B",
+    "moduleId": 4,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 60,
@@ -717,532 +894,760 @@
       "C) json_extract()",
       "D) json_get()"
     ],
-    "answer": "C"
+    "answer": "C",
+    "moduleId": 4,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 61,
     "text": "Explain the difference between a DATABASE and a DBMS. Give one example of each.",
     "type": "short_answer",
     "options": [],
-    "answer": "A database is the organized collection of data itself (the actual stored information).\nA DBMS is the software system used to create, manage, and interact with that database.\nExample: The collection of patient records, appointment data, and doctor information\nstored on disk = the database. MySQL (the software you install and use to run\nqueries on that data) = the DBMS."
+    "answer": "A database is the organized collection of data itself (the actual stored information).\nA DBMS is the software system used to create, manage, and interact with that database.\nExample: The collection of patient records, appointment data, and doctor information\nstored on disk = the database. MySQL (the software you install and use to run\nqueries on that data) = the DBMS.",
+    "moduleId": 5,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 62,
     "text": "What is functional dependence? Give a clear example using a real-world scenario.",
     "type": "short_answer",
     "options": [],
-    "answer": "B is functionally dependent on A if knowing the value of A always and uniquely\ndetermines the value of B (written A -> B). Example: In a patient table,\npatient_id -> first_name, last_name, dob means that knowing the patient ID\nuniquely determines the name and date of birth. However, phone -> patient_name\nis NOT a functional dependency because two patients (e.g., parent and child)\ncan share the same phone number, so phone does not uniquely determine a name."
+    "answer": "B is functionally dependent on A if knowing the value of A always and uniquely\ndetermines the value of B (written A -> B). Example: In a patient table,\npatient_id -> first_name, last_name, dob means that knowing the patient ID\nuniquely determines the name and date of birth. However, phone -> patient_name\nis NOT a functional dependency because two patients (e.g., parent and child)\ncan share the same phone number, so phone does not uniquely determine a name.",
+    "moduleId": 5,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 63,
     "text": "Describe the three levels of database design (Conceptual, Logical, Physical).",
     "type": "short_answer",
     "options": [],
-    "answer": "Conceptual: The highest, most abstract level. Contains entity names and\nentity relationships only. Aimed at non-technical stakeholders.\nLogical: Adds attributes and primary/foreign keys to the conceptual model.\nMany-to-many relationships are resolved using bridge tables. Still not tied\nto any specific DBMS.\nPhysical: The most detailed level. Adds table names, column names, and column\ndata types. Tailored to the chosen DBMS (e.g., MySQL). Includes indexes,\nstorage details, and performance considerations."
+    "answer": "Conceptual: The highest, most abstract level. Contains entity names and\nentity relationships only. Aimed at non-technical stakeholders.\nLogical: Adds attributes and primary/foreign keys to the conceptual model.\nMany-to-many relationships are resolved using bridge tables. Still not tied\nto any specific DBMS.\nPhysical: The most detailed level. Adds table names, column names, and column\ndata types. Tailored to the chosen DBMS (e.g., MySQL). Includes indexes,\nstorage details, and performance considerations.",
+    "moduleId": 5,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 64,
     "text": "Explain why a many-to-many (M:N) relationship cannot be directly implemented",
     "type": "short_answer",
     "options": [],
-    "answer": "A relational database requires each cell to hold a single value (no multi-valued\ncells). A direct M:N relationship would require one row to reference multiple rows\nin another table simultaneously, which violates this rule. The solution is to create\na bridge (junction) table. This table contains the primary keys from both original\ntables as foreign keys, and each row represents one specific pairing. For example,\na student-course M:N relationship is resolved by a \"enrollment\" bridge table\nwith (student_id, course_id) as the composite primary key."
+    "answer": "A relational database requires each cell to hold a single value (no multi-valued\ncells). A direct M:N relationship would require one row to reference multiple rows\nin another table simultaneously, which violates this rule. The solution is to create\na bridge (junction) table. This table contains the primary keys from both original\ntables as foreign keys, and each row represents one specific pairing. For example,\na student-course M:N relationship is resolved by a \"enrollment\" bridge table\nwith (student_id, course_id) as the composite primary key.",
+    "moduleId": 5,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 65,
     "text": "What is a secondary key? How does it differ from a primary key?",
     "type": "short_answer",
     "options": [],
-    "answer": "A secondary key is any key used for data retrieval that is NOT the primary key.\nIt is not required to be unique. It narrows down search results but may still\nreturn multiple matches. A primary key MUST be unique and NOT NULL, and there\nis exactly one per table. Example: In Qatar, phone number is a common secondary\nkey -- searching by phone narrows down the list to a few people, but since\nchildren and parents often share numbers, it is not unique and not a primary key."
+    "answer": "A secondary key is any key used for data retrieval that is NOT the primary key.\nIt is not required to be unique. It narrows down search results but may still\nreturn multiple matches. A primary key MUST be unique and NOT NULL, and there\nis exactly one per table. Example: In Qatar, phone number is a common secondary\nkey -- searching by phone narrows down the list to a few people, but since\nchildren and parents often share numbers, it is not unique and not a primary key.",
+    "moduleId": 5,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 66,
     "text": "Why is design described as \"iterative\" in this course? What are the practical",
     "type": "short_answer",
     "options": [],
-    "answer": "Iterative means you rarely get the correct design in a single pass. You make\neducated guesses, ask stakeholders questions, discover problems, and revise the\nmodel repeatedly. Taking shortcuts early -- like skipping proper normalization or\nignoring business rules -- creates problems later during implementation:\nredundant data, update anomalies, difficulty enforcing constraints, and\nexpensive redesign of tables that already contain live data."
+    "answer": "Iterative means you rarely get the correct design in a single pass. You make\neducated guesses, ask stakeholders questions, discover problems, and revise the\nmodel repeatedly. Taking shortcuts early -- like skipping proper normalization or\nignoring business rules -- creates problems later during implementation:\nredundant data, update anomalies, difficulty enforcing constraints, and\nexpensive redesign of tables that already contain live data.",
+    "moduleId": 5,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 67,
     "text": "Explain the difference between a centralized and a distributed database.",
     "type": "short_answer",
     "options": [],
-    "answer": "Centralized: All data in one location. Advantage: simple to administer, one\nconsistent copy of data. Disadvantage: single point of failure (e.g., airline\nsystems going down and canceling thousands of flights).\nDistributed: Data in multiple locations. Advantage: faster local access, redundancy\nmeans one node failing doesn't cause total data loss. Disadvantage: much harder to\nconfigure and maintain, risk of data inconsistency across nodes."
+    "answer": "Centralized: All data in one location. Advantage: simple to administer, one\nconsistent copy of data. Disadvantage: single point of failure (e.g., airline\nsystems going down and canceling thousands of flights).\nDistributed: Data in multiple locations. Advantage: faster local access, redundancy\nmeans one node failing doesn't cause total data loss. Disadvantage: much harder to\nconfigure and maintain, risk of data inconsistency across nodes.",
+    "moduleId": 5,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 68,
     "text": "What is a surrogate key? Why are surrogate keys the most common type of",
     "type": "short_answer",
     "options": [],
-    "answer": "A surrogate key is an artificial, system-generated identifier with no business\nmeaning -- typically an auto-incremented integer. They are the most common PK\nbecause: (1) they are always unique; (2) they never need to change (unlike\nbusiness data like email or phone); (3) they are small integers, making\njoins fast; (4) they are simple to generate with AUTO_INCREMENT and require\nno thought from the developer inserting data.\n--- TOPIC: SQL ---"
+    "answer": "A surrogate key is an artificial, system-generated identifier with no business\nmeaning -- typically an auto-incremented integer. They are the most common PK\nbecause: (1) they are always unique; (2) they never need to change (unlike\nbusiness data like email or phone); (3) they are small integers, making\njoins fast; (4) they are simple to generate with AUTO_INCREMENT and require\nno thought from the developer inserting data.\n--- TOPIC: SQL ---",
+    "moduleId": 5,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 69,
     "text": "Explain the difference between WHERE and HAVING. Why can't you use an",
     "type": "short_answer",
     "options": [],
-    "answer": "WHERE filters individual rows BEFORE grouping occurs. HAVING filters groups\nAFTER the GROUP BY clause has been applied. Aggregate functions (COUNT, SUM,\nAVG, etc.) operate on groups of rows, not individual rows. Since WHERE runs\nbefore grouping, groups don't yet exist at that point, so aggregate functions\nhave nothing to operate on. The correct clause for filtering by aggregate\nresults is HAVING."
+    "answer": "WHERE filters individual rows BEFORE grouping occurs. HAVING filters groups\nAFTER the GROUP BY clause has been applied. Aggregate functions (COUNT, SUM,\nAVG, etc.) operate on groups of rows, not individual rows. Since WHERE runs\nbefore grouping, groups don't yet exist at that point, so aggregate functions\nhave nothing to operate on. The correct clause for filtering by aggregate\nresults is HAVING.",
+    "moduleId": 5,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 70,
     "text": "Describe what ON DELETE CASCADE does and explain why the course materials",
     "type": "short_answer",
     "options": [],
-    "answer": "ON DELETE CASCADE means that when a parent row is deleted, all child rows\nthat reference it via a foreign key are automatically deleted as well.\nThe course materials say it is generally not recommended because in most\nreal systems you want to preserve history. For example, if a patient is\nremoved, you probably still want to keep the appointment records for\nauditing, billing, or medical history purposes. Auto-deleting them silently\nrisks permanently losing important data."
+    "answer": "ON DELETE CASCADE means that when a parent row is deleted, all child rows\nthat reference it via a foreign key are automatically deleted as well.\nThe course materials say it is generally not recommended because in most\nreal systems you want to preserve history. For example, if a patient is\nremoved, you probably still want to keep the appointment records for\nauditing, billing, or medical history purposes. Auto-deleting them silently\nrisks permanently losing important data.",
+    "moduleId": 5,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 71,
     "text": "What is an index in MySQL? Describe the tradeoff between having too few",
     "type": "short_answer",
     "options": [],
-    "answer": "An index is a separate data structure that maps column values to the row\nlocations where they appear -- like the index at the back of a book. It\nspeeds up SELECT queries that use that column in a WHERE clause.\nToo few indexes: queries perform full table scans (type: ALL in EXPLAIN),\nwhich is slow for large tables.\nToo many indexes: INSERT, UPDATE, and DELETE operations become slower because\nevery write must also update all indexes. The database also uses more disk space.\nThe correct approach is to index only columns that are frequently searched."
+    "answer": "An index is a separate data structure that maps column values to the row\nlocations where they appear -- like the index at the back of a book. It\nspeeds up SELECT queries that use that column in a WHERE clause.\nToo few indexes: queries perform full table scans (type: ALL in EXPLAIN),\nwhich is slow for large tables.\nToo many indexes: INSERT, UPDATE, and DELETE operations become slower because\nevery write must also update all indexes. The database also uses more disk space.\nThe correct approach is to index only columns that are frequently searched.",
+    "moduleId": 5,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 72,
     "text": "Explain the difference between DROP TABLE, DELETE, and TRUNCATE.",
     "type": "short_answer",
     "options": [],
-    "answer": "DELETE: Removes specific rows matching a WHERE condition (or all rows if no WHERE).\nIt can be rolled back before a COMMIT. It does NOT remove the table structure.\nTRUNCATE: Removes ALL rows from a table quickly. Cannot be rolled back in most\nDBMS. Keeps the table structure. Faster than DELETE for clearing a table.\nDROP TABLE: Completely removes the table AND its structure from the database.\nCannot be undone. Use when you no longer need the table at all."
+    "answer": "DELETE: Removes specific rows matching a WHERE condition (or all rows if no WHERE).\nIt can be rolled back before a COMMIT. It does NOT remove the table structure.\nTRUNCATE: Removes ALL rows from a table quickly. Cannot be rolled back in most\nDBMS. Keeps the table structure. Faster than DELETE for clearing a table.\nDROP TABLE: Completely removes the table AND its structure from the database.\nCannot be undone. Use when you no longer need the table at all.",
+    "moduleId": 5,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 73,
     "text": "A VIEW does not store data. Explain what actually happens when you",
     "type": "short_answer",
     "options": [],
-    "answer": "When you query a view, MySQL re-executes the underlying SELECT statement\nthat defines the view and returns the results as if it were a real table.\nNo data is physically stored in the view itself.\nUseful situations: (1) Security -- you can grant users access to a view\nthat shows only certain columns or rows, hiding sensitive data. (2) Simplification\n-- complex multi-table joins or calculations can be defined once as a view,\nthen queried simply with SELECT * FROM view_name."
+    "answer": "When you query a view, MySQL re-executes the underlying SELECT statement\nthat defines the view and returns the results as if it were a real table.\nNo data is physically stored in the view itself.\nUseful situations: (1) Security -- you can grant users access to a view\nthat shows only certain columns or rows, hiding sensitive data. (2) Simplification\n-- complex multi-table joins or calculations can be defined once as a view,\nthen queried simply with SELECT * FROM view_name.",
+    "moduleId": 5,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 74,
     "text": "Explain what a full table scan is, how to detect one in MySQL,",
     "type": "short_answer",
     "options": [],
-    "answer": "A full table scan means MySQL reads every row in the table to find matching\nresults, rather than jumping directly to relevant rows. This is slow for\nlarge tables. Detection: run EXPLAIN before the query -- look for type: ALL\nand key: NULL, which means no index was used.\nFix: create an index on the column being searched in the WHERE clause.\nExample: CREATE INDEX idx_phone ON patient(phone); -- then re-run EXPLAIN\nand you should see type: ref or const instead of ALL."
+    "answer": "A full table scan means MySQL reads every row in the table to find matching\nresults, rather than jumping directly to relevant rows. This is slow for\nlarge tables. Detection: run EXPLAIN before the query -- look for type: ALL\nand key: NULL, which means no index was used.\nFix: create an index on the column being searched in the WHERE clause.\nExample: CREATE INDEX idx_phone ON patient(phone); -- then re-run EXPLAIN\nand you should see type: ref or const instead of ALL.",
+    "moduleId": 5,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 75,
     "text": "Explain the difference between SELECTION and PROJECTION in relational algebra,",
     "type": "short_answer",
     "options": [],
-    "answer": "Selection (σ) filters rows based on a condition -- it is a horizontal operation.\nProjection (π) filters columns -- it is a vertical operation.\nIn SQL, the confusion arises because the keyword SELECT performs projection\n(choosing which columns to show), while the WHERE clause performs selection\n(filtering rows). Students read \"SELECT\" and think it means \"selection\" from\nrelational algebra, but it actually means projection. The WHERE clause is the\nreal \"selection\" operator.\n--- TOPIC: Design & Mapping ---"
+    "answer": "Selection (σ) filters rows based on a condition -- it is a horizontal operation.\nProjection (π) filters columns -- it is a vertical operation.\nIn SQL, the confusion arises because the keyword SELECT performs projection\n(choosing which columns to show), while the WHERE clause performs selection\n(filtering rows). Students read \"SELECT\" and think it means \"selection\" from\nrelational algebra, but it actually means projection. The WHERE clause is the\nreal \"selection\" operator.\n--- TOPIC: Design & Mapping ---",
+    "moduleId": 5,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 76,
     "text": "Given this business scenario: \"Each student can enroll in many courses, and",
     "type": "short_answer",
     "options": [],
-    "answer": "This is a M:N relationship. You cannot implement it directly.\nStep 1: Create the student table with student_id as PK.\nStep 2: Create the course table with course_id as PK.\nStep 3: Create a bridge table (e.g., enrollment) with:\n- student_id (FK referencing student)\n- course_id (FK referencing course)\n- The composite (student_id, course_id) becomes the PK.\nStep 4: You may add additional attributes to the bridge table\n(e.g., grade, semester) if the relationship itself has properties."
+    "answer": "This is a M:N relationship. You cannot implement it directly.\nStep 1: Create the student table with student_id as PK.\nStep 2: Create the course table with course_id as PK.\nStep 3: Create a bridge table (e.g., enrollment) with:\n- student_id (FK referencing student)\n- course_id (FK referencing course)\n- The composite (student_id, course_id) becomes the PK.\nStep 4: You may add additional attributes to the bridge table\n(e.g., grade, semester) if the relationship itself has properties.",
+    "moduleId": 5,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 77,
     "text": "In a 1:1 relationship where both sides are optional (an instructor may or",
     "type": "short_answer",
     "options": [],
-    "answer": "When both sides are optional, the database designer can choose either side\nfor the foreign key placement. The practical consideration is: which entity\nis more likely to have the association? If most instructors eventually get\nan office, put the FK in the instructor table. If offices are often unassigned\nfor long periods, put the FK in the office table. There is no single universally\ncorrect answer -- it is a design judgment call."
+    "answer": "When both sides are optional, the database designer can choose either side\nfor the foreign key placement. The practical consideration is: which entity\nis more likely to have the association? If most instructors eventually get\nan office, put the FK in the instructor table. If offices are often unassigned\nfor long periods, put the FK in the office table. There is no single universally\ncorrect answer -- it is a design judgment call.",
+    "moduleId": 5,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 78,
     "text": "What features does the Logical model add compared to the Conceptual model?",
     "type": "short_answer",
     "options": [],
-    "answer": "The logical model adds: attributes for each entity, primary keys, and foreign\nkeys. It also resolves M:N relationships using bridge tables.\nData types are not specified at the logical level because the logical model\nis intentionally independent of any specific DBMS. Different systems handle\ntypes differently (e.g., MySQL's VARCHAR vs. Oracle's VARCHAR2). Specifying\ntypes would tie the design to one platform, defeating the purpose of the\nlogical model as a portable, DBMS-agnostic representation.\n--- TOPIC: MongoDB ---"
+    "answer": "The logical model adds: attributes for each entity, primary keys, and foreign\nkeys. It also resolves M:N relationships using bridge tables.\nData types are not specified at the logical level because the logical model\nis intentionally independent of any specific DBMS. Different systems handle\ntypes differently (e.g., MySQL's VARCHAR vs. Oracle's VARCHAR2). Specifying\ntypes would tie the design to one platform, defeating the purpose of the\nlogical model as a portable, DBMS-agnostic representation.\n--- TOPIC: MongoDB ---",
+    "moduleId": 5,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 79,
     "text": "Explain the difference between EMBEDDING and REFERENCING in MongoDB.",
     "type": "short_answer",
     "options": [],
-    "answer": "Embedding: Storing related data inside the same document.\nAdvantage: All data retrieved in a single query; supports atomic operations.\nDisadvantage: Document can grow large (16MB limit); overhead if you often\nonly need part of the document.\nReferencing: Storing an _id reference to a document in another collection\n(like a foreign key in SQL).\nAdvantage: Smaller documents; data doesn't get duplicated; frequently accessed\ndata can be queried independently.\nDisadvantage: May require multiple queries to retrieve all related data."
+    "answer": "Embedding: Storing related data inside the same document.\nAdvantage: All data retrieved in a single query; supports atomic operations.\nDisadvantage: Document can grow large (16MB limit); overhead if you often\nonly need part of the document.\nReferencing: Storing an _id reference to a document in another collection\n(like a foreign key in SQL).\nAdvantage: Smaller documents; data doesn't get duplicated; frequently accessed\ndata can be queried independently.\nDisadvantage: May require multiple queries to retrieve all related data.",
+    "moduleId": 5,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 80,
     "text": "What is the 16MB document limit in MongoDB, and why does it exist?",
     "type": "short_answer",
     "options": [],
-    "answer": "MongoDB limits each document to 16MB. This exists to ensure no single document\nconsumes too much RAM during processing or too much bandwidth during replication\nbetween cluster nodes. It influences design by discouraging unbounded array growth\n-- if visits or comments can number in the thousands, embedding them all would\neventually hit the limit. In those cases, referencing (storing child documents\nin a separate collection) is preferred."
+    "answer": "MongoDB limits each document to 16MB. This exists to ensure no single document\nconsumes too much RAM during processing or too much bandwidth during replication\nbetween cluster nodes. It influences design by discouraging unbounded array growth\n-- if visits or comments can number in the thousands, embedding them all would\neventually hit the limit. In those cases, referencing (storing child documents\nin a separate collection) is preferred.",
+    "moduleId": 5,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 81,
     "text": "Describe the One-to-Few, One-to-Many, and One-to-Squillions patterns in MongoDB.",
     "type": "short_answer",
     "options": [],
-    "answer": "One-to-Few (embed directly): Use when the \"many\" side has only 2-20 items\nand you rarely need to query those items independently. Example: multiple\naddresses for one patient.\nOne-to-Many (array of references in parent): Use when there are up to a few\nthousand child records and the child documents may need to stand alone.\nExample: a patient with many visits stored in a separate visits collection,\nwith an array of visit _ids in the patient document.\nOne-to-Squillions (parent reference in child): Use when child records are\nextremely numerous. Store a reference to the parent in each child document\n(like a SQL foreign key). Example: log entries for a server -- potentially\nmillions of logs per server."
+    "answer": "One-to-Few (embed directly): Use when the \"many\" side has only 2-20 items\nand you rarely need to query those items independently. Example: multiple\naddresses for one patient.\nOne-to-Many (array of references in parent): Use when there are up to a few\nthousand child records and the child documents may need to stand alone.\nExample: a patient with many visits stored in a separate visits collection,\nwith an array of visit _ids in the patient document.\nOne-to-Squillions (parent reference in child): Use when child records are\nextremely numerous. Store a reference to the parent in each child document\n(like a SQL foreign key). Example: log entries for a server -- potentially\nmillions of logs per server.",
+    "moduleId": 5,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 82,
     "text": "What is $elemMatch in MongoDB and when is it necessary?",
     "type": "short_answer",
     "options": [],
-    "answer": "$elemMatch is a query operator used to search arrays of embedded objects.\nIt specifies that ALL conditions inside the $elemMatch must match within\nthe SAME array element. It is necessary when you have an array of objects\nand you need to find documents where a single element satisfies multiple\nconditions simultaneously. Without $elemMatch, MongoDB would check each\ncondition against any element in the array independently, potentially\nproducing incorrect matches."
+    "answer": "$elemMatch is a query operator used to search arrays of embedded objects.\nIt specifies that ALL conditions inside the $elemMatch must match within\nthe SAME array element. It is necessary when you have an array of objects\nand you need to find documents where a single element satisfies multiple\nconditions simultaneously. Without $elemMatch, MongoDB would check each\ncondition against any element in the array independently, potentially\nproducing incorrect matches.",
+    "moduleId": 5,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 83,
     "text": "Explain what $unwind does in a MongoDB aggregation pipeline.",
     "type": "short_answer",
     "options": [],
-    "answer": "$unwind deconstructs an array field from the input documents and outputs\none document per array element. For example, if a patient document has a\nvisits array with 3 visits, $unwind produces 3 separate documents, each\nwith one of the original visits and all the other patient fields intact.\nThis makes array data look and behave like a table, making it much easier\nto filter, group, and aggregate individual array elements. It is useful\nwhen you need to count visits per doctor, filter specific visit dates, or\ncompute statistics at the visit level rather than the patient level."
+    "answer": "$unwind deconstructs an array field from the input documents and outputs\none document per array element. For example, if a patient document has a\nvisits array with 3 visits, $unwind produces 3 separate documents, each\nwith one of the original visits and all the other patient fields intact.\nThis makes array data look and behave like a table, making it much easier\nto filter, group, and aggregate individual array elements. It is useful\nwhen you need to count visits per doctor, filter specific visit dates, or\ncompute statistics at the visit level rather than the patient level.",
+    "moduleId": 5,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 84,
     "text": "Compare the MongoDB aggregation pipeline to SQL GROUP BY.",
     "type": "short_answer",
     "options": [],
-    "answer": "$match (before $group)  --> SQL WHERE   (filter rows before grouping)\n$group                  --> SQL GROUP BY + aggregate functions (SUM, AVG, etc.)\n$match (after $group)   --> SQL HAVING  (filter groups after aggregation)\n$project                --> SQL SELECT column list (choose which fields to show)\n$sort                   --> SQL ORDER BY (sort results)\nKey difference: in SQL, these are fixed clauses in a fixed order.\nIn MongoDB, pipeline stages can be reordered and repeated as needed.\n--- TOPIC: Mixed ---"
+    "answer": "$match (before $group)  --> SQL WHERE   (filter rows before grouping)\n$group                  --> SQL GROUP BY + aggregate functions (SUM, AVG, etc.)\n$match (after $group)   --> SQL HAVING  (filter groups after aggregation)\n$project                --> SQL SELECT column list (choose which fields to show)\n$sort                   --> SQL ORDER BY (sort results)\nKey difference: in SQL, these are fixed clauses in a fixed order.\nIn MongoDB, pipeline stages can be reordered and repeated as needed.\n--- TOPIC: Mixed ---",
+    "moduleId": 5,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 85,
     "text": "Why does the course say that JOINs sound \"like the opposite of normalization\"?",
     "type": "short_answer",
     "options": [],
-    "answer": "Normalization is the process of splitting data across multiple tables to\neliminate redundancy and anomalies. JOINs are the mechanism for recombining\nthat split data at query time to produce a unified result. They appear to be\nopposites because normalization separates data while joins reunite it.\nHowever, they work together: we normalize to store data cleanly, then use\nJOINs to reassemble the data we need for specific queries without duplicating\nstorage."
+    "answer": "Normalization is the process of splitting data across multiple tables to\neliminate redundancy and anomalies. JOINs are the mechanism for recombining\nthat split data at query time to produce a unified result. They appear to be\nopposites because normalization separates data while joins reunite it.\nHowever, they work together: we normalize to store data cleanly, then use\nJOINs to reassemble the data we need for specific queries without duplicating\nstorage.",
+    "moduleId": 5,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 86,
     "text": "What is the difference between a relational database (MySQL) and a",
     "type": "short_answer",
     "options": [],
-    "answer": "Relational (MySQL): Fixed schema, all records have the same structure,\nrelationships enforced via FK constraints, queries via SQL.\nDocument (MongoDB): Flexible schema, each document can have different fields,\nno enforced relationships, queries via MQL.\nMySQL better: Banking system -- data is highly structured, relationships are\ncritical, and consistency matters.\nMongoDB better: A product catalog for an e-commerce site where different product\ncategories have completely different attributes -- rigid schemas would waste space\nor require many nullable columns."
+    "answer": "Relational (MySQL): Fixed schema, all records have the same structure,\nrelationships enforced via FK constraints, queries via SQL.\nDocument (MongoDB): Flexible schema, each document can have different fields,\nno enforced relationships, queries via MQL.\nMySQL better: Banking system -- data is highly structured, relationships are\ncritical, and consistency matters.\nMongoDB better: A product catalog for an e-commerce site where different product\ncategories have completely different attributes -- rigid schemas would waste space\nor require many nullable columns.",
+    "moduleId": 5,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 87,
     "text": "List the five general rules for MongoDB document design from the course.",
     "type": "short_answer",
     "options": [],
-    "answer": "Rule 1: Favor embedding unless there is a compelling reason not to.\nRule 2: Needing to access an object on its own is a compelling reason not to embed it.\nRule 3: Avoid joins/lookups if possible, but don't be afraid if they give a better schema.\nRule 4: Arrays should not grow without bound (more than a couple hundred = use references).\nRule 5: Structure data to match your application's actual query and update patterns."
+    "answer": "Rule 1: Favor embedding unless there is a compelling reason not to.\nRule 2: Needing to access an object on its own is a compelling reason not to embed it.\nRule 3: Avoid joins/lookups if possible, but don't be afraid if they give a better schema.\nRule 4: Arrays should not grow without bound (more than a couple hundred = use references).\nRule 5: Structure data to match your application's actual query and update patterns.",
+    "moduleId": 5,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 88,
     "text": "What are the constraints available in MySQL DDL? Briefly describe each one.",
     "type": "short_answer",
     "options": [],
-    "answer": "NOT NULL: Column must always have a value; cannot be empty.\nUNIQUE: All values in the column must be different; allows one NULL.\nDEFAULT: Provides a fallback value when no value is supplied during INSERT.\nCHECK: Validates that values satisfy a specified condition (e.g., age >= 18).\nPRIMARY KEY: Uniquely identifies each row; combines UNIQUE and NOT NULL; one per table.\nFOREIGN KEY: References the primary key of another table; enforces referential integrity."
+    "answer": "NOT NULL: Column must always have a value; cannot be empty.\nUNIQUE: All values in the column must be different; allows one NULL.\nDEFAULT: Provides a fallback value when no value is supplied during INSERT.\nCHECK: Validates that values satisfy a specified condition (e.g., age >= 18).\nPRIMARY KEY: Uniquely identifies each row; combines UNIQUE and NOT NULL; one per table.\nFOREIGN KEY: References the primary key of another table; enforces referential integrity.",
+    "moduleId": 5,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 89,
     "text": "In MySQL Workbench physical modeling, what do the following symbols represent?",
     "type": "short_answer",
     "options": [],
-    "answer": "Yellow key: The column is a primary key.\nRed key: The column is both a foreign key AND part of the primary key\n(common in bridge tables).\nBlue filled diamond: The column is mandatory (NOT NULL).\nRed open diamond: The column is an optional foreign key (nullable FK)."
+    "answer": "Yellow key: The column is a primary key.\nRed key: The column is both a foreign key AND part of the primary key\n(common in bridge tables).\nBlue filled diamond: The column is mandatory (NOT NULL).\nRed open diamond: The column is an optional foreign key (nullable FK).",
+    "moduleId": 5,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 90,
     "text": "Explain why the course materials warn: \"Specifying an incorrect condition",
     "type": "short_answer",
     "options": [],
-    "answer": "UPDATE and DELETE statements without a WHERE clause apply to EVERY row in the\ntable. Even a WHERE clause with a subtle error (wrong column, wrong value)\ncould match far more rows than intended. Best practices: (1) Always double-check\nyour WHERE condition with a SELECT first to confirm which rows it matches before\nrunning UPDATE/DELETE. (2) Work in a transaction so you can ROLLBACK if\nsomething goes wrong before committing. (3) Make backups before running\nbulk data operations.\n================================================================\nSECTION C -- MYSQL QUERY WRITING: BASIC (Q91 - Q112)\nWrite the exact SQL query for each task.\nUse tables: patient(pid, first_name, last_name, phone)\nappointment(apid, pid, doctor_id, start_time, duration)\ndoctor(did, first_name, last_name, phone)\nproduct(id, sku, name, regular_price, attrib1name, attribute1)\n================================================================"
+    "answer": "UPDATE and DELETE statements without a WHERE clause apply to EVERY row in the\ntable. Even a WHERE clause with a subtle error (wrong column, wrong value)\ncould match far more rows than intended. Best practices: (1) Always double-check\nyour WHERE condition with a SELECT first to confirm which rows it matches before\nrunning UPDATE/DELETE. (2) Work in a transaction so you can ROLLBACK if\nsomething goes wrong before committing. (3) Make backups before running\nbulk data operations.\n================================================================\nSECTION C -- MYSQL QUERY WRITING: BASIC (Q91 - Q112)\nWrite the exact SQL query for each task.\nUse tables: patient(pid, first_name, last_name, phone)\nappointment(apid, pid, doctor_id, start_time, duration)\ndoctor(did, first_name, last_name, phone)\nproduct(id, sku, name, regular_price, attrib1name, attribute1)\n================================================================",
+    "moduleId": 5,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 91,
     "text": "Select all columns from the patient table.",
     "type": "short_answer",
     "options": [],
-    "answer": "SELECT * FROM patient;"
+    "answer": "SELECT * FROM patient;",
+    "moduleId": 5,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 92,
     "text": "Select only the first_name and phone columns from the patient table.",
     "type": "short_answer",
     "options": [],
-    "answer": "SELECT first_name, phone FROM patient;"
+    "answer": "SELECT first_name, phone FROM patient;",
+    "moduleId": 5,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 93,
     "text": "Insert a new patient with pid=500, first_name='Sara', last_name='Ali', phone='5550-1111'.",
     "type": "short_answer",
     "options": [],
-    "answer": "INSERT INTO patient VALUES (500, 'Sara', 'Ali', '5550-1111');"
+    "answer": "INSERT INTO patient VALUES (500, 'Sara', 'Ali', '5550-1111');",
+    "moduleId": 5,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 94,
     "text": "Insert two patients in a single INSERT statement:",
     "type": "short_answer",
     "options": [],
-    "answer": "INSERT INTO patient VALUES\n(501, 'Ahmed', 'Hassan', '5550-2222'),\n(502, 'Nour',  'Salem',  '5550-3333');"
+    "answer": "INSERT INTO patient VALUES\n(501, 'Ahmed', 'Hassan', '5550-2222'),\n(502, 'Nour',  'Salem',  '5550-3333');",
+    "moduleId": 5,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 95,
     "text": "Find all patients whose last_name is 'Ali'.",
     "type": "short_answer",
     "options": [],
-    "answer": "SELECT * FROM patient WHERE last_name = 'Ali';"
+    "answer": "SELECT * FROM patient WHERE last_name = 'Ali';",
+    "moduleId": 5,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 96,
     "text": "Find all appointments where duration is greater than 30.",
     "type": "short_answer",
     "options": [],
-    "answer": "SELECT * FROM appointment WHERE duration > 30;"
+    "answer": "SELECT * FROM appointment WHERE duration > 30;",
+    "moduleId": 5,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 97,
     "text": "Find all products where regular_price is between 10 and 50 (inclusive).",
     "type": "short_answer",
     "options": [],
-    "answer": "SELECT * FROM product WHERE regular_price BETWEEN 10 AND 50;"
+    "answer": "SELECT * FROM product WHERE regular_price BETWEEN 10 AND 50;",
+    "moduleId": 5,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 98,
     "text": "Find all patients whose phone number is NULL.",
     "type": "short_answer",
     "options": [],
-    "answer": "SELECT * FROM patient WHERE phone IS NULL;"
+    "answer": "SELECT * FROM patient WHERE phone IS NULL;",
+    "moduleId": 5,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 99,
     "text": "Find all patients whose first_name starts with the letter 'M'.",
     "type": "short_answer",
     "options": [],
-    "answer": "SELECT * FROM patient WHERE first_name LIKE 'M%';"
+    "answer": "SELECT * FROM patient WHERE first_name LIKE 'M%';",
+    "moduleId": 5,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 100,
     "text": "Find all patients whose first_name contains the letter 'a' anywhere.",
     "type": "short_answer",
     "options": [],
-    "answer": "SELECT * FROM patient WHERE first_name LIKE '%a%';"
+    "answer": "SELECT * FROM patient WHERE first_name LIKE '%a%';",
+    "moduleId": 5,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 101,
     "text": "Find all patients with pid IN the list (232, 334, 400).",
     "type": "short_answer",
     "options": [],
-    "answer": "SELECT * FROM patient WHERE pid IN (232, 334, 400);"
+    "answer": "SELECT * FROM patient WHERE pid IN (232, 334, 400);",
+    "moduleId": 5,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 102,
     "text": "Find all appointments where duration > 20 AND pid = 232.",
     "type": "short_answer",
     "options": [],
-    "answer": "SELECT * FROM appointment WHERE duration > 20 AND pid = 232;"
+    "answer": "SELECT * FROM appointment WHERE duration > 20 AND pid = 232;",
+    "moduleId": 5,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 103,
     "text": "List all products ordered by regular_price ascending.",
     "type": "short_answer",
     "options": [],
-    "answer": "SELECT * FROM product ORDER BY regular_price ASC;"
+    "answer": "SELECT * FROM product ORDER BY regular_price ASC;",
+    "moduleId": 5,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 104,
     "text": "List all products ordered by regular_price descending, then by name ascending.",
     "type": "short_answer",
     "options": [],
-    "answer": "SELECT * FROM product ORDER BY regular_price DESC, name ASC;"
+    "answer": "SELECT * FROM product ORDER BY regular_price DESC, name ASC;",
+    "moduleId": 5,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 105,
     "text": "Update the phone number to '9999-0000' for the patient with pid = 232.",
     "type": "short_answer",
     "options": [],
-    "answer": "UPDATE patient SET phone = '9999-0000' WHERE pid = 232;"
+    "answer": "UPDATE patient SET phone = '9999-0000' WHERE pid = 232;",
+    "moduleId": 5,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 106,
     "text": "Delete the patient with pid = 400.",
     "type": "short_answer",
     "options": [],
-    "answer": "DELETE FROM patient WHERE pid = 400;"
+    "answer": "DELETE FROM patient WHERE pid = 400;",
+    "moduleId": 5,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 107,
     "text": "Create the patient table with:",
     "type": "short_answer",
     "options": [],
-    "answer": "CREATE TABLE patient (\npid        INT NOT NULL AUTO_INCREMENT PRIMARY KEY,\nfirst_name VARCHAR(50) NOT NULL,\nlast_name  VARCHAR(50) NOT NULL,\nphone      VARCHAR(20)\n);"
+    "answer": "CREATE TABLE patient (\npid        INT NOT NULL AUTO_INCREMENT PRIMARY KEY,\nfirst_name VARCHAR(50) NOT NULL,\nlast_name  VARCHAR(50) NOT NULL,\nphone      VARCHAR(20)\n);",
+    "moduleId": 5,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 108,
     "text": "Add a column called date_of_birth (DATE type) to the patient table.",
     "type": "short_answer",
     "options": [],
-    "answer": "ALTER TABLE patient ADD COLUMN date_of_birth DATE;"
+    "answer": "ALTER TABLE patient ADD COLUMN date_of_birth DATE;",
+    "moduleId": 5,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 109,
     "text": "Drop the phone column from the patient table.",
     "type": "short_answer",
     "options": [],
-    "answer": "ALTER TABLE patient DROP COLUMN phone;"
+    "answer": "ALTER TABLE patient DROP COLUMN phone;",
+    "moduleId": 5,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 110,
     "text": "Rename the column 'phone' to 'contact_number' and change its type to VARCHAR(30).",
     "type": "short_answer",
     "options": [],
-    "answer": "ALTER TABLE patient CHANGE phone contact_number VARCHAR(30);"
+    "answer": "ALTER TABLE patient CHANGE phone contact_number VARCHAR(30);",
+    "moduleId": 5,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 111,
     "text": "Create an index on the phone column of the patient table.",
     "type": "short_answer",
     "options": [],
-    "answer": "CREATE INDEX idx_phone ON patient(phone);"
+    "answer": "CREATE INDEX idx_phone ON patient(phone);",
+    "moduleId": 5,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 112,
     "text": "Show the query execution plan for a query that searches patient by phone number.",
     "type": "short_answer",
     "options": [],
-    "answer": "EXPLAIN SELECT * FROM patient WHERE phone = '5550-1111';\n================================================================\nSECTION D -- MYSQL QUERY WRITING: ADVANCED (Q113 - Q135)\n================================================================"
+    "answer": "EXPLAIN SELECT * FROM patient WHERE phone = '5550-1111';\n================================================================\nSECTION D -- MYSQL QUERY WRITING: ADVANCED (Q113 - Q135)\n================================================================",
+    "moduleId": 5,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 113,
     "text": "Count the total number of patients in the patient table.",
     "type": "short_answer",
     "options": [],
-    "answer": "SELECT COUNT(*) FROM patient;"
+    "answer": "SELECT COUNT(*) FROM patient;",
+    "moduleId": 5,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 114,
     "text": "Find the total, minimum, maximum, and average duration",
     "type": "short_answer",
     "options": [],
-    "answer": "SELECT SUM(duration)  AS total_duration,\nMIN(duration)  AS min_duration,\nMAX(duration)  AS max_duration,\nAVG(duration)  AS avg_duration\nFROM appointment;"
+    "answer": "SELECT SUM(duration)  AS total_duration,\nMIN(duration)  AS min_duration,\nMAX(duration)  AS max_duration,\nAVG(duration)  AS avg_duration\nFROM appointment;",
+    "moduleId": 5,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 115,
     "text": "Count the number of appointments for each patient (grouped by pid).",
     "type": "short_answer",
     "options": [],
-    "answer": "SELECT pid, COUNT(*) AS appointment_count\nFROM appointment\nGROUP BY pid;"
+    "answer": "SELECT pid, COUNT(*) AS appointment_count\nFROM appointment\nGROUP BY pid;",
+    "moduleId": 5,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 116,
     "text": "Count the number of appointments per patient, but only show",
     "type": "short_answer",
     "options": [],
-    "answer": "SELECT pid, COUNT(*) AS appointment_count\nFROM appointment\nGROUP BY pid\nHAVING COUNT(*) > 2;"
+    "answer": "SELECT pid, COUNT(*) AS appointment_count\nFROM appointment\nGROUP BY pid\nHAVING COUNT(*) > 2;",
+    "moduleId": 5,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 117,
     "text": "Find all products with a price equal to the minimum price in the table.",
     "type": "short_answer",
     "options": [],
-    "answer": "SELECT * FROM product\nWHERE regular_price = (SELECT MIN(regular_price) FROM product);"
+    "answer": "SELECT * FROM product\nWHERE regular_price = (SELECT MIN(regular_price) FROM product);",
+    "moduleId": 5,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 118,
     "text": "Find all appointments where duration is above the average duration.",
     "type": "short_answer",
     "options": [],
-    "answer": "SELECT * FROM appointment\nWHERE duration > (SELECT AVG(duration) FROM appointment);"
+    "answer": "SELECT * FROM appointment\nWHERE duration > (SELECT AVG(duration) FROM appointment);",
+    "moduleId": 5,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 119,
     "text": "List all distinct values in the attribute1 column of the product table.",
     "type": "short_answer",
     "options": [],
-    "answer": "SELECT DISTINCT attribute1 FROM product;"
+    "answer": "SELECT DISTINCT attribute1 FROM product;",
+    "moduleId": 5,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 120,
     "text": "Perform an INNER JOIN to show appointment details alongside",
     "type": "short_answer",
     "options": [],
-    "answer": "SELECT a.apid, a.start_time, a.duration,\np.first_name, p.last_name\nFROM appointment a\nJOIN patient p ON a.pid = p.pid;"
+    "answer": "SELECT a.apid, a.start_time, a.duration,\np.first_name, p.last_name\nFROM appointment a\nJOIN patient p ON a.pid = p.pid;",
+    "moduleId": 5,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 121,
     "text": "Perform a LEFT JOIN to show ALL patients and any appointment",
     "type": "short_answer",
     "options": [],
-    "answer": "SELECT p.pid, p.first_name, p.last_name,\na.apid, a.start_time\nFROM patient p\nLEFT JOIN appointment a ON p.pid = a.pid;"
+    "answer": "SELECT p.pid, p.first_name, p.last_name,\na.apid, a.start_time\nFROM patient p\nLEFT JOIN appointment a ON p.pid = a.pid;",
+    "moduleId": 5,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 122,
     "text": "Join THREE tables: appointment, patient, and doctor.",
     "type": "short_answer",
     "options": [],
-    "answer": "SELECT p.first_name  AS patient_name,\nd.first_name  AS doctor_name,\na.start_time\nFROM appointment a\nJOIN patient p ON a.pid      = p.pid\nJOIN doctor  d ON a.doctor_id = d.did;"
+    "answer": "SELECT p.first_name  AS patient_name,\nd.first_name  AS doctor_name,\na.start_time\nFROM appointment a\nJOIN patient p ON a.pid      = p.pid\nJOIN doctor  d ON a.doctor_id = d.did;",
+    "moduleId": 5,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 123,
     "text": "Using UNION, list all first names from BOTH the patient table",
     "type": "short_answer",
     "options": [],
-    "answer": "SELECT first_name FROM patient\nUNION\nSELECT first_name FROM doctor;"
+    "answer": "SELECT first_name FROM patient\nUNION\nSELECT first_name FROM doctor;",
+    "moduleId": 5,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 124,
     "text": "Simulate INTERSECT: find first names that appear in BOTH",
     "type": "short_answer",
     "options": [],
-    "answer": "SELECT first_name FROM patient\nWHERE first_name IN (SELECT first_name FROM doctor);"
+    "answer": "SELECT first_name FROM patient\nWHERE first_name IN (SELECT first_name FROM doctor);",
+    "moduleId": 5,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 125,
     "text": "Simulate DIFFERENCE: find first names in the doctor table",
     "type": "short_answer",
     "options": [],
-    "answer": "SELECT first_name FROM doctor\nWHERE first_name NOT IN (SELECT first_name FROM patient);"
+    "answer": "SELECT first_name FROM doctor\nWHERE first_name NOT IN (SELECT first_name FROM patient);",
+    "moduleId": 5,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 126,
     "text": "Create a VIEW called active_appointments that shows patient",
     "type": "short_answer",
     "options": [],
-    "answer": "CREATE VIEW active_appointments AS\nSELECT p.first_name, p.last_name, a.start_time\nFROM patient p\nJOIN appointment a ON p.pid = a.pid\nWHERE a.duration > 20;"
+    "answer": "CREATE VIEW active_appointments AS\nSELECT p.first_name, p.last_name, a.start_time\nFROM patient p\nJOIN appointment a ON p.pid = a.pid\nWHERE a.duration > 20;",
+    "moduleId": 5,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 127,
     "text": "Create the appointment table with:",
     "type": "short_answer",
     "options": [],
-    "answer": "CREATE TABLE appointment (\napid       INT      NOT NULL AUTO_INCREMENT PRIMARY KEY,\npid        INT      NOT NULL,\ndoctor_id  INT      NOT NULL,\nstart_time DATETIME NOT NULL,\nduration   INT      NOT NULL DEFAULT 15,\nCONSTRAINT fk_appt_patient FOREIGN KEY (pid)       REFERENCES patient(pid),\nCONSTRAINT fk_appt_doctor  FOREIGN KEY (doctor_id) REFERENCES doctor(did)\n);"
+    "answer": "CREATE TABLE appointment (\napid       INT      NOT NULL AUTO_INCREMENT PRIMARY KEY,\npid        INT      NOT NULL,\ndoctor_id  INT      NOT NULL,\nstart_time DATETIME NOT NULL,\nduration   INT      NOT NULL DEFAULT 15,\nCONSTRAINT fk_appt_patient FOREIGN KEY (pid)       REFERENCES patient(pid),\nCONSTRAINT fk_appt_doctor  FOREIGN KEY (doctor_id) REFERENCES doctor(did)\n);",
+    "moduleId": 5,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 128,
     "text": "Add a foreign key constraint named fk_appt_doc to the appointment table",
     "type": "short_answer",
     "options": [],
-    "answer": "ALTER TABLE appointment ADD CONSTRAINT fk_appt_doc\nFOREIGN KEY (doctor_id) REFERENCES doctor(did);"
+    "answer": "ALTER TABLE appointment ADD CONSTRAINT fk_appt_doc\nFOREIGN KEY (doctor_id) REFERENCES doctor(did);",
+    "moduleId": 5,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 129,
     "text": "Remove the foreign key constraint named fk_appt_doc from appointment.",
     "type": "short_answer",
     "options": [],
-    "answer": "ALTER TABLE appointment DROP CONSTRAINT fk_appt_doc;"
+    "answer": "ALTER TABLE appointment DROP CONSTRAINT fk_appt_doc;",
+    "moduleId": 5,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 130,
     "text": "Show the GROUP BY result for number of appointments per doctor,",
     "type": "short_answer",
     "options": [],
-    "answer": "SELECT doctor_id, COUNT(*) AS appointment_count\nFROM appointment\nGROUP BY doctor_id\nORDER BY appointment_count DESC;"
+    "answer": "SELECT doctor_id, COUNT(*) AS appointment_count\nFROM appointment\nGROUP BY doctor_id\nORDER BY appointment_count DESC;",
+    "moduleId": 5,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 131,
     "text": "Find the average duration of appointments for each patient,",
     "type": "short_answer",
     "options": [],
-    "answer": "SELECT pid, AVG(duration) AS avg_duration\nFROM appointment\nGROUP BY pid\nHAVING AVG(duration) > 25;"
+    "answer": "SELECT pid, AVG(duration) AS avg_duration\nFROM appointment\nGROUP BY pid\nHAVING AVG(duration) > 25;",
+    "moduleId": 5,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 132,
     "text": "Count appointments per doctor for appointments where duration > 15,",
     "type": "short_answer",
     "options": [],
-    "answer": "SELECT doctor_id, COUNT(*) AS long_appt_count\nFROM appointment\nWHERE duration > 15\nGROUP BY doctor_id\nHAVING COUNT(*) > 3;"
+    "answer": "SELECT doctor_id, COUNT(*) AS long_appt_count\nFROM appointment\nWHERE duration > 15\nGROUP BY doctor_id\nHAVING COUNT(*) > 3;",
+    "moduleId": 5,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 133,
     "text": "Create a view called clinic_schedule that joins appointment, patient,",
     "type": "short_answer",
     "options": [],
-    "answer": "CREATE VIEW clinic_schedule AS\nSELECT CONCAT(p.first_name, ' ', p.last_name) AS patient_name,\nCONCAT(d.first_name, ' ', d.last_name) AS doctor_name,\na.start_time,\na.duration\nFROM appointment a\nJOIN patient p ON a.pid       = p.pid\nJOIN doctor  d ON a.doctor_id = d.did;"
+    "answer": "CREATE VIEW clinic_schedule AS\nSELECT CONCAT(p.first_name, ' ', p.last_name) AS patient_name,\nCONCAT(d.first_name, ' ', d.last_name) AS doctor_name,\na.start_time,\na.duration\nFROM appointment a\nJOIN patient p ON a.pid       = p.pid\nJOIN doctor  d ON a.doctor_id = d.did;",
+    "moduleId": 5,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 134,
     "text": "Write the SQL to create the appointment table with ON DELETE CASCADE",
     "type": "short_answer",
     "options": [],
-    "answer": "CREATE TABLE appointment (\napid       INT      NOT NULL AUTO_INCREMENT PRIMARY KEY,\npid        INT      NOT NULL,\nstart_time DATETIME NOT NULL,\nduration   INT      NOT NULL DEFAULT 15,\nCONSTRAINT fk_appt_patient FOREIGN KEY (pid)\nREFERENCES patient(pid)\nON DELETE CASCADE\n);"
+    "answer": "CREATE TABLE appointment (\napid       INT      NOT NULL AUTO_INCREMENT PRIMARY KEY,\npid        INT      NOT NULL,\nstart_time DATETIME NOT NULL,\nduration   INT      NOT NULL DEFAULT 15,\nCONSTRAINT fk_appt_patient FOREIGN KEY (pid)\nREFERENCES patient(pid)\nON DELETE CASCADE\n);",
+    "moduleId": 5,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 135,
     "text": "Write the query to find all products where the name starts with 'Ajax',",
     "type": "short_answer",
     "options": [],
-    "answer": "SELECT attribute1, COUNT(*)\nFROM product\nWHERE name LIKE 'Ajax%' AND attrib1name = 'Size'\nGROUP BY attribute1;\n================================================================\nSECTION E -- MONGODB (Q136 - Q150)\nCovers: insert, find, update, delete, aggregation, arrays,\nembedded objects, indexes.\n================================================================"
+    "answer": "SELECT attribute1, COUNT(*)\nFROM product\nWHERE name LIKE 'Ajax%' AND attrib1name = 'Size'\nGROUP BY attribute1;\n================================================================\nSECTION E -- MONGODB (Q136 - Q150)\nCovers: insert, find, update, delete, aggregation, arrays,\nembedded objects, indexes.\n================================================================",
+    "moduleId": 5,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 136,
@@ -1254,7 +1659,10 @@
       "C) Collection",
       "D) Field"
     ],
-    "answer": "C"
+    "answer": "C",
+    "moduleId": 5,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 137,
@@ -1266,7 +1674,10 @@
       "C) primary_key",
       "D) doc_id"
     ],
-    "answer": "B"
+    "answer": "B",
+    "moduleId": 5,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 138,
@@ -1278,7 +1689,10 @@
       "C) A full collection scan (slow)",
       "D) An automatic index to be created"
     ],
-    "answer": "C"
+    "answer": "C",
+    "moduleId": 5,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 139,
@@ -1290,7 +1704,10 @@
       "C) $project",
       "D) $filter"
     ],
-    "answer": "B"
+    "answer": "B",
+    "moduleId": 5,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 140,
@@ -1302,76 +1719,244 @@
       "C) Creates one output document per array element",
       "D) Merges two arrays into one"
     ],
-    "answer": "C"
+    "answer": "C",
+    "moduleId": 5,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 141,
     "text": "[Written] Write the MongoDB command to insert ONE document into",
     "type": "short_answer",
     "options": [],
-    "answer": "db.patients.insertOne({\nfirst_name: \"Ali\",\nlast_name:  \"Hassan\",\nage:        30,\nphone:      [\"5551-0000\", \"5551-1111\"]\n})"
+    "answer": "db.patients.insertOne({\nfirst_name: \"Ali\",\nlast_name:  \"Hassan\",\nage:        30,\nphone:      [\"5551-0000\", \"5551-1111\"]\n})",
+    "moduleId": 5,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 142,
     "text": "[Written] Write the MongoDB query to find all patients where age > 25,",
     "type": "short_answer",
     "options": [],
-    "answer": "db.patients.find(\n{ age: { $gt: 25 } },\n{ first_name: 1, last_name: 1, _id: 0 }\n)"
+    "answer": "db.patients.find(\n{ age: { $gt: 25 } },\n{ first_name: 1, last_name: 1, _id: 0 }\n)",
+    "moduleId": 5,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 143,
     "text": "[Query] Write the MongoDB query to update the phone field of the patient",
     "type": "short_answer",
     "options": [],
-    "answer": "db.patients.updateOne(\n{ first_name: \"Ali\" },\n{ $set: { phone: \"9999-0000\" } }\n)"
+    "answer": "db.patients.updateOne(\n{ first_name: \"Ali\" },\n{ $set: { phone: \"9999-0000\" } }\n)",
+    "moduleId": 5,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 144,
     "text": "[Query] Write the MongoDB query to delete all patients with age less than 18.",
     "type": "short_answer",
     "options": [],
-    "answer": "db.patients.deleteMany({ age: { $lt: 18 } })"
+    "answer": "db.patients.deleteMany({ age: { $lt: 18 } })",
+    "moduleId": 5,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 145,
     "text": "[Query] Write the aggregation pipeline to compute the total number of",
     "type": "short_answer",
     "options": [],
-    "answer": "db.appointments.aggregate([\n{ $group: {\n_id: \"$doctor_name\",\ntotal: { $sum: 1 }\n}},\n{ $sort: { total: -1 } }\n])"
+    "answer": "db.appointments.aggregate([\n{ $group: {\n_id: \"$doctor_name\",\ntotal: { $sum: 1 }\n}},\n{ $sort: { total: -1 } }\n])",
+    "moduleId": 5,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 146,
     "text": "[Query] From a 'cars' collection (fields: manufacturer, price), write the",
     "type": "short_answer",
     "options": [],
-    "answer": "db.cars.aggregate([\n{ $group: {\n_id: \"$manufacturer\",\ntotal: { $sum: \"$price\" }\n}},\n{ $match: { total: { $lt: 50000 } } },\n{ $sort: { total: 1 } }\n])"
+    "answer": "db.cars.aggregate([\n{ $group: {\n_id: \"$manufacturer\",\ntotal: { $sum: \"$price\" }\n}},\n{ $match: { total: { $lt: 50000 } } },\n{ $sort: { total: 1 } }\n])",
+    "moduleId": 5,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 147,
     "text": "[Query] From the 'patients' collection (with embedded last_vitals object",
     "type": "short_answer",
     "options": [],
-    "answer": "db.patients.find({ \"last_vitals.weight\": { $gt: 80 } })"
+    "answer": "db.patients.find({ \"last_vitals.weight\": { $gt: 80 } })",
+    "moduleId": 5,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 148,
     "text": "[Query] From the 'patients' collection (with a visits array of objects",
     "type": "short_answer",
     "options": [],
-    "answer": "db.patients.find({\n\"visits\": { $elemMatch: { \"doctor\": \"Taylor\" } }\n})"
+    "answer": "db.patients.find({\n\"visits\": { $elemMatch: { \"doctor\": \"Taylor\" } }\n})",
+    "moduleId": 5,
+    "difficulty": "easy",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 149,
     "text": "[Written] Explain when you would use EMBEDDING versus REFERENCING in MongoDB.",
     "type": "short_answer",
     "options": [],
-    "answer": "Embedding: Use when related data is small, always accessed with the parent,\nand doesn't need to be queried independently. Example: embed a patient's\nlast_vitals (height, weight, heart_rate) directly inside the patient document\nbecause vitals are always viewed as part of the patient record, they are few\nin number, and we never query vitals without wanting the patient info too.\nReferencing: Use when data can grow large, needs independent access, or is\nshared across multiple documents. Example: store visits in a separate 'visits'\ncollection and include a patient_id field in each visit document (like a FK).\nThis is because a patient can have hundreds of visits over years, and medical\nstaff may want to query all visits across all patients without loading every\npatient's full document."
+    "answer": "Embedding: Use when related data is small, always accessed with the parent,\nand doesn't need to be queried independently. Example: embed a patient's\nlast_vitals (height, weight, heart_rate) directly inside the patient document\nbecause vitals are always viewed as part of the patient record, they are few\nin number, and we never query vitals without wanting the patient info too.\nReferencing: Use when data can grow large, needs independent access, or is\nshared across multiple documents. Example: store visits in a separate 'visits'\ncollection and include a patient_id field in each visit document (like a FK).\nThis is because a patient can have hundreds of visits over years, and medical\nstaff may want to query all visits across all patients without loading every\npatient's full document.",
+    "moduleId": 5,
+    "difficulty": "medium",
+    "explanation": "Review the module content for this topic."
   },
   {
     "id": 150,
     "text": "[Query] Create a single-field ascending index on the 'manufacturer' field",
     "type": "short_answer",
     "options": [],
-    "answer": "-- Step 1: Create the index\ndb.cars.createIndex({ manufacturer: 1 })\n-- Step 2: Run query with explain to verify index use\ndb.cars.find({ manufacturer: \"Toyota\" }).explain(\"executionStats\")\n-- In the output, look for:\n--   \"stage\": \"IXSCAN\"  --> index is being used (GOOD)\n--   \"stage\": \"COLLSCAN\" --> no index used (BAD)\n================================================================\nEND OF QUESTION BANK\nTotal: 150 Questions\nSection A (MCQ):             Q1  - Q60   [60 questions]\nSection B (Written):         Q61 - Q90   [30 questions]\nSection C (MySQL Basic):     Q91 - Q112  [22 questions]\nSection D (MySQL Advanced):  Q113 - Q135 [23 questions]\nSection E (MongoDB):         Q136 - Q150 [15 questions]\n================================================================"
+    "answer": "-- Step 1: Create the index\ndb.cars.createIndex({ manufacturer: 1 })\n-- Step 2: Run query with explain to verify index use\ndb.cars.find({ manufacturer: \"Toyota\" }).explain(\"executionStats\")\n-- In the output, look for:\n--   \"stage\": \"IXSCAN\"  --> index is being used (GOOD)\n--   \"stage\": \"COLLSCAN\" --> no index used (BAD)\n================================================================\nEND OF QUESTION BANK\nTotal: 150 Questions\nSection A (MCQ):             Q1  - Q60   [60 questions]\nSection B (Written):         Q61 - Q90   [30 questions]\nSection C (MySQL Basic):     Q91 - Q112  [22 questions]\nSection D (MySQL Advanced):  Q113 - Q135 [23 questions]\nSection E (MongoDB):         Q136 - Q150 [15 questions]\n================================================================",
+    "moduleId": 5,
+    "difficulty": "hard",
+    "explanation": "Review the module content for this topic."
+  },
+  {
+    "id": 1000,
+    "text": "Are databases and DBMS exactly the same thing?",
+    "type": "mcq",
+    "options": [
+      "A) Yes, they are interchangeable terms",
+      "B) No, a database is the data, a DBMS is the software",
+      "C) Yes, both refer to the hardware",
+      "D) No, DBMS is for cloud, database is local"
+    ],
+    "answer": "B",
+    "moduleId": 1,
+    "difficulty": "trap",
+    "explanation": "A database is the organized collection of data. A DBMS is the software system that manages it."
+  },
+  {
+    "id": 1001,
+    "text": "Can an M:N relationship be implemented directly in a relational database?",
+    "type": "mcq",
+    "options": [
+      "A) Yes, using foreign keys on both sides",
+      "B) No, it must be resolved with a bridge table",
+      "C) Yes, if the DBMS is newer than 2010",
+      "D) No, M:N relationships are theoretically impossible"
+    ],
+    "answer": "B",
+    "moduleId": 2,
+    "difficulty": "trap",
+    "explanation": "M:N cannot be directly implemented. You MUST use a bridge table containing foreign keys from both sides."
+  },
+  {
+    "id": 1002,
+    "text": "Does the SQL 'SELECT' keyword perform Selection or Projection in relational algebra terms?",
+    "type": "mcq",
+    "options": [
+      "A) Selection",
+      "B) Projection",
+      "C) Both",
+      "D) Neither"
+    ],
+    "answer": "B",
+    "moduleId": 2,
+    "difficulty": "trap",
+    "explanation": "TRAP! The SQL SELECT keyword performs projection (choosing columns). The WHERE clause does selection (filtering rows)."
+  },
+  {
+    "id": 1003,
+    "text": "In a 1:M relationship, where does the Foreign Key go?",
+    "type": "mcq",
+    "options": [
+      "A) In the 'One' side",
+      "B) In the 'Many' side",
+      "C) In a bridge table",
+      "D) It doesn't matter"
+    ],
+    "answer": "B",
+    "moduleId": 2,
+    "difficulty": "trap",
+    "explanation": "The foreign key always goes in the 'many' side. e.g. Department(1) to Employees(M) -> FK goes in Employee."
+  },
+  {
+    "id": 1004,
+    "text": "If you run `DELETE FROM patient;` what happens?",
+    "type": "mcq",
+    "options": [
+      "A) The table is dropped",
+      "B) An error is thrown",
+      "C) All rows are deleted, but the table structure remains",
+      "D) Only the first row is deleted"
+    ],
+    "answer": "C",
+    "moduleId": 3,
+    "difficulty": "trap",
+    "explanation": "DELETE without a WHERE clause removes all rows from the table, but the table itself remains."
+  },
+  {
+    "id": 1005,
+    "text": "Which clause filters groups AFTER aggregation?",
+    "type": "mcq",
+    "options": [
+      "A) WHERE",
+      "B) GROUP BY",
+      "C) HAVING",
+      "D) FILTER"
+    ],
+    "answer": "C",
+    "moduleId": 4,
+    "difficulty": "trap",
+    "explanation": "HAVING filters groups after aggregation. WHERE filters individual rows before aggregation."
+  },
+  {
+    "id": 1006,
+    "text": "Can you rollback an AUTO_INCREMENT value if you delete a row?",
+    "type": "mcq",
+    "options": [
+      "A) Yes, always",
+      "B) Yes, using ALTER TABLE",
+      "C) No, trying to roll it backwards is ignored",
+      "D) Yes, but only for the last inserted row"
+    ],
+    "answer": "C",
+    "moduleId": 4,
+    "difficulty": "trap",
+    "explanation": "AUTO_INCREMENT only goes up. You cannot roll it backwards."
+  },
+  {
+    "id": 1007,
+    "text": "In MongoDB, what fields are fast to search by default?",
+    "type": "mcq",
+    "options": [
+      "A) All fields",
+      "B) Only string fields",
+      "C) Only the _id field",
+      "D) No fields are fast until indexed"
+    ],
+    "answer": "C",
+    "moduleId": 5,
+    "difficulty": "trap",
+    "explanation": "Searching by _id is fast. All other queries result in a full document scan unless you create an index."
+  },
+  {
+    "id": 1008,
+    "text": "Should you embed an array of thousands of items in a single MongoDB document?",
+    "type": "mcq",
+    "options": [
+      "A) Yes, it's faster",
+      "B) No, use references for large cardinality",
+      "C) Yes, if they are integers",
+      "D) It doesn't matter"
+    ],
+    "answer": "B",
+    "moduleId": 5,
+    "difficulty": "trap",
+    "explanation": "Documents have a 16MB limit. Unbounded arrays are dangerous. Use references (One-to-Squillions pattern)."
   }
 ]
